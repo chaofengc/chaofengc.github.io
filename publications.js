@@ -116,6 +116,17 @@ var data = {
             "project": "https://ywq.github.io/s3nerf/",
         },
         {
+            // "highlight": true,
+            // "img": "images/ECCV2022_fastvqa.gif",
+            "title": "FAST-VQA: Efficient End-to-end Video Quality Assessment with Fragment Sampling",
+            "authors": "Haoning Wu, Chaofeng Chen, Jingwen Hou, Liang Liao, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
+            "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
+            "year": "2022",
+            "arxiv": "https://arxiv.org/abs/2207.02595",
+            "github": "https://github.com/VQAssessment/FAST-VQA-and-FasterVQA",
+        },
+
+        {
             "highlight": true,
             "img": "images/ECCV2022_ReDegNet.jpg",
             "title": "From Face to Natural Image: Learning Real Degradation for Blind Image Super-Resolution",

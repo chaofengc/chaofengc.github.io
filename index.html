@@ -270,6 +270,10 @@
                              '</li>'
                 }
 
+                if ("github" in p) {
+                    links += `<li>${p['github'] ? '<a href="' + p['github'] + '" target="_blank"><img class="imgbadge" src="https://img.shields.io/github/stars/' + p['github'].split('/').slice(-2).join('/') + '?style=social"></a>' : ''}</li>`
+                }
+
                 if ("oral" in p) {
                   p['year'] = `${p['year']} (<b style='color:red;'>${p['oral']}</b>)` 
                 }
