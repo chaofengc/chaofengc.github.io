@@ -100,6 +100,34 @@ ul.news li {
 }
 
 
+.inlineList {
+    list-style-type: none; /* Remove default list bullets */
+    display: inline; /* Display list items inline */
+    padding: 0px; /* Remove default padding */
+    margin-left: 20px;
+}
+
+.inlineList li {
+    display: inline; /* Display list items inline */
+    margin-right: 5px; /* Add some space between items */
+}
+
+.full-list {
+    list-style-type: none; /* Remove default list bullets */
+    display: inline; /* Display list items inline */
+    padding: 0px; /* Remove default padding */
+    margin-left: 0px;
+}
+
+.full-list li {
+    display: inline; /* Display list items inline */
+    margin-bottom: 3px;
+}
+
+.full-list-item {
+    margin-bottom: 5px; /* Add some space between items */
+    line-height: 1.5;
+}
 
 /*  Education and Experience styles
 --------------------------------------*/
@@ -139,6 +167,17 @@ ul.news li {
 /*  Paper styles
     FontAwesome reference: http://astronautweb.co/snippet/font-awesome/
 --------------------------------------*/
+#highlight-publication ul {
+	padding: 0;
+	list-style: none;
+}
+
+#publication-switch a.disabled {
+	cursor: default;
+	color: #666;
+	text-decoration: none;
+}
+
 #paper {
     border-bottom: solid 1px #EEE;
     margin-bottom: 10px;
