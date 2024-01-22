@@ -14,6 +14,16 @@ var data = {
         // Preprints
         {
             "highlight": true,
+            "img": "images/onescorer.png",
+            "title": "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels",
+            "authors": "Haoning Wu*, Zicheng Zhang*, Weixia Zhang, Chaofeng Chen, Liang Liao, Chunyi Li, Yixuan Gao, Annan Wang, Erli Zhang, Wenxiu Sun, Qiong Yan, Xiongkuo Min, Guangtao Zhai, Weisi Lin",
+            "preprint": "ArXiv preprint",
+            "year": 2023,
+            "arxiv": "https://arxiv.org/abs/2312.17090",
+            "github": "https://github.com/Q-Future/Q-Align",
+        },
+        {
+            "highlight": true,
             "img": "images/arXiv2023_texforce.jpg",
             "title": "Enhancing Diffusion Models with Text-Encoder Reinforcement Learning",
             "authors": "Chaofeng Chen*, Annan Wang*, Haoning Wu, Liang Liao, Wenxiu Sun, Qiong Yan, Weisi Lin",
@@ -26,7 +36,7 @@ var data = {
             "highlight": true,
             "img": "images/qinstruct.jpg",
             "title": "Q-Instruct: Improving Low-level Visual Abilities for Multi-modality Foundation Models",
-            "authors": "Haoning Wu, Zicheng Zhang, Erli Zhang, Chaofeng Chen, Liang Liao, Annan Wang, Kaixin Xu, Chunyi Li, Jingwen Hou, Guangtao Zhai, Geng Xue, Wenxiu Sun, Qiong Yan, Weisi Lin",
+            "authors": "Haoning Wu*, Zicheng Zhang*, Erli Zhang*, Chaofeng Chen, Liang Liao, Annan Wang, Kaixin Xu, Chunyi Li, Jingwen Hou, Guangtao Zhai, Geng Xue, Wenxiu Sun, Qiong Yan, Weisi Lin",
             "preprint": "ArXiv preprint",
             "year": 2023,
             "arxiv": "https://arxiv.org/abs/2311.06783",
@@ -328,6 +338,12 @@ var data = {
         "Shaozheng Hao": "https://haoosz.github.io/",
         "Mengcheng Lan": "https://mc-lan.github.io/",
         "Wenxiu Sun": "http://wenxiusun.com/",
-
+        "Weixia Zhang": "https://sites.google.com/view/r-panda",
+        "Yixuan Gao": "https://github.com/YixuanGao98",
+        "Annan Wang": "https://github.com/AnnanWangDaniel",
+        "Erli Zhang": "https://github.com/ZhangErliCarl/",
+        "Qiong Yan": "https://scholar.google.com/citations?user=uT9CtPYAAAAJ&hl=en",
+        "Xiongkuo Min": "https://sites.google.com/site/minxiongkuo/",
+        "Jingwen Hou": "https://scholar.google.com.sg/citations?user=NlNOyiQAAAAJ&hl=zh-CN",
     }
 };
