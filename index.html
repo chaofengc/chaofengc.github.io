@@ -306,12 +306,21 @@
                   );
                 }
                 // Full List
-                $('#full-list-publication ol.' + dest).append(
-                  `<li class="full-list-item">"${p['title']}." <em>${p['authors'].replace(fullName, '<strong>' + fullName + '</strong>')}.</em> ${p[dest]}, ${p['year']}. ${p['impact_factor'] ? '(IF = ' + p['impact_factor'] + ')' : ''} ${p['note'] || ''} <ul class="full-list">${links}</ul>
-                  </li>
-                  `
-                );
-            }
+                  
+                if ("highlight" in p && p['highlight']) {
+                  $('#full-list-publication ol.' + dest).append(
+                    `<li class="full-list-itemhl">"${p['title']}." <em>${p['authors'].replace(fullName, '<strong>' + fullName + '</strong>')}.</em> ${p[dest]}, ${p['year']}. ${p['impact_factor'] ? '(IF = ' + p['impact_factor'] + ')' : ''} ${p['note'] || ''} <ul class="full-list">${links}</ul>
+                    </li>
+                    `
+                  );
+                } else {
+                  $('#full-list-publication ol.' + dest).append(
+                    `<li class="full-list-item">"${p['title']}." <em>${p['authors'].replace(fullName, '<strong>' + fullName + '</strong>')}.</em> ${p[dest]}, ${p['year']}. ${p['impact_factor'] ? '(IF = ' + p['impact_factor'] + ')' : ''} ${p['note'] || ''} <ul class="full-list">${links}</ul>
+                    </li>
+                    `
+                  );
+                }
+              }
         }
     // </script>
     <!-- <script type="text/javascript">
