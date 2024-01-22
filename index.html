@@ -229,7 +229,7 @@
     <script src="publications.js"></script>
     <script type="text/javascript">
       $(function() {
-        loadPublications(data['publications'], data['fields'], 'Chaofeng Chen');
+        loadPublications(data['publications'], data['fields'], data['author_links'], 'Chaofeng Chen');
       })
     </script>
     <script type="text/javascript">
@@ -247,7 +247,7 @@
         })
     </script>
     <script >
-        function loadPublications(publications, fields, fullName) {
+        function loadPublications(publications, fields, author_links, fullName) {
 
             for (let i = 0; i < publications.length; ++ i) {
                 let p = publications[i],
@@ -259,6 +259,11 @@
                         links += `<li class="list-inline-item"><a href="${p[f]}" target="_blank">[${fields[f]}]</a></li>`;
                     }
                 }
+
+                for (let f in author_links) {
+                  p['authors'] = p['authors'].replace(f, `<a href="${author_links[f]}" target="_blank">${f}</a>`)
+                }
+
                 if ("bibtex" in p) {
                     links += '<li class="list-inline-item">' + 
                              '  <a href="javascript:void(0)" class="bibtex">[BibTeX]</a>' +
