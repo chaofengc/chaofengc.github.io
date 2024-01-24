@@ -16,6 +16,7 @@ h2   {
      font-style:     normal;
      /* border-bottom: solid 1px #A9A9A9; */
      color: Brown;
+     margin-bottom: 3px;
 }
 
 img {
@@ -69,6 +70,13 @@ a:active {
   text-decoration: underline;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: #3333333f;
+  /* background-image: linear-gradient(to right, #ccc, #333, #ccc); */
+}
+
 /*  Profile styles
 --------------------------------------*/
 
@@ -90,9 +98,10 @@ a:active {
 
 div .news {
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
+  margin-top: 0px;
 }
 
 ul.news li { 
