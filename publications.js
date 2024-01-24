@@ -13,6 +13,13 @@ var data = {
         // },
         // Preprints
         {
+            "title": "Local Distortion Aware Efficient Transformer Adaptation for Image Quality Assessment",
+            "authors": "Kangmin Xu, Liang Liao, Jing Xiao, Chaofeng Chen, Haoning Wu, Qiong Yan, Weisi Lin",
+            "preprint": "ArXiv preprint",
+            "year": 2023,
+            "arxiv": "https://arxiv.org/abs/2308.12001",
+        },
+        {
             "highlight": true,
             "img": "images/onescorer.png",
             "title": "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels",
