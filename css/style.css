@@ -109,20 +109,27 @@ ul.news li {
 }
 
 /* Hide the default scrollbar */
-::-webkit-scrollbar {
+div.news::-webkit-scrollbar {
   width: 6px; /* Set the width of the scrollbar */
-  background: #f1f1f1; /* Background color */
 }
 
 /* Handle (the draggable part of the scrollbar) */
-::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar handle */
-  border-radius: 6px; /* Rounded corners of the handle */
+div.news::-webkit-scrollbar-thumb {
+  background: transparent;
 }
 
 /* On hover, style the scrollbar handle */
-::-webkit-scrollbar-thumb:hover {
+div.news:hover::-webkit-scrollbar-thumb {
   background: #555;
+  border-radius: 6px; /* Rounded corners of the handle */
+}
+
+div.news::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+div.news:hover::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color when hovered */
 }
 
 
