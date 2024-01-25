@@ -74,7 +74,7 @@ var data = {
         {
             "img": "",
             "title": "Towards Explainable In-the-wild Video Quality Assessment: A Database and a Language-Prompted Approach",
-            "authors": "Haoning Wu*, Erli Zhang*, Liang Liao*, Chaofeng Chen, Jingwen Hou, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
+            "authors": "Haoning Wu*, Erli Zhang*, Liang Liao, Chaofeng Chen, Jingwen Hou, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
             "conference": "ACM Multimedia (<b>MM</b>)",
             "year": "2023",
             "arxiv": "https://arxiv.org/abs/2305.12726",
