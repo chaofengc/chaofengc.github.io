@@ -12,13 +12,7 @@ var data = {
         //     "github": "",
         // },
         // Preprints
-        {
-            "title": "Local Distortion Aware Efficient Transformer Adaptation for Image Quality Assessment",
-            "authors": "Kangmin Xu, Liang Liao, Jing Xiao, Chaofeng Chen, Haoning Wu, Qiong Yan, Weisi Lin",
-            "preprint": "ArXiv preprint",
-            "year": 2023,
-            "arxiv": "https://arxiv.org/abs/2308.12001",
-        },
+        
         {
             "highlight": true,
             "img": "images/onescorer.png",
@@ -39,17 +33,24 @@ var data = {
             "arxiv": "https://arxiv.org/abs/2311.15657",
             "github": "https://github.com/chaofengc/TexForce",
         },
+        // Conference papers
+        {
+            "title": "Local Distortion Aware Efficient Transformer Adaptation for Image Quality Assessment",
+            "authors": "Kangmin Xu, Liang Liao, Jing Xiao, Chaofeng Chen, Haoning Wu, Qiong Yan, Weisi Lin",
+            "conference": "Computer Vision and Pattern Recognition (<b>CVPR</b>)",
+            "year": 2024,
+            "arxiv": "https://arxiv.org/abs/2308.12001",
+        },
         {
             "highlight": true,
             "img": "images/qinstruct.jpg",
             "title": "Q-Instruct: Improving Low-level Visual Abilities for Multi-modality Foundation Models",
             "authors": "Haoning Wu*, Zicheng Zhang*, Erli Zhang*, Chaofeng Chen, Liang Liao, Annan Wang, Kaixin Xu, Chunyi Li, Jingwen Hou, Guangtao Zhai, Geng Xue, Wenxiu Sun, Qiong Yan, Weisi Lin",
-            "preprint": "ArXiv preprint",
-            "year": 2023,
+            "conference": "Computer Vision and Pattern Recognition (<b>CVPR</b>)",
+            "year": 2024,
             "arxiv": "https://arxiv.org/abs/2311.06783",
             "github": "https://github.com/Q-Future/Q-Instruct",
         },
-        // Conference papers
         {
             "highlight": true,
             "img": "images/qbench.png",
