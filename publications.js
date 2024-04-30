@@ -83,7 +83,7 @@ var data = {
             "oral": "Oral",
         },
         {
-            "highlight": true,
+            // "highlight": true,
             "img": "images/ICCV2023_DOVER.png",
             "title": "Exploring Video Quality Assessment on User Generated Contents from Aesthetic and Technical Perspectives",
             "authors": "Haoning Wu*, Erli Zhang*, Liang Liao*, Chaofeng Chen, Jingwen Hou, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
