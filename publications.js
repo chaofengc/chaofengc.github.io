@@ -18,8 +18,8 @@ var data = {
             "img": "images/onescorer.png",
             "title": "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels",
             "authors": "Haoning Wu*, Zicheng Zhang*, Weixia Zhang, Chaofeng Chen, Liang Liao, Chunyi Li, Yixuan Gao, Annan Wang, Erli Zhang, Wenxiu Sun, Qiong Yan, Xiongkuo Min, Guangtao Zhai, Weisi Lin",
-            "preprint": "ArXiv preprint",
-            "year": 2023,
+            "conference": "International Conference on Machine Learning (<b>ICML</b>)", 
+            "year": 2024,
             "arxiv": "https://arxiv.org/abs/2312.17090",
             "github": "https://github.com/Q-Future/Q-Align",
         },
@@ -148,7 +148,7 @@ var data = {
             "highlight": true,
             "img": "images/MM2022_FeMaSR.jpg",
             "title": "Real-World Blind Super-Resolution via Feature Matching with Implicit High-Resolution Priors",
-            "authors": "Chaofeng Chen*, Xinyu Shi*, Yipeng Qin, Xiaoming Li, Tao Yang, Xiaoguang Han, Shihui Guo",
+            "authors": "Chaofeng Chen*, Xinyu Shi*, Yipeng Qin, Xiaoming Li, Xiaoguang Han, Tao Yang, Shihui Guo",
             "conference": "ACM Multimedia (<b>MM</b>)",
             "oral": "Oral",
             "year": "2022",
@@ -364,5 +364,8 @@ var data = {
         "Qiong Yan": "https://scholar.google.com/citations?user=uT9CtPYAAAAJ&hl=en",
         "Xiongkuo Min": "https://sites.google.com/site/minxiongkuo/",
         "Jingwen Hou": "https://scholar.google.com.sg/citations?user=NlNOyiQAAAAJ&hl=zh-CN",
+        "Tao Yang": "https://github.com/yangxy",
+        "Shihui Guo": "https://scholar.google.co.uk/citations?user=RPAVxiAAAAAJ&hl=en",
+        "Xinyu Shi": "https://xinyu-shi.github.io/",
     }
 };
