@@ -14,7 +14,7 @@ var data = {
         // Preprints
         
         {
-            "highlight": true,
+            // "highlight": true,
             "img": "images/onescorer.png",
             "title": "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels",
             "authors": "Haoning Wu*, Zicheng Zhang*, Weixia Zhang, Chaofeng Chen, Liang Liao, Chunyi Li, Yixuan Gao, Annan Wang, Erli Zhang, Wenxiu Sun, Qiong Yan, Xiongkuo Min, Guangtao Zhai, Weisi Lin",
@@ -42,7 +42,7 @@ var data = {
             "arxiv": "https://arxiv.org/abs/2308.12001",
         },
         {
-            "highlight": true,
+            // "highlight": true,
             "img": "images/qinstruct.jpg",
             "title": "Q-Instruct: Improving Low-level Visual Abilities for Multi-modality Foundation Models",
             "authors": "Haoning Wu*, Zicheng Zhang*, Erli Zhang*, Chaofeng Chen, Liang Liao, Annan Wang, Kaixin Xu, Chunyi Li, Jingwen Hou, Guangtao Zhai, Geng Xue, Wenxiu Sun, Qiong Yan, Weisi Lin",
@@ -135,7 +135,7 @@ var data = {
         },
 
         {
-            "highlight": true,
+            // "highlight": true,
             "img": "images/ECCV2022_ReDegNet.jpg",
             "title": "From Face to Natural Image: Learning Real Degradation for Blind Image Super-Resolution",
             "authors": "Xiaoming Li, Chaofeng Chen, Xianhui Lin, Wangmeng Zuo, Lei Zhang",
@@ -177,7 +177,7 @@ var data = {
             "github": "https://github.com/haoosz/FFR-Net",
         },
         {
-            "highlight": true,
+            // "highlight": true,
             "img": "images/ICCV2021_HDRNet.jpg",
             "title": "HDR Video Reconstruction: A Coarse-to-fine Network and A Real-world Benchmark Dataset",
             "authors": "Guanying Chen, Chaofeng Chen, Shi Guo, Zhetong Liang, Kwan-Yee K. Wong, Lei Zhang",
@@ -265,7 +265,7 @@ var data = {
             "title": "TOPIQ: A Top-down Approach from Semantics to Distortions for Image Quality Assessment",
             "authors": "Chaofeng Chen, Jiadi Mo, Jingwen Hou, Haoning Wu, Liang Liao, Wenxiu Sun, Qiong Yan, Weisi Lin",
             "journal": "IEEE Transactions on Image Processing (<b>TIP</b>)",
-            "year": "2023",
+            "year": "2024",
             "arxiv": "https://arxiv.org/abs/2308.03060",
             "github": "https://github.com/chaofengc/IQA-PyTorch",
         },
