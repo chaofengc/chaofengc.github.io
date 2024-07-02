@@ -42,16 +42,6 @@ var data = {
             "github": "https://github.com/Q-Future/Co-Instruct",
         },
         {
-            // "highlight": true,
-            "img": "images/onescorer.png",
-            "title": "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels",
-            "authors": "Haoning Wu*, Zicheng Zhang*, Weixia Zhang, Chaofeng Chen, Liang Liao, Chunyi Li, Yixuan Gao, Annan Wang, Erli Zhang, Wenxiu Sun, Qiong Yan, Xiongkuo Min, Guangtao Zhai, Weisi Lin",
-            "conference": "International Conference on Machine Learning (<b>ICML</b>)", 
-            "year": 2024,
-            "arxiv": "https://arxiv.org/abs/2312.17090",
-            "github": "https://github.com/Q-Future/Q-Align",
-        },
-        {
             "highlight": true,
             "img": "images/arXiv2023_texforce.jpg",
             "title": "Enhancing Diffusion Models with Text-Encoder Reinforcement Learning",
@@ -60,6 +50,16 @@ var data = {
             "year": 2024,
             "arxiv": "https://arxiv.org/abs/2311.15657",
             "github": "https://github.com/chaofengc/TexForce",
+        },
+        {
+            // "highlight": true,
+            "img": "images/onescorer.png",
+            "title": "Q-Align: Teaching LMMs for Visual Scoring via Discrete Text-Defined Levels",
+            "authors": "Haoning Wu*, Zicheng Zhang*, Weixia Zhang, Chaofeng Chen, Liang Liao, Chunyi Li, Yixuan Gao, Annan Wang, Erli Zhang, Wenxiu Sun, Qiong Yan, Xiongkuo Min, Guangtao Zhai, Weisi Lin",
+            "conference": "International Conference on Machine Learning (<b>ICML</b>)", 
+            "year": 2024,
+            "arxiv": "https://arxiv.org/abs/2312.17090",
+            "github": "https://github.com/Q-Future/Q-Align",
         },
         // Conference papers
         {
