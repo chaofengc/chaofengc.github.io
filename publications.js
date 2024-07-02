@@ -12,6 +12,25 @@ var data = {
         //     "github": "",
         // },
         {
+            "title": "Combining Generative and Geometry Priors for Wide-Angle Portrait Correction",
+            "authors": "Lan Yao, Chaofeng Chen, Xiaoming Li, Zifei Yan, Wangmeng Zuo",
+            "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
+            "year": 2024,
+        },
+        {
+            "title": "ClearCLIP: Decomposing CLIP Representations for Dense Vision-Language Inference",
+            "authors": "Mengcheng Lan, Chaofeng Chen, Yiping Ke, Xinjiang Wang, Litong Feng, Wayne Zhang",
+            "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
+            "year": 2024,
+        },
+        {
+            "title": "ProxyCLIP: Proxy Attention Improves CLIP for Open-Vocabulary Segmentation",
+            "authors": "Mengcheng Lan, Chaofeng Chen, Yiping Ke, Xinjiang Wang, Litong Feng, Wayne Zhang",
+            "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
+            "year": 2024,
+        },
+
+        {
             // "highlight": true,
             "img": "images/ECCV2024_CoInstruct.png",
             "title": "Towards Open-ended Visual Quality Comparison",
