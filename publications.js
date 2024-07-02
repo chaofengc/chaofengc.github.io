@@ -11,8 +11,17 @@ var data = {
         //     "arxiv": "",
         //     "github": "",
         // },
-        // Preprints
-        
+        {
+            // "highlight": true,
+            "img": "images/ECCV2024_CoInstruct.png",
+            "title": "Towards Open-ended Visual Quality Comparison",
+            "authors": "Haoning Wu*, Hanwei Zhu*, Zicheng Zhang*, Erli Zhang, Chaofeng Chen, Liang Liao, Chunyi Li, Annan Wang, Wenxiu Sun, Qiong Yan, Xiaohong Liu, Guangtao Zhai, Shiqi Wang, Weisi Lin",
+            "conference": "International Conference on Machine Learning (<b>ICML</b>)", 
+            "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
+            "year": 2024,
+            "arxiv": "https://arxiv.org/abs/2402.16641",
+            "github": "https://github.com/Q-Future/Co-Instruct",
+        },
         {
             // "highlight": true,
             "img": "images/onescorer.png",
@@ -28,8 +37,8 @@ var data = {
             "img": "images/arXiv2023_texforce.jpg",
             "title": "Enhancing Diffusion Models with Text-Encoder Reinforcement Learning",
             "authors": "Chaofeng Chen*, Annan Wang*, Haoning Wu, Liang Liao, Wenxiu Sun, Qiong Yan, Weisi Lin",
-            "preprint": "ArXiv preprint",
-            "year": 2023,
+            "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
+            "year": 2024,
             "arxiv": "https://arxiv.org/abs/2311.15657",
             "github": "https://github.com/chaofengc/TexForce",
         },
