@@ -244,7 +244,8 @@ div.news:hover::-webkit-scrollbar-track {
 }
 
 #paper .imgtd {
-  width: 100px;
+  /* width: 100px; */
+  width: 20%;
   border: 1px dotted #555;
 }
 

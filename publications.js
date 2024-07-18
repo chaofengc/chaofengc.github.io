@@ -12,6 +12,16 @@ var data = {
         //     "github": "",
         // },
         {
+            "highlight": true,
+            "img": "images/MM2024_QGround.jpg",
+            "title": "Q-Ground: Image Quality Grounding with Large Multi-modality Models",
+            "authors": "Chaofeng Chen, Yang Sensen, Haoning Wu, Liang Liao, Zicheng Zhang, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
+            "conference": "ACM Multimedia (<b>MM</b>)",
+            "year": 2024,
+            // "arxiv": "",
+            // "github": "",
+        },
+        {
             "title": "Combining Generative and Geometry Priors for Wide-Angle Portrait Correction",
             "authors": "Lan Yao, Chaofeng Chen, Xiaoming Li, Zifei Yan, Wangmeng Zuo",
             "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
@@ -22,6 +32,8 @@ var data = {
             "authors": "Mengcheng Lan, Chaofeng Chen, Yiping Ke, Xinjiang Wang, Litong Feng, Wayne Zhang",
             "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
             "year": 2024,
+            "arxiv": "https://arxiv.org/abs/2407.12442",
+            "github": "https://github.com/mc-lan/ClearCLIP"
         },
         {
             "title": "ProxyCLIP: Proxy Attention Improves CLIP for Open-Vocabulary Segmentation",
