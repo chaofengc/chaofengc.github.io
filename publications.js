@@ -18,6 +18,7 @@ var data = {
             "authors": "Chaofeng Chen, Yang Sensen, Haoning Wu, Liang Liao, Zicheng Zhang, Annan Wang, Wenxiu Sun, Qiong Yan, Weisi Lin",
             "conference": "ACM Multimedia (<b>MM</b>)",
             "year": 2024,
+            "oral": "Oral",
             // "arxiv": "",
             // "github": "",
         },
