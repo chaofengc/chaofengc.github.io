@@ -19,8 +19,8 @@ var data = {
             "conference": "ACM Multimedia (<b>MM</b>)",
             "year": 2024,
             "oral": "Oral",
-            // "arxiv": "",
-            // "github": "",
+            "arxiv": "https://arxiv.org/abs/2407.17035",
+            "github": "https://github.com/Q-Future/Q-Ground",
         },
         {
             "title": "Combining Generative and Geometry Priors for Wide-Angle Portrait Correction",
