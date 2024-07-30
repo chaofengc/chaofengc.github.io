@@ -11,6 +11,10 @@ var data = {
         //     "arxiv": "",
         //     "github": "",
         // },
+
+        // ========================================
+        // MM 2024
+        // ========================================
         {
             "highlight": true,
             "img": "images/MM2024_QGround.jpg",
@@ -22,6 +26,33 @@ var data = {
             "arxiv": "https://arxiv.org/abs/2407.17035",
             "github": "https://github.com/Q-Future/Q-Ground",
         },
+        {
+            "title": "T2I-Scorer: Quantitative Evaluation on Text-to-Image Generation via Fine-Tuned Large Multi-Modal Models",
+            "authors": "Haoning Wu, Xiele Wu, Chunyi Li, Zicheng Zhang, Chaofeng Chen, Xiaohong Liu, Guangtao Zhai, Weisi Lin",
+            "conference": "ACM Multimedia (<b>MM</b>)",
+            "year": 2024,
+            "arxiv": "",
+            "github": "",
+        },
+        {
+            "title": "G-Refine: A General Quality Refiner for Text-to-Image Generation",
+            "authors": "Chunyi Li, Haoning Wu, Hongkun Hao, Zicheng Zhang, Tengchaun Kou, Chaofeng Chen, Lei Bai, Xiaohong Liu, Weisi Lin, Guangtao Zhai",
+            "conference": "ACM Multimedia (<b>MM</b>)",
+            "year": 2024,
+            "oral": "Oral, 3.97%",
+            "arxiv": "https://arxiv.org/abs/2404.18343",
+            "github": "https://github.com/Q-Future/Q-Refine",
+        },
+        {
+            "title": "LMM-PCQA: Assisting Point Cloud Quality Assessment with LMM",
+            "authors": "Zicheng Zhang, Haoning Wu, Yingjie Zhou, Chunyi Li, Wei Sun, Chaofeng Chen, Xiongkuo Min, Xiaohong Liu, Weisi Lin, Guangtao Zhai",
+            "conference": "ACM Multimedia (<b>MM</b>)",
+            "year": 2024,
+            "oral": "Oral, 3.97%",
+            "arxiv": "https://arxiv.org/abs/2404.18203",
+            "github": "https://github.com/Q-Future/LMM-PCQA",
+        },
+        
         {
             "title": "Combining Generative and Geometry Priors for Wide-Angle Portrait Correction",
             "authors": "Lan Yao, Chaofeng Chen, Xiaoming Li, Zifei Yan, Wangmeng Zuo",
