@@ -72,6 +72,8 @@ var data = {
             "authors": "Mengcheng Lan, Chaofeng Chen, Yiping Ke, Xinjiang Wang, Litong Feng, Wayne Zhang",
             "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
             "year": 2024,
+            "arxiv": "https://arxiv.org/abs/2408.04883",
+            "github": "https://github.com/mc-lan/ProxyCLIP",
         },
 
         {
