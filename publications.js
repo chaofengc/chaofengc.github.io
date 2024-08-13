@@ -86,6 +86,7 @@ var data = {
             "year": 2024,
             "arxiv": "https://arxiv.org/abs/2402.16641",
             "github": "https://github.com/Q-Future/Co-Instruct",
+            "oral": "Oral",
         },
         {
             "highlight": true,
