@@ -257,6 +257,20 @@ div.news:hover::-webkit-scrollbar-track {
   margin-right: 5px;
 }
 
+#paper .mybtn {
+  padding: 1px 15px 1px 15px;
+  margin: 0px;
+  font-size: 8.5pt;
+  border-radius: 3px;
+  border: 1px solid #e7e7e7;
+  cursor: pointer; 
+}
+
+#paper .mybtn:hover {
+    color: dodgerblue;                /* Text color when hovering */
+    border-color: dodgerblue;         /* Border color when hovering */
+}
+
 #paper .prjbadge{
   max-height: 20px;
   max-width: 100px;
@@ -290,6 +304,7 @@ div.news:hover::-webkit-scrollbar-track {
     /* color: #500; */
     margin: 1px;
     font-size: 11pt;
+    font-style: italic;
 }
 
 #paper .arxivbadge {
