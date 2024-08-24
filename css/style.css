@@ -261,6 +261,7 @@ div.news:hover::-webkit-scrollbar-track {
   padding: 1px 15px 1px 15px;
   margin: 0px;
   font-size: 8.5pt;
+  font-weight: bolder;
   border-radius: 3px;
   border: 1px solid #e7e7e7;
   cursor: pointer; 
