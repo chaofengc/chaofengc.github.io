@@ -86,10 +86,15 @@ hr {
 }
 
 #profile img{
-    width: 155;
-    max-height: 300px;
-    margin: 8 20 20 20;
-    object-fit: contain;
+  width: 155;
+  max-height: 300px;
+  margin: 8 20 20 20;
+  object-fit: contain;
+}
+
+#profile .btn-icon {
+  font-size: 10pt;
+  font-weight: bold;
 }
 
 
