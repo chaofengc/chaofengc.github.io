@@ -16,7 +16,10 @@ h2   {
      font-style:     normal;
      /* border-bottom: solid 1px #A9A9A9; */
      color: Brown;
-     margin-bottom: 3px;
+}
+
+h3 {
+  font-size: 14pt;
 }
 
 img {
@@ -75,6 +78,8 @@ hr {
   height: 1px;
   background: #3333333f;
   /* background-image: linear-gradient(to right, #ccc, #333, #ccc); */
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /*  Profile styles
