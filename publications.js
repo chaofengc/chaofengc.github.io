@@ -16,7 +16,7 @@ var data = {
             "img": "images/arXiv2024_Text4Seg.png",
             "title": "Text4Seg: Reimagining Image Segmentation as Text Generation",
             "authors": "Mengcheng Lan, Chaofeng Chen, Yue Zhou, Jiaxing Xu, Yiping Ke, Xinjiang Wang, Litong Feng, Wayne Zhang",
-            // "conference": "",
+            "conference": "arXiv",
             "year": 2024,
             "arxiv": "https://arxiv.org/abs/2410.09855",
             "github": "https://github.com/mc-lan/Text4Seg",
