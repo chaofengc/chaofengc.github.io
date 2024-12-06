@@ -69,6 +69,8 @@ var data = {
             "authors": "Lan Yao, Chaofeng Chen, Xiaoming Li, Zifei Yan, Wangmeng Zuo",
             "conference": "European Conference on Computer Vision (<b>ECCV</b>)",
             "year": 2024,
+            "arxiv": "https://arxiv.org/abs/2410.09911",
+            "github": "https://github.com/Dev-Mrha/DualPriorsCorrection",
         },
         {
             "title": "ClearCLIP: Decomposing CLIP Representations for Dense Vision-Language Inference",
