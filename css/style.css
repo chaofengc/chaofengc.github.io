@@ -106,6 +106,15 @@ hr {
 /*  News styles
 --------------------------------------*/
 
+.highlight {
+  background-color: #ffffcc;
+  padding: 15px;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
 div.news {
   width: 100%;
   max-height: 300px;
