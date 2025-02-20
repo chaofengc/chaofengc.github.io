@@ -410,7 +410,7 @@ var data = {
             "title": "Learning Spatial Attention for Face Super-Resolution",
             "authors": "Chaofeng Chen, Dihong Gong, Hao Wang, Zhifeng Li, Kwan-Yee K. Wong",
             "journal": "IEEE Transactions on Image Processing (<b>TIP</b>)",
-            "year": 2020,
+            "year": 2021,
             "arxiv": "https://arxiv.org/abs/2012.01211",
             "github": "https://github.com/chaofengc/Face-SPARNet",
         }
