@@ -11,6 +11,19 @@ var data = {
         //     "arxiv": "",
         //     "github": "",
         // },
+        // ========================================
+        // 2025
+        // ========================================
+        {
+            "img": "images/ICCV2025_mvqa.png",
+            "title": "MVQA: Mamba with Unified Sampling for Efficient Video Quality Assessment",
+            "authors": "Yachun Mi, Yu Li, Weicheng Meng, Chaofeng Chen, Chen Hui, Shaohui Liu",
+            // "preprint": "arXiv",
+            "conference": "International Conference on Computer Vision (<b>ICCV</b>)",
+            "year": 2025,
+            "arxiv": "https://arxiv.org/abs/2504.16003",
+            // "github": "https://github.com/mc-lan/Text4Seg",
+        },
         {
             "highlight": true,
             "img": "images/arXiv2024_Text4Seg.png",
@@ -22,7 +35,6 @@ var data = {
             "arxiv": "https://arxiv.org/abs/2410.09855",
             "github": "https://github.com/mc-lan/Text4Seg",
         },
-
         // ========================================
         // MM 2024
         // ========================================
