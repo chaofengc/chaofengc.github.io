@@ -1,0 +1,19 @@
+{
+  "current_members": [],
+  "alumni": [],
+  "welcome_message": {
+    "title": "Welcome to Join Our Research Group!",
+    "description": "We are actively looking for passionate students/researchers to join our team. If you are interested in cutting-edge research and collaborative work, we would love to hear from you.",
+    "opportunities": [
+      "Masters positions available",
+      "Research internships for undergraduates and graduates",
+      "PhD positions available",
+      "Postdoctoral fellowships"
+    ],
+    "contact": {
+      "text": "For more information about joining our group, please check our",
+      "link_text": "openings page",
+      "link_url": "openings.html"
+    }
+  }
+}

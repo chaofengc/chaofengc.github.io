@@ -1,467 +1,308 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>CHEN Chaofeng</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="icon" type="image/x-icon" href="images/space.png">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEN Chaofeng</title>
+    <link rel="icon" type="image/svg+xml" href="images/space.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/publications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/navigation.js"></script>
 </head>
+<body class="index-page">
 
-<body>
-  <div class="main-container">
-    <!-------------------------------  Introduction -------------------------------------------->
-    <div class="content-container font-hei">
-      <div class="hflex-container" id="profile">
-        <div>
-          <table>
-            <tr>
-              <td rowspan="5"><img src="images/me.jpg" width="25%"></td>
-              <td><b style="font-size:25px"><em>CHEN Chaofeng</em></b><b class="font-song"
-                  style="font-size:25px">(陈超锋)</b>
-              </td>
-            </tr>
-            <tr>
-              <td>Tenure Track Assistant Professor @ <a href="https://sai.whu.edu.cn/index.htm" target="_blank">WHU</a>
-                <!-- <a href="https://sai.sysu.edu.cnkteacher/542" target="_blank">[中文主页]</a> -->
-              </td>
-            </tr>
-            <tr>
-              <td>PostDoc @ NTU; Ph.D @ <a href="https://www.hku.hk/" target="_blank">HKU</a>; B.Eng. @ <a
-                  href="https://www.hust.edu.cn/" target="_blank">HUST</a></td>
-            </tr>
-            <tr>
-              <td>E-mail: chaofenghust [at] gmail.com</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="https://github.com/chaofengc" target="_blank" class="btn btn-light btn-icon"><i
-                    class="fab fa-github fa-xl"></i> GitHub</a>
-                <a href="https://scholar.google.com/citations?user=lxiqnI0AAAAJ&hl=en" target="_blank"
-                  class="btn btn-light btn-icon"><i class="fab fa-google-scholar fa-xl" style="color: #4185f4;"></i>
-                  Google Scholar</a>
-                <a href="files/Resume_ChenChaofeng_en.pdf" target="_blank" class="btn btn-light btn-icon"><i
-                    class="bi bi-file-person fs-5"></i> CV</i></a>
-                <!-- <a href="https://www.linkedin.com/in/%E9%99%88-%E8%B6%85%E9%94%8B-aa96518b/" target="_blank"
-                  class="btn btn-light btn-icon"><i class="fab fa-linkedin-in fa-xl"
-                    style="color: #0077b5;"></i>&nbsp;</a> -->
-                <a href="https://www.zhihu.com/people/fly-cfchen" target="_blank" class="btn btn-light btn-icon"><i
-                    class="fab fa-zhihu fa-2xl" style="color: #1772f6"></i>&nbsp;</a>
-              </td>
-            </tr>
-          </table>
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="profile">
+                <img class="profile-pic" src="images/me.jpg" alt="Profile Photo">
+                <div class="profile-info">
+                    <h1>CHEN Chaofeng (陈超锋)</h1>
+                    <h2 class="title-position">
+                        Tenure Track Assistant Professor
+                    </h2>
+                    <p class="affiliation">School of Artificial Intelligence, Wuhan University</p>
+                    <p>Research Areas: Computer Vision, Image Processing, Multi-modality Generative Models</p>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i> chaofenghust [at] gmail.com &nbsp;&nbsp;
+                        <a href="https://github.com/chaofengc" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=lxiqnI0AAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                        <a href="assets/Resume_ChenChaofeng_en.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
+                        <a href="https://www.zhihu.com/people/fly-cfchen" target="_blank"><i class="fab fa-zhihu"></i> Zhihu</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="about">
+                <h2>About Me</h2>
+                <p>I am currently a tenure track Assistant Professor at School of Artificial Intelligence, Wuhan University. I was a postdoctoral research fellow at S-Lab in Nanyang Technological University, worked with <a href="https://personal.ntu.edu.sg/wslin/Home.html" target="_blank">Prof. Weisi Lin</a> and <a href="https://www.ntu.edu.sg/erian/about-us/our-people/cluster-directors/kelly-ke" target="_blank">Prof. Kelly</a>. I received my Ph.D. degree from <a href="https://www.cs.hku.hk/" target="_blank">Dept. of Computer Science at the University of Hong Kong</a>, advised by <a href="http://i.cs.hku.hk/~kykwong/" target="_blank">Dr. Kenneth K.Y. Wong</a>. Before that, I received my B.Eng. from <a href="http://www.hust.edu.cn" target="_blank">Huazhong University of Science and Technology</a>. My interests are centered around Computer Vision and Image Processing. Current research topics are: Low level vision, including image quality assessment, restoration and enhancement; Multi-modality generative models.</p>
+                
+                <div class="highlight" style="background-color: #fff8dc; border: 1px solid #f0c987; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                    <span style="color: #e74c3c; font-weight: bold; font-size: 18px;">🚩 Openings / 招生信息</span>
+                    <hr style="border: none; border-top: 1px solid #f0c987; margin: 10px 0;">
+                    
+                    <p style="margin: 6px 0; color: #333;">
+                        We are <strong>actively looking for passionate and talented students</strong> to join our research group.  
+                        If you are interested in working on cutting-edge research in <strong>computer vision</strong> and <strong>deep learning</strong>,  
+                        please send me an email with your <strong>resume</strong> and <strong>transcript</strong>.
+                    </p>
+                    
+                    <p style="margin: 6px 0; color: #333;">
+                        我们课题组长期欢迎<strong>有志于计算机视觉、深度学习等方向</strong>的优秀同学加入，一起探索前沿技术、完成有影响力的科研工作！
+                        有意向的同学请发送邮件至我的邮箱，并附上<strong>个人简历</strong>和<strong>成绩单</strong>。
+                    </p>
+                    
+                    <p style="margin: 6px 0; color: #333;">
+                        目前，课题组正在招收<span style="color: #e74c3c; font-weight: bold; font-size: 17px;">2026年秋季</span>入学的<strong>硕士研究生</strong>和<strong>博士研究生</strong>。欢迎有兴趣的同学积极投递简历！<a href="openings.html" target="_blank">[查看招生详情]</a>
+                    </p>
+                </div>
+            </section>
+            
+            <section class="news">
+                <h2>Latest News</h2>
+                <div class="news-container">
+                    <div class="news-scroll">
+                        <div class="news-item" style="color: red;">
+                            <span class="date">⭐</span>
+                            <span class="content">Use <code style="color: black;background-color: yellow;">pip install pyiqa</code> to try our PyTorch toolbox for Image Quality Assessment <a href="https://github.com/chaofengc/IQA-PyTorch" target="_blank">IQA-PyTorch</a>.</span>
+                        </div>
+                        <div class="news-item" style="color: red;">
+                            <span class="date">⭐</span>
+                            <span class="content">Find a comprehensive survey about Image Quality Assessment here: <a href="https://github.com/chaofengc/Awesome-Image-Quality-Assessment" target="_blank">Awesome-Image-Quality-Assessment</a>.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2025-07</span>
+                            <span class="content">One paper is accepted by ICCV2025!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2025-01</span>
+                            <span class="content">Our work <a href="https://github.com/mc-lan/Text4Seg" target="_blank">Text4Seg</a> is accepted by ICLR2025!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2024-07</span>
+                            <span class="content">Four papers are accepted by ACM MM2024 with three <span style="color:red;">Oral (3.97%)</span> presentations!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2024-07</span>
+                            <span class="content">Five papers are accepted by ECCV2024 (1 first-authored, 1 Oral)!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2024-05</span>
+                            <span class="content"><a href="https://github.com/Q-Future/Q-Align" target="_blank">Q-Align</a> is accepted by ICML2024!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2024-02</span>
+                            <span class="content">Two papers (Co-authored) about IQA are accepted by CVPR2024!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2024-01</span>
+                            <span class="content"><a href="https://github.com/Q-Future/Q-Bench" target="_blank">Q-Bench</a> is accepted as <span style="color:red;">spotlight paper (4.96%)</span> by ICLR2024!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2024-01</span>
+                            <span class="content"><a href="https://github.com/chaofengc/IQA-PyTorch" target="_blank">TOPIQ</a> is accepted by Transactions on Image Processing (TIP).</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-12</span>
+                            <span class="content">One paper about image super-resolution is accepted by AAAI2024.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-10</span>
+                            <span class="content">We release <a href="https://q-future.github.io/Q-Instruct/" target="_blank">Q-Instruct</a>, a multi-modality dataset for low-level visual instruction tuning with large visual language models.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-09</span>
+                            <span class="content">We release <a href="https://github.com/VQAssessment/Q-Bench" target="_blank">Q-Bench</a>, a systematic benchmark for multi-modality LLMs (MLLMs) on low-level vision and visual quality assessment.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-09</span>
+                            <span class="content">Extension of <a href="https://github.com/VQAssessment/FAST-VQA-and-FasterVQA" target="_blank">FAST-VQA (FasterVQA)</a> get accepted by TPAMI.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-07</span>
+                            <span class="content">One paper about video quality assessment is accepted by ACM MM 2023.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-07</span>
+                            <span class="content">One paper about video quality assessment is accepted by ICCV 2023.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-03</span>
+                            <span class="content">One paper about video quality assessment is accepted by ICME 2023.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2023-02</span>
+                            <span class="content">One paper about video quality assessment is accepted by TCSVT 2023.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-12</span>
+                            <span class="content">One paper about video prediction is accepted by AAAI 2023.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-11</span>
+                            <span class="content">Our research team, <a href="https://github.com/QualityAssessment" target="_blank">NTU Visual Quality Assessment Group</a> is created, which aims to build efficient and explainable Visual Quality Assessment approaches.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-09</span>
+                            <span class="content">One paper is accepted by NeurIPS 2022.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-07</span>
+                            <span class="content">Three papers have been accepted by ECCV2022.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-06</span>
+                            <span class="content">Two papers, including <a href="https://arxiv.org/abs/2202.13142" target="_blank">QuanTexSR (renamed as FeMaSR)</a> have been accepted by ACM MM2022 as <span style="color:red;">Oral presentation (5.9%)</span>.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-06</span>
+                            <span class="content">One paper, <a href="https://arxiv.org/abs/2202.07358" target="_blank">FFRNet</a> about masked face recognition has been accepted by ICIP2022.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-03</span>
+                            <span class="content">We release our work about blind image resolution, <a href="https://arxiv.org/abs/2202.13142" target="_blank">QuanTexSR</a>, together with the codes in <a href="https://github.com/chaofengc/QuanTexSR" target="_blank">Github</a>.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2022-02</span>
+                            <span class="content">We release a PyTorch toolbox for IQA <a href="https://github.com/chaofengc/IQA-PyTorch" target="_blank"><img class="imgbadge" src="https://img.shields.io/github/stars/Chaofengc/IQA-PyTorch?style=social"></a> as well as a comprehensive survey <a href="https://github.com/chaofengc/Awesome-Image-Quality-Assessment" target="_blank"><img class="imgbadge" src="https://img.shields.io/github/stars/Chaofengc/Awesome-Image-Quality-Assessment?style=social"></a>.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2021-07</span>
+                            <span class="content">One paper about HDR video reconstruction is accepted by ICCV 2021.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2021-03</span>
+                            <span class="content">Our paper <a href="https://github.com/chaofengc/PSFRGAN" target="_blank">PSFR-GAN</a> about face SR has been accepted by CVPR2021.</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="date">2020-11</span>
+                            <span class="content">Our paper <a href="https://github.com/chaofengc/Face-SPARNet" target="_blank">SPARNet</a> about face SR has been accepted by TIP2020.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience">
+                <h2>Experience</h2>
+                <div class="experience-list">
+                    <table>
+                        <tr>
+                            <td>Jul 2025 - Present</td>
+                            <td>Tenure Track Assistant Professor at School of Artificial Intelligence, Wuhan University.</td>
+                        </tr>
+                        <tr>
+                            <td>Sep 2021 - Jan 2025</td>
+                            <td>Postdoctoral research fellow at S-Lab in NTU, working with <a href="https://personal.ntu.edu.sg/wslin/Home.html" target="_blank">Prof. Weisi Lin</a> and <a href="https://www.ntu.edu.sg/erian/about-us/our-people/cluster-directors/kelly-ke" target="_blank">Prof. Kelly</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mar 2021 - Aug 2021</td>
+                            <td>Research Assistant at <a href="https://mypage.cuhk.edu.cn/academics/hanxiaoguang/index.html" target="_blank">GAP Lab CUHKSZ</a>, worked with <a href="https://mypage.cuhk.edu.cn/academics/hanxiaoguang/index.html" target="_blank">Dr. Xiaoguang Han</a></td>
+                        </tr>
+                        <tr>
+                            <td>Nov 2019 - Mar 2021</td>
+                            <td>Research Intern at Alibaba DAMO Academy, worked with <a href="https://www4.comp.polyu.edu.hk/~cslzhang/" target="_blank">Prof. Lei Zhang</a> and <a href="https://csxmli2016.github.io/" target="_blank">Dr. Xiaoming Li</a></td>
+                        </tr>
+                        <tr>
+                            <td>May 2019 - Oct 2019</td>
+                            <td>Research Visitor at VLLab UC Merced, worked with <a href="https://faculty.ucmerced.edu/mhyang/" target="_blank">Prof. Ming-Hsuan Yang</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jun 2018 - Mar 2019</td>
+                            <td>Research Intern at Tencent AI Lab, worked with <a href="https://dblp.uni-trier.de/pers/l/Li:Zhifeng.html" target="_blank">Prof. Zhifeng Li</a> and <a href="https://www.cise.ufl.edu/~dihong/" target="_blank">Dr. Dihong Gong</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section class="selected-publications">
+                <div class="publications-header">
+                    <h2>Selected Publications</h2>
+                    <div class="publications-links">
+                        <a href="publications.html" class="publications-link">All Publications</a>
+                        <span class="link-separator">|</span>
+                        <a href="https://scholar.google.com" target="_blank" class="google-scholar-link"><font color="#4285F4">G</font><font color="#DB4437">o</font><font color="#F4B400">o</font><font color="#4285F4">g</font><font color="#0F9D58">l</font><font color="#DB4437">e</font> Scholar</a>
+                    </div>
+                </div>
+                
+                <!-- Conference Publications Section -->
+                <div class="publication-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-users"></i>
+                        Conference Papers
+                    </h3>
+                    <div class="publications-container" id="conference-publications">
+                        <!-- Conference publications will be loaded from BIB file via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Journal Publications Section -->
+                <div class="publication-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-book"></i>
+                        Journal Papers
+                    </h3>
+                    <div class="publications-container" id="journal-publications">
+                        <!-- Journal publications will be loaded from BIB file via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="professional-activities">
+                <h2>Professional Activities</h2>
+                <ul>
+                    <li><b>Conference Reviewer</b>:
+                    <ul>
+                        <li>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</li>
+                        <li>International Conference on Computer Vision (ICCV)</li>
+                        <li>European Conference on Computer Vision (ECCV)</li>
+                        <li>Conference on Neural Information Processing Systems (NeurIPS)</li>
+                        <li>International Conference on Learning Representations (ICLR)</li>
+                        <li>Association for the Advancement of Artificial Intelligence (AAAI)</li>
+                        <li>ACM International Conference on Multimedia (ACM MM)</li>
+                    </ul>
+                    </li>
+                    <li><b>Journal Reviewer</b>:
+                    <ul>
+                        <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
+                        <li>International Journal of Computer Vision (IJCV)</li>
+                        <li>IEEE Transactions on Image Processing (TIP)</li>
+                        <li>IEEE Transactions on Multimedia (TMM)</li>
+                        <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
+                        <li>Elsevier Journal of Neurocomputing (Neurocomputing)</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="awards">
+                <h2>Awards</h2>
+                <ul>
+                    <li>Hong Kong PhD Fellowship, HKU, 2015 - 2018</li>
+                    <li>National Scholarship, HUST, 2011 - 2012</li>
+                </ul>
+            </section>
+
+            <section class="teaching">
+                <h2>Teaching</h2>
+                <ul>
+                    <li>[2017/18 2nd semester]: COMP3317 Computer Vision&nbsp;~ Teaching Assistant</li>
+                    <li>[2015/16 2nd semester]: COMP2396 Object-Oriented Programming and Java&nbsp;~ Teaching Assistant</li>
+                    <li>[2016/17 1st semester]: COMP2396 Object-Oriented Programming and Java&nbsp;~ Teaching Assistant</li>
+                </ul>
+            </section>
 
         </div>
-      </div>
-      <!-- </div> -->
-      <!-------------------------------  About me -------------------------------------------->
-      <!-- <div class="content-container"> -->
-      <!-- <h2>About Me</h2> -->
-      <hr>
-      <p>I am currently a tenure track Assistant Professor at School of Artificial Intelligence, Wuhan University. I was a postdoctoral research fellow at S-Lab in Nanyang Technological University during 2021 - 2025, worked
-        with <a href="https://personal.ntu.edu.sg/wslin/Home.html" target="_blank">Prof. Weisi Lin</a> and <a
-          href="https://www.ntu.edu.sg/erian/about-us/our-people/cluster-directors/kelly-ke" target="_blank">Prof.
-          Kelly</a>. I received my Ph.D. degree from <a href="https://www.cs.hku.hk/" target="_blank">Dept. of Computer
-          Science at the University of Hong Kong</a> in January 2021, advised by <a href="http://i.cs.hku.hk/~kykwong/"
-          target="_blank">Dr. Kenneth K.Y. Wong</a>. Before that, I received my B.Eng. from <a
-          href="http://www.hust.edu.cn" target="_blank">Huazhong University of Science and Technology</a>.</p>
-
-      <p>My interests are centered around Computer Vision and Image Processing. Current research topics are: Low level
-        vision, including image quality assessment, restoration and enhancement; Multi-modality generative models.</p>
-
-      <div class="highlight">
-        <span style="color: #e74c3c; font-weight: bold; font-size: 18px;">🚩 Openings / 招生信息</span>
-        <hr style="border: none; border-top: 1px solid #f0c987; margin: 10px 0;">
-
-        <!-- 英文公告 -->
-        <p style="margin: 6px 0; color: #333;">
-          We are <strong>actively looking for passionate and talented students</strong> to join our research group.  
-          If you are interested in working on cutting-edge research in <strong>computer vision</strong> and <strong>deep learning</strong>,  
-        please send me an email with your <strong>resume</strong> and <strong>transcript</strong>.
-        </p>
-
-        <!-- 中文公告 -->
-        <p style="margin: 6px 0; color: #333;">
-            我们课题组长期欢迎<strong>有志于计算机视觉、深度学习等方向</strong>的优秀同学加入，一起探索前沿技术、完成有影响力的科研工作！
-            有意向的同学请发送邮件至我的邮箱，并附上<strong>个人简历</strong>和<strong>成绩单</strong>。
-        </p>
-
-        <!-- 招生时间 -->
-        <p style="margin: 6px 0; color: #333;">
-            目前，课题组正在招收<span style="color: #e74c3c; font-weight: bold; font-size: 17px;">2026年秋季</span>入学的<strong>硕士研究生</strong>和<strong>博士研究生</strong>。欢迎有兴趣的同学积极投递简历！
-        </p>
-
-        <a href="https://chaofengc.github.io/openings.html" target="_blank">[查看招生详情]</a>
-      </div>
-    
-      <!-- </div> -->
-      <!-------------------------------  Education -------------------------------------------->
-      <h2>News</h2>
-      <hr>
-      <div class="news">
-        <ul class="news">
-          <li style="color: red;">⭐ Use <code style="color: black;background-color: yellow;">pip install pyiqa</code> to
-            try our PyTorch toolbox for Image Quality Assessment<a href="https://github.com/chaofengc/IQA-PyTorch"
-              target="_blank"><img class="imgbadge"
-                src="https://img.shields.io/github/stars/Chaofengc/IQA-PyTorch?style=social"></a>.</li>
-          <li style="color: red;">⭐ Find a comprehensive survey about Image Quality Assessment here: <a
-              href="https://github.com/chaofengc/Awesome-Image-Quality-Assessment" target="_blank"><img class="imgbadge"
-                src="https://img.shields.io/github/stars/Chaofengc/Awesome-Image-Quality-Assessment?style=social"></a>.
-          </li>
-          <li>2025-07: One paper is accepted by ICCV2025!</span>
-          <li>2025-01: Our work <a href="https://github.com/mc-lan/Text4Seg" target="_blank">Text4Seg</a> is accepted by ICLR2025!</span>
-          <li>2024-07: Four papers are accepted by ACM MM2024 with three <span style="color:red;">Oral (3.97%)</span>
-            presentations!</li>
-          <li>2024-07: Five papers are accepted by ECCV2024 (1 first-authored, 1 Oral)!</li>
-          <li>2024-05: <a href="https://github.com/Q-Future/Q-Align" target="_blank">Q-Align</a> is accepted by
-            ICML2024!</li>
-          <li>2024-02: Two papers (Co-authored) about IQA are accepted by CVPR2024!</li>
-          <li>2024-01: <a href="https://github.com/Q-Future/Q-Bench" target="_blank">Q-Bench</a> is accepted as <span
-              style="color:red;">spotlight paper (4.96%)</span> by ICLR2024!</li>
-          <li>2024-01: <a href="https://github.com/chaofengc/IQA-PyTorch" target="_blank">TOPIQ</a> is accepted by
-            Transactions on Image Processing (TIP).</li>
-          <li>2023-12: One paper about image super-resolution is accepted by AAAI2024.</li>
-          <li>2023-10: We release <a href="https://q-future.github.io/Q-Instruct/" target="_blank">Q-Instruct</a>, a
-            multi-modality dataset for low-level visual instruction tuning with large visual language models.</li>
-          <li>2023-09: We release <a href="https://github.com/VQAssessment/Q-Bench" target="_blank">Q-Bench</a>, a
-            systematic benchmark for multi-modality LLMs (MLLMs) on low-level vision and visual quality assessment.</li>
-          <li>2023-09: Extension of <a href="https://github.com/VQAssessment/FAST-VQA-and-FasterVQA"
-              target="_blank">FAST-VQA (FasterVQA)</a> get accepted by TPAMI.</li>
-          <li>2023-07: One paper about video quality assessment is accepted by ACM MM 2023.</li>
-          <li>2023-07: One paper about video quality assessment is accepted by ICCV 2023.</li>
-          <li>2023-03: One paper about video quality assessment is accepted by ICME 2023.</li>
-          <li>2023-02: One paper about video quality assessment is accepted by TCSVT 2023.</li>
-          <li>2022-12: One paper about video prediction is accepted by AAAI 2023.</li>
-          <li>2022-11: Our research team, <a href="https://github.com/QualityAssessment" target="_blank">NTU Visual
-              Quality Assessment Group</a> is created, which aims to build efficient and explainable Visual Quality
-            Assessment approaches.</li>
-          <li>2022-09: One paper is accepted by NeurIPS 2022.</li>
-          <li>2022-07: Three papers have been accepted by ECCV2022.</li>
-          <li>2022-06: Two papers, including <a href="https://arxiv.org/abs/2202.13142" target="_blank">QuanTexSR
-              (renamed as FeMaSR)</a> have been accepted by ACM MM2022 as <span style="color:red"> Oral presentation
-              (5.9%)</span>.</li>
-          <li>2022-06: One paper, <a href="https://arxiv.org/abs/2202.07358" target="_blank">FFRNet</a> about masked
-            face recognition has been accepted by ICIP2022.</li>
-          <li>2022-03: We release our work about blind image resolution, <a href="https://arxiv.org/abs/2202.13142"
-              target="_blank">QuanTexSR</a>, together with the codes in <a href="https://github.com/chaofengc/QuanTexSR"
-              target="_blank">Github</a>.</li>
-          <li>2022-02: We release a PyTorch toolbox for IQA <a href="https://github.com/chaofengc/IQA-PyTorch"
-              target="_blank"><img class="imgbadge"
-                src="https://img.shields.io/github/stars/Chaofengc/IQA-PyTorch?style=social"></a> as well as a
-            comprehensive survey <a href="https://github.com/chaofengc/Awesome-Image-Quality-Assessment"
-              target="_blank"> <img class="imgbadge"
-                src="https://img.shields.io/github/stars/Chaofengc/Awesome-Image-Quality-Assessment?style=social"></a>.
-          </li>
-          <li>2021-07: One paper about HDR video reconstruction is accepted by ICCV 2021.</li>
-          <li>2021-03: Our paper <a href="https://github.com/chaofengc/PSFRGAN" target="_blank">PSFR-GAN</a> about face
-            SR has been accepted by CVPR2021.</li>
-          <li>2020-11: Our paper <a href="https://github.com/chaofengc/Face-SPARNet" target="_blank">SPARNet</a> about
-            face SR has been accepted by TIP2020.</li>
-        </ul>
-      </div>
-
-      <!-------------------------------  Experience -------------------------------------------->
-      <!-- <div class="content-container" display="flex"> -->
-      <br>
-      <h2>Experience</h2>
-      <hr>
-      <div class="experience">
-        <table>
-          <!-- <tr>
-            <td>Jan 2025 - Present</td>
-            <td>AssociatekProfessor at School of Artificial Intelligence, Sun Yat-sen University
-              (SYSU).</td>
-          </tr> -->
-          <tr>
-            <td>Jul 2025 - Present</td>
-            <td>Tenure Track Assistant Professor at School of Artificial Intelligence, Wuhan University.</td>
-          </tr>
-          <tr>
-            <td>Sep 2021 - Jan 2025</td>
-            <td>Postdoctoral research fellow at S-Lab in NTU, working with <a
-                href="https://personal.ntu.edu.sg/wslin/Home.html" target="_blank">Prof. Weisi Lin</a> and <a
-                href="https://www.ntu.edu.sg/erian/about-us/our-people/cluster-directors/kelly-ke" target="_blank">Prof.
-                Kelly</a></td>
-          </tr>
-          <tr>
-            <td>Mar 2021 - Aug 2021</td>
-            <td>Research Assistant at <a href="https://mypage.cuhk.edu.cn/academics/hanxiaoguang/index.html"
-                target="_blank">GAP Lab CUHKSZ</a>, worked with <a
-                href="https://mypage.cuhk.edu.cn/academics/hanxiaoguang/index.html" target="_blank">Dr. Xiaoguang
-                Han</a></td>
-          </tr>
-          <tr>
-            <td>Nov 2019 - Mar 2021</td>
-            <td>Research Intern at Alibaba DAMO Academy, worked with <a href="https://www4.comp.polyu.edu.hk/~cslzhang/"
-                target="_blank">Prof. Lei Zhang</a> and <a href="https://csxmli2016.github.io/" , target="_blank">Dr.
-                Xiaoming Li</a> </td>
-          </tr>
-          <tr>
-            <td>May 2019 - Oct 2019</td>
-            <td>Research Visitor at VLLab UC Merced, worked with <a href="https://faculty.ucmerced.edu/mhyang/"
-                target="_blank">Prof. Ming-Hsuan Yang</a></td>
-          </tr>
-          <td>Jun 2018 - Mar 2019</td>
-          <td>Research Intern at Tencent AI Lab, worked with <a href="https://dblp.uni-trier.de/pers/l/Li:Zhifeng.html"
-              target="_blank">Prof. Zhifeng Li</a> and <a href="https://www.cise.ufl.edu/~dihong/" , target="_blank">Dr.
-              Dihong Gong</td>
-          <tr>
-          </tr>
-        </table>
-      </div>
-      <br>
-      <!-------------------------------  Publications -------------------------------------------->
-      <div id="publication-switch">
-        <h2 style="display: inline;">Publications</h2>
-        <ul class="inlineList">
-          <li><a href="javascript:void(0)" class="disabled">[Highlight]</a></li>
-          <li><a href="javascript:void(0)">[Full List]</a></li>
-          <li><a href="https://scholar.google.com/citations?hl=en&user=lxiqnI0AAAAJ" target="_blank"
-              class="mobile-display">[<font color="#4285F4">G</font><font color="#DB4437">o</font><font color="#F4B400">o</font><font color="#4285F4">g</font><font color="#0F9D58">l</font><font color="#DB4437">e</font> Scholar]
-            </a></li>
-          <li>( <sup>*</sup> equal contribution)</li>
-        </ul>
-      </div>
-      <hr>
-      <br>
-
-      <div id="highlight-publication">
-        <!-- <h3>Preprint Papers</h3> -->
-        <!-- <ul class="preprint"></ul> -->
-        <h3>Conference Papers</h3>
-        <ul class="conference"></ul>
-        <h3>Journal Papers</h3>
-        <ul class="journal"></ul>
-      </div> <!-- #highlight-publication -->
-      <div id="full-list-publication" style="display: none;">
-        <!-- <h4>Preprint Papers</h4> -->
-        <!-- <ol class="preprint"></ol> -->
-        <h4>Conference Papers</h4>
-        <ol class="conference"></ol>
-        <h4>Journal Papers</h4>
-        <ol class="journal"></ol>
-      </div> <!-- #full-list-publication -->
-
-      <!-- <h2>PhD Dissertation</h2>
-          <div class="hflex-container" id="paper">
-            <table>
-              <tr>
-                <td rowspan="4" width="100px">
-          	      <img src="images/Logo_HKU.jpg">
-                </td>
-                <td>
-                  <p class="title" style="font-size: 13pt;">Face Sketch Synthesis and Face Super Resolution in the Wild with Deep Learning</p>
-                </td>
-              </tr>
-              <tr><td>
-          		    <p class="authors" style="font-size: 13pt;"><span class="author_me">Chaofeng Chen</span></p>
-              </td></tr>
-              <tr><td>
-                  <p class="venue" style="font-size: 12pt;">Dept. of Computer Science, The University of Hong Kong, 2020</p>
-              </td></tr>
-              <tr><td>
-                  <a class="pdflink" href="https://hub.hku.hk/handle/10722/297490" target="_blank">HKU Theses Online</a>
-              </td></tr>
-            </table>
-          </div>   -->
-
-      <!-------------------------------  Other information -------------------------------------------->
-      <h2>Professional Activities</h2>
-      <ul>
-        <li><b>Conference Reviewer</b>:
-          <ul>
-            <li>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-            <li>International Conference on Computer Vision (ICCV)</li>
-            <li>European Conference on Computer Vision (ECCV)</li>
-            <li>Conference on Neural Information Processing Systems (NeurIPS)</li>
-            <li>International Conference on Learning Representations (ICLR)</li>
-            <li>Association for the Advancement of Artificial Intelligence (AAAI)</li>
-            <li>ACM International Conference on Multimedia (ACM MM)</li>
-          </ul>
-        </li>
-        <br>
-        <li><b>Journal Reviewer</b>:
-          <ul>
-            <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
-            <li>International Journal of Computer Vision (IJCV)</li>
-            <li>IEEE Transactions on Image Processing (TIP)</li>
-            <li>IEEE Transactions on Multimedia (TMM)</li>
-            <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
-            <li>Elsevier Journal of Neurocomputing (Neurocomputing)</li>
-          </ul>
-      </ul>
-
-      <h2>Awards</h2>
-      <ul>
-        <li>Hong Kong PhD Fellowship, HKU, 2015 - 2018</li>
-        <li>National Scholarship, HUST, 2011 - 2012</li>
-      </ul>
-
-      <!-- <div class="content-container"> -->
-      <h2>Teaching</h2>
-      <ul>
-        <li>[2017/18 2nd semester]: COMP3317 Computer Vision&nbsp;~ Teaching Assistant</li>
-        <li>[2015/16 2nd semester]: COMP2396 Object-Oriented Programming and Java&nbsp;~ Teaching Assistant</li>
-        <li>[2016/17 1st semester]: COMP2396 Object-Oriented Programming and Java&nbsp;~ Teaching Assistant</li>
-      </ul>
-
-      <div style="max-width: 50%; margin: 0 auto">
-        <script type='text/javascript' id='clustrmaps'
-          src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=_WPYBsWS3jdK-Qk2uEpzsJESFoZAn23tijknLzpnvis'></script>
-      </div>
     </div>
-    <!-- loadPublications -->
-    <!-- <script src="publications.js"></script>  -->
-    <script src="publications.js"></script>
-    <script type="text/javascript">
-      $(function () {
-        loadPublications(data['publications'], data['fields'], data['author_links'], 'Chaofeng Chen');
-      })
-    </script>
-    <script type="text/javascript">
-      $('li:nth-child(1)', '#publication-switch').on('click', function () {
-        $('li:nth-child(2) > a', '#publication-switch').removeClass('disabled')
-        $('li:nth-child(1) > a', '#publication-switch').addClass('disabled')
-        $('#full-list-publication').hide()
-        $('#highlight-publication').show()
-      })
-      $('li:nth-child(2)', '#publication-switch').on('click', function () {
-        $('li:nth-child(1) > a', '#publication-switch').removeClass('disabled')
-        $('li:nth-child(2) > a', '#publication-switch').addClass('disabled')
-        $('#highlight-publication').hide()
-        $('#full-list-publication').show()
-      })
-    </script>
-    <script>
-      function loadPublications(publications, fields, author_links, fullName) {
 
-        for (let i = 0; i < publications.length; ++i) {
-          let p = publications[i],
-            dest = 'journal' in p ? 'journal' : 'conference' in p ? 'conference' : 'preprint',
-            links = ''
+    <footer class="site-footer" id="site-footer">
+        <!-- Footer content will be generated by footer.js -->
+    </footer>
 
-          for (let f in fields) {
-            if (p[f]) {
-              links += `<li class="list-inline-item"><a href="${p[f]}" target="_blank">[${fields[f]}]</a></li>`;
-            }
-          }
-
-          for (let f in author_links) {
-            p['authors'] = p['authors'].replace(f, `<a href="${author_links[f]}" target="_blank">${f}</a>`)
-          }
-
-          if ("bibtex" in p) {
-            links += '<li class="list-inline-item">' +
-              '  <a href="javascript:void(0)" class="bibtex">[BibTeX]</a>' +
-              '</li>'
-          }
-
-          if ("github" in p) {
-            links += `<li>${p['github'] ? '<a href="' + p['github'] + '" target="_blank"><img class="imgbadge" src="https://img.shields.io/github/stars/' + p['github'].split('/').slice(-2).join('/') + '?style=social"></a>' : ''}</li>`
-          }
-
-          if ("oral" in p) {
-            p['year'] = `${p['year']} (<span style='color:red;'>${p['oral']}</span>)`
-          }
-
-          // Highlights
-          if ("highlight" in p && p['highlight']) {
-            let imgHtml = '<img src="' + p['img'] + '" alt="Highlight">';
-            if ('img-overlay' in p) {
-              imgHtml += '<div class="overlay transparent"><img src="' + p['img-overlay'] + '"></div>';
-            }
-            $('#highlight-publication ul.' + dest).append(
-              `<li>
-                      <div class="hflex-container" id="paper">
-                        <table>
-                          <tr>
-                            <td rowspan="4" class="imgtd">
-                              <img src="${p['img']}">
-                            </td>
-                            <td>
-                              <p class="title">${p['title']}</p>
-                            </td>
-                          </tr>
-                          <tr><td>
-                             ${p['authors'].replace(fullName, '<b>' + fullName + '</b>')}
-                          </td></tr>
-                          <tr><td>
-                              <p class="venue">${p[dest]}, ${p['year']}</p> 
-                          </td></tr>
-                          <tr><td>
-                              ${p['pdf'] ? '<a href="' + p['pdf'] + '" target="_blank">[PDF]</a>' : ''}
-                              ${p['arxiv'] ? '<a href="' + p['arxiv'] + '" target="_blank" class="btn mybtn" role="button"><i class="ai ai-arxiv"></i>  arXiv</a>' : ''}
-                              ${p['github'] ? '<a href="' + p['github'] + '" target="_blank"><img class="imgbadge" src="https://img.shields.io/github/stars/' + p['github'].split('/').slice(-2).join('/') + '?style=social"></a>' : ''}
-                              ${p['project'] ? '<a href="' + p['project'] + '" target="_blank"><img class="prjbadge" src="https://img.shields.io/badge/Project-' + p['project'].split('/').slice(-2).join('') + '-e9f1f6?style=flat-square"></a>' : ''}
-                          </td></tr>
-                        </table>
-                      </div>
-                    </li>
-                    `
-            );
-          }
-          // Full List
-
-          if ("highlight" in p && p['highlight']) {
-            $('#full-list-publication ol.' + dest).append(
-              `<li class="full-list-itemhl">"${p['title']}." <em>${p['authors'].replace(fullName, '<strong>' + fullName + '</strong>')}.</em> ${p[dest]}, ${p['year']}. ${p['impact_factor'] ? '(IF = ' + p['impact_factor'] + ')' : ''} ${p['note'] || ''} <ul class="full-list">${links}</ul>
-                    </li>
-                    `
-            );
-          } else {
-            $('#full-list-publication ol.' + dest).append(
-              `<li class="full-list-item">"${p['title']}." <em>${p['authors'].replace(fullName, '<strong>' + fullName + '</strong>')}.</em> ${p[dest]}, ${p['year']}. ${p['impact_factor'] ? '(IF = ' + p['impact_factor'] + ')' : ''} ${p['note'] || ''} <ul class="full-list">${links}</ul>
-                    </li>
-                    `
-            );
-          }
-        }
-      }
-      // </script>
-    <!-- <script type="text/javascript">
-        $('#highlight-publication').on('mouseenter touchstart', '.row', function(evt) {
-            let overlayImg = $('.overlay', $(this).parent())
-            if ( overlayImg.length ) {
-                $('.overlay', $(this).parent()).removeClass('transparent') //opacity: 1
-            }
-        })
-
-        $('#highlight-publication').on('mouseleave touchend', '.row', function(evt) {
-            let overlayImg = $('.overlay', $(this).parent())
-            if ( overlayImg.length ) {
-                $('.overlay', $(this).parent()).addClass('transparent') //opacity: 0
-            }
-        })
-    </script>
-    <script type="text/javascript">
-        $('#head .overlay').hover(function() {
-            $('img[alt=Overlay-Photo]', $(this).parent()).removeClass('transparent')
-            $(this).removeClass('transparent')
-        }, function() {
-            $(this).addClass('transparent')
-            $('img[alt=Overlay-Photo]', $(this).parent()).addClass('transparent')
-        })
-    </script>
-    <script type="text/javascript">
-        $('#publications').on('click', '.bibtex', function() {
-            var bibtexBlock = $('pre', $(this).parent().parent().parent()),
-                isVisible = bibtexBlock.is(':visible')
-
-            if ( isVisible ) {
-                bibtexBlock.slideUp(36)
-            } else {
-                bibtexBlock.slideDown(36)
-            }
-        }) -->
-    <!-- </script> -->
+    <script src="js/bibtex-parser.js"></script>
+    <script src="js/publications.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/footer.js"></script>
 </body>
-
 </html>

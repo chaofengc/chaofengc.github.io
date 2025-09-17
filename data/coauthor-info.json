@@ -1,0 +1,374 @@
+{
+  "coauthors": {
+    "Annan Wang": {
+      "name": "Annan Wang",
+      "affiliation": "Unknown",
+      "website": "https://github.com/AnnanWangDaniel"
+    },
+    "Chunyi Li": {
+      "name": "Chunyi Li",
+      "affiliation": "Unknown",
+      "website": "http://lcysyzxdxc.github.io/"
+    },
+    "Dihong Gong": {
+      "name": "Dihong Gong",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Erli Zhang": {
+      "name": "Erli Zhang",
+      "affiliation": "Unknown",
+      "website": "https://github.com/ZhangErliCarl/"
+    },
+    "Geng Xue": {
+      "name": "Geng Xue",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Guangtao Zhai": {
+      "name": "Guangtao Zhai",
+      "affiliation": "Unknown",
+      "website": "https://faculty.sjtu.edu.cn/zhaiguangtao/en/index.htm"
+    },
+    "Guanying Chen": {
+      "name": "Guanying Chen",
+      "affiliation": "Unknown",
+      "website": "https://guanyingc.github.io/"
+    },
+    "Hao Wang": {
+      "name": "Hao Wang",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Haoning Wu": {
+      "name": "Haoning Wu",
+      "affiliation": "Unknown",
+      "website": "http://teowu.github.io/"
+    },
+    "Hanwei Zhu": {
+      "name": "Hanwei Zhu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Hongkun Hao": {
+      "name": "Hongkun Hao",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "J. Han": {
+      "name": "J. Han",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Jiaxing Xu": {
+      "name": "Jiaxing Xu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Jing Xiao": {
+      "name": "Jing Xiao",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Jingwen Hou": {
+      "name": "Jingwen Hou",
+      "affiliation": "Unknown",
+      "website": "https://scholar.google.com.sg/citations?user=NlNOyiQAAAAJ&hl=zh-CN"
+    },
+    "Jinwei Gu": {
+      "name": "Jinwei Gu",
+      "affiliation": "Unknown",
+      "website": "http://www.gujinwei.org/"
+    },
+    "Kangmin Xu": {
+      "name": "Kangmin Xu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Kaixin Xu": {
+      "name": "Kaixin Xu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Kwan-Yee K. Wong": {
+      "name": "Kwan-Yee K. Wong",
+      "affiliation": "Unknown",
+      "website": "http://www.cs.hku.hk/~kykwong"
+    },
+    "Lan Yao": {
+      "name": "Lan Yao",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Lei Bai": {
+      "name": "Lei Bai",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Lei Zhang": {
+      "name": "Lei Zhang",
+      "affiliation": "Unknown",
+      "website": "http://www4.comp.polyu.edu.hk/~cslzhang/"
+    },
+    "Liang Liao": {
+      "name": "Liang Liao",
+      "affiliation": "Unknown",
+      "website": "https://liaoliang92.github.io/homepage/"
+    },
+    "Lingbo Yang": {
+      "name": "Lingbo Yang",
+      "affiliation": "Unknown",
+      "website": "http://lotayou.github.io/"
+    },
+    "Litong Feng": {
+      "name": "Litong Feng",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Mengcheng Lan": {
+      "name": "Mengcheng Lan",
+      "affiliation": "Unknown",
+      "website": "https://mc-lan.github.io/"
+    },
+    "Qian Chen": {
+      "name": "Qian Chen",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Qiong Yan": {
+      "name": "Qiong Yan",
+      "affiliation": "Unknown",
+      "website": "https://scholar.google.com/citations?user=uT9CtPYAAAAJ&hl=en"
+    },
+    "Shaohui Liu": {
+      "name": "Shaohui Liu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Shaozhe Hao": {
+      "name": "Shaozhe Hao",
+      "affiliation": "Unknown",
+      "website": "https://haoosz.github.io/"
+    },
+    "Shangchen Zhou": {
+      "name": "Shangchen Zhou",
+      "affiliation": "Unknown",
+      "website": "https://shangchenzhou.com/"
+    },
+    "Shi Guo": {
+      "name": "Shi Guo",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Shihui Guo": {
+      "name": "Shihui Guo",
+      "affiliation": "Unknown",
+      "website": "https://scholar.google.co.uk/citations?user=RPAVxiAAAAAJ&hl=en"
+    },
+    "Shiqi Wang": {
+      "name": "Shiqi Wang",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Shuliang Ning": {
+      "name": "Shuliang Ning",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Shuguang Cui": {
+      "name": "Shuguang Cui",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Tao Yang": {
+      "name": "Tao Yang",
+      "affiliation": "Unknown",
+      "website": "https://github.com/yangxy"
+    },
+    "Tengchaun Kou": {
+      "name": "Tengchaun Kou",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Wangmeng Zuo": {
+      "name": "Wangmeng Zuo",
+      "affiliation": "Unknown",
+      "website": "http://homepage.hit.edu.cn/wangmengzuo"
+    },
+    "Wayne Zhang": {
+      "name": "Wayne Zhang",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Wei Liu": {
+      "name": "Wei Liu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Wei Sun": {
+      "name": "Wei Sun",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Weicheng Meng": {
+      "name": "Weicheng Meng",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Weide Liu": {
+      "name": "Weide Liu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Weisi Lin": {
+      "name": "Weisi Lin",
+      "affiliation": "Unknown",
+      "website": "https://personal.ntu.edu.sg/wslin/Home.html"
+    },
+    "Weixia Zhang": {
+      "name": "Weixia Zhang",
+      "affiliation": "Unknown",
+      "website": "https://sites.google.com/view/r-panda"
+    },
+    "Wenqi Yang": {
+      "name": "Wenqi Yang",
+      "affiliation": "Unknown",
+      "website": "https://ywq.github.io/"
+    },
+    "Wenxiu Sun": {
+      "name": "Wenxiu Sun",
+      "affiliation": "Unknown",
+      "website": "http://wenxiusun.com/"
+    },
+    "Xiao Tan": {
+      "name": "Xiao Tan",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Xianhui Lin": {
+      "name": "Xianhui Lin",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Xiaohong Liu": {
+      "name": "Xiaohong Liu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Xiaoguang Han": {
+      "name": "Xiaoguang Han",
+      "affiliation": "Unknown",
+      "website": "https://mypage.cuhk.edu.cn/academics/hanxiaoguang/"
+    },
+    "Xiaoming Li": {
+      "name": "Xiaoming Li",
+      "affiliation": "Unknown",
+      "website": "https://csxmli2016.github.io/"
+    },
+    "Xiele Wu": {
+      "name": "Xiele Wu",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Xinjiang Wang": {
+      "name": "Xinjiang Wang",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Xinyu Shi": {
+      "name": "Xinyu Shi",
+      "affiliation": "Unknown",
+      "website": "https://xinyu-shi.github.io/"
+    },
+    "Xiongkuo Min": {
+      "name": "Xiongkuo Min",
+      "affiliation": "Unknown",
+      "website": "https://sites.google.com/site/minxiongkuo/"
+    },
+    "Xunlai Chen": {
+      "name": "Xunlai Chen",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yachun Mi": {
+      "name": "Yachun Mi",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yang Sensen": {
+      "name": "Yang Sensen",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yanran Li": {
+      "name": "Yanran Li",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yingjie Zhou": {
+      "name": "Yingjie Zhou",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yiping Ke": {
+      "name": "Yiping Ke",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yipeng Qin": {
+      "name": "Yipeng Qin",
+      "affiliation": "Unknown",
+      "website": "https://www.cardiff.ac.uk/people/view/1508897-qin-yipeng"
+    },
+    "Yixuan Gao": {
+      "name": "Yixuan Gao",
+      "affiliation": "Unknown",
+      "website": "https://github.com/YixuanGao98"
+    },
+    "Yu Li": {
+      "name": "Yu Li",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yue Zhou": {
+      "name": "Yue Zhou",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Yuming Fang": {
+      "name": "Yuming Fang",
+      "affiliation": "Unknown",
+      "website": "https://sites.google.com/site/leofangyuming/"
+    },
+    "Z. Su": {
+      "name": "Z. Su",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Zhetong Liang": {
+      "name": "Zhetong Liang",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Zhenfang Chen": {
+      "name": "Zhenfang Chen",
+      "affiliation": "Unknown",
+      "website": "http://zfchenunique.github.io/"
+    },
+    "Zhifeng Li": {
+      "name": "Zhifeng Li",
+      "affiliation": "Unknown",
+      "website": ""
+    },
+    "Zicheng Zhang": {
+      "name": "Zicheng Zhang",
+      "affiliation": "Unknown",
+      "website": "https://github.com/zzc-1998"
+    },
+    "Zifei Yan": {
+      "name": "Zifei Yan",
+      "affiliation": "Unknown",
+      "website": ""
+    }
+  }
+}

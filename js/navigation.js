@@ -1,0 +1,149 @@
+/**
+ * Unified Navigation Header Generator
+ * Generates consistent navigation headers for all pages
+ */
+
+class NavigationGenerator {
+    constructor() {
+        this.siteTitle = "CHEN Chaofeng";
+        this.navigationItems = [
+            { name: "Home", href: "index.html", id: "home" },
+            { name: "Publications", href: "publications.html", id: "publications" },
+            { name: "Group", href: "group.html", id: "group", hidden: true }, // Currently commented out
+            { name: "Openings", href: "openings.html", id: "openings" }
+        ];
+    }
+
+    /**
+     * Get the current page identifier based on the current URL
+     */
+    getCurrentPage() {
+        const currentPath = window.location.pathname;
+        const currentFile = currentPath.split('/').pop() || 'index.html';
+        
+        // Map file names to page identifiers
+        const pageMap = {
+            'index.html': 'home',
+            '': 'home', // Root path
+            'publications.html': 'publications',
+            'group.html': 'group',
+            'openings.html': 'openings'
+        };
+        
+        return pageMap[currentFile] || 'home';
+    }
+
+    /**
+     * Generate the navigation HTML structure
+     */
+    generateNavigation() {
+        const currentPage = this.getCurrentPage();
+        
+        const navigationHTML = `
+            <header class="site-header">
+                <div class="wrapper">
+                    <a class="site-title" href="index.html">${this.siteTitle}</a>
+                    <nav class="site-nav">
+                        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+                        <label for="nav-trigger">
+                            <span class="menu-icon">
+                                <i class="fas fa-bars"></i>
+                            </span>
+                        </label>
+                        <div class="trigger">
+                            ${this.generateNavigationLinks(currentPage)}
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        `;
+        
+        return navigationHTML;
+    }
+
+    /**
+     * Generate navigation links with proper active state
+     */
+    generateNavigationLinks(currentPage) {
+        return this.navigationItems
+            .filter(item => !item.hidden) // Filter out hidden items
+            .map(item => {
+                const activeClass = item.id === currentPage ? ' active' : '';
+                return `<a class="page-link${activeClass}" href="${item.href}">${item.name}</a>`;
+            })
+            .join('\n                            ');
+    }
+
+    /**
+     * Insert navigation into the page
+     */
+    insertNavigation() {
+        // Check if navigation already exists
+        const existingHeader = document.querySelector('.site-header');
+        if (existingHeader) {
+            console.log('Navigation already exists, skipping insertion');
+            return;
+        }
+
+        const navigationHTML = this.generateNavigation();
+        
+        // Insert at the beginning of body
+        const body = document.body;
+        if (body) {
+            body.insertAdjacentHTML('afterbegin', navigationHTML);
+        }
+    }
+
+    /**
+     * Replace existing navigation
+     */
+    replaceNavigation() {
+        const existingHeader = document.querySelector('.site-header');
+        if (existingHeader) {
+            existingHeader.remove();
+        }
+        this.insertNavigation();
+    }
+
+    /**
+     * Initialize navigation on page load
+     */
+    init() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.insertNavigation();
+            });
+        } else {
+            this.insertNavigation();
+        }
+    }
+
+    /**
+     * Update navigation items configuration
+     */
+    updateNavigationItems(items) {
+        this.navigationItems = items;
+    }
+
+    /**
+     * Show/hide specific navigation item
+     */
+    toggleNavigationItem(itemId, show = true) {
+        const item = this.navigationItems.find(item => item.id === itemId);
+        if (item) {
+            item.hidden = !show;
+            this.replaceNavigation();
+        }
+    }
+}
+
+// Create global navigation instance
+const navigation = new NavigationGenerator();
+
+// Auto-initialize when script loads
+navigation.init();
+
+// Export for manual control if needed
+window.NavigationGenerator = NavigationGenerator;
+window.navigation = navigation;
