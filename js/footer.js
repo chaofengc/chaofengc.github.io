@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p class="update-time">Last updated: <span id="update-time"></span></p>
                     </div>
                     <div class="footer-col footer-stats">
-                        <div class="visitor-stats">
-                            <script type='text/javascript' id='clustrmaps' 
-                              src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=_WPYBsWS3jdK-Qk2uEpzsJESFoZAn23tijknLzpnvis'></script>
+                        <div class="visitor-stats" id="visitor-stats-container">
+                            <!-- ClustrMaps will be loaded here dynamically -->
                         </div>
                     </div>
                 </div>
@@ -57,7 +56,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     /**
-     * Initialize unified footer
+     * Load ClustrMaps visitor statistics script dynamically
+     */
+    function loadClustrMaps() {
+        const container = document.getElementById('visitor-stats-container');
+        if (container) {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.id = 'clustrmaps';
+            script.src = '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=_WPYBsWS3jdK-Qk2uEpzsJESFoZAn23tijknLzpnvis';
+            container.appendChild(script);
+        }
+    }
+
+    /**
+     * Initialize footer with all components
      */
     function initializeFooter() {
         const footerElement = document.querySelector('.site-footer');
@@ -65,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             footerElement.innerHTML = generateFooterHTML();
             // Set update time after HTML is inserted
             setTimeout(setUpdateTime, 100);
+            // Load ClustrMaps after HTML is inserted
+            setTimeout(loadClustrMaps, 200);
         }
     }
     
