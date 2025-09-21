@@ -551,32 +551,19 @@ section h2 {
   font-style: italic;
 }
 
-.trae-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
+.footer-stats {
+  text-align: center;
+  margin-top: 10px;
 }
 
-.trae-link:hover {
-  color: var(--accent-color);
-  text-decoration: none;
+.visitor-stats {
+  display: inline-block;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-.trae-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  transition: width 0.3s ease;
-}
-
-.trae-link:hover::after {
-  width: 100%;
+.visitor-stats:hover {
+  opacity: 1;
 }
 
 /* 响应式设计 */
@@ -599,6 +586,14 @@ section h2 {
   .footer-col-wrapper {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-stats {
+    margin-top: 15px;
+  }
+
+  .visitor-stats {
+    transform: scale(0.9);
   }
 }
 
