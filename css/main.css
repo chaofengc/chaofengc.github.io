@@ -525,7 +525,7 @@ section h2 {
   border-top: 1px solid var(--border-color);
   padding: var(--spacing-unit) 0;
   background-color: var(--footer-background);
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .footer-col-wrapper {
