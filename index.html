@@ -336,8 +336,9 @@
             </section>
 
             <section>
-                <script type='text/javascript' id='clustrmaps'
-          src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=_WPYBsWS3jdK-Qk2uEpzsJESFoZAn23tijknLzpnvis'></script>
+                <div id="clustrmap-container">
+                    <p id="clustrmap-loading">Loading visitor map...</p>
+                </div>
             </section>
 
         </div>
@@ -349,6 +350,50 @@
 
     <script src="js/bibtex-parser.js"></script>
     <script src="js/publications.js"></script>
+    
+    <!-- Async Clustrmap Loading -->
+    <script>
+        // Load clustrmap asynchronously after page content is ready
+        function loadClustrmap() {
+            const loadingText = document.getElementById('clustrmap-loading');
+            const container = document.getElementById('clustrmap-container');
+            
+            if (loadingText && container) {
+                // Create and load the clustrmap script
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.id = 'clustrmaps';
+                script.async = true;
+                script.src = '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=_WPYBsWS3jdK-Qk2uEpzsJESFoZAn23tijknLzpnvis';
+                
+                // Handle script load completion
+                script.onload = function() {
+                    // Remove loading text when map loads
+                    setTimeout(() => {
+                        if (loadingText) {
+                            loadingText.remove();
+                        }
+                    }, 500);
+                };
+                
+                script.onerror = function() {
+                    loadingText.textContent = 'Unable to load visitor map';
+                };
+                
+                // Append script to container
+                container.appendChild(script);
+            }
+        }
+        
+        // Load clustrmap after a short delay to prioritize main content
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(loadClustrmap, 1000);
+            });
+        } else {
+            setTimeout(loadClustrmap, 1000);
+        }
+    </script>
     <script src="js/animations.js"></script>
     <script src="js/footer.js"></script>
 </body>
