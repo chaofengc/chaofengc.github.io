@@ -106,17 +106,55 @@ class NavigationGenerator {
     }
 
     /**
-     * Initialize navigation on page load
+     * Initialize navigation system
      */
     init() {
         // Wait for DOM to be ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 this.insertNavigation();
+                this.initScrollEffect();
             });
         } else {
             this.insertNavigation();
+            this.initScrollEffect();
         }
+    }
+
+    /**
+     * Initialize scroll effect for transparent navigation
+     */
+    initScrollEffect() {
+        let ticking = false;
+        
+        const updateNavigation = () => {
+            const header = document.querySelector('.site-header');
+            if (!header) return;
+            
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const threshold = 100; // 滚动超过100px时触发透明效果
+            
+            if (scrollTop > threshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            ticking = false;
+        };
+        
+        const requestTick = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateNavigation);
+                ticking = true;
+            }
+        };
+        
+        // 监听滚动事件
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        // 初始检查
+        updateNavigation();
     }
 
     /**

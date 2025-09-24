@@ -85,6 +85,15 @@ ul, ol {
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滚动时的透明效果 */
+.site-header.scrolled {
+  background-color: rgba(248, 249, 250, 0.85);
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
