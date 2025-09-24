@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEN Chaofeng - Gallery</title>
+    <link rel="icon" type="image/svg+xml" href="images/space.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/navigation.js"></script>
+</head>
+<body>
+
+    <div class="page-content">
+        <div class="wrapper">
+            <!-- Gallery Header -->
+            <section class="gallery-header">
+                <h1>Life Gallery</h1>
+                <p class="gallery-subtitle">记录实验室生活、学术活动、旅行等美好时光</p>
+            </section>
+
+            <!-- Filter Controls -->
+            <section class="gallery-filters">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="categoryFilter">分类筛选:</label>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="all">全部分类</option>
+                            <!-- Categories will be dynamically loaded -->
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="yearFilter">年份筛选:</label>
+                        <select id="yearFilter" class="filter-select">
+                            <option value="all">全部年份</option>
+                            <!-- Years will be dynamically loaded -->
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="tagFilter">标签筛选:</label>
+                        <select id="tagFilter" class="filter-select">
+                            <option value="all">全部标签</option>
+                            <!-- Tags will be dynamically loaded -->
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <button id="resetFilters" class="reset-btn">
+                            <i class="fas fa-refresh"></i> 重置筛选
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Grid -->
+            <section class="gallery-grid">
+                <div class="gallery-container" id="galleryContainer">
+                    <!-- Gallery items will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Gallery Stats -->
+            <section class="gallery-stats">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <i class="fas fa-images"></i>
+                        <span class="stat-number" id="totalItems">0</span>
+                        <span class="stat-label">总相册数</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-camera"></i>
+                        <span class="stat-number" id="totalPhotos">0</span>
+                        <span class="stat-label">总照片数</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span class="stat-number" id="featuredItems">0</span>
+                        <span class="stat-label">精选相册</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <div class="lightbox-header">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+            <div class="lightbox-slider">
+                <button class="slider-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Images will be dynamically loaded here -->
+                    </div>
+                </div>
+                <button class="slider-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="lightbox-footer">
+                <div class="image-info">
+                    <span id="imageCaption"></span>
+                    <span id="imageCounter"></span>
+                </div>
+                <div class="lightbox-controls">
+                    <button id="autoPlayBtn" class="control-btn">
+                        <i class="fas fa-play"></i> 自动播放
+                    </button>
+                    <button id="fullscreenBtn" class="control-btn">
+                        <i class="fas fa-expand"></i> 全屏
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>加载中...</p>
+    </div>
+
+    <footer class="site-footer" id="site-footer">
+        <!-- Footer content will be generated by footer.js -->
+    </footer>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "projects": [
+    {
+      "id": "femasr",
+      "title": "FeMaSR",
+      "description": "Feature Matching in Explicit and Implicit Manners for Real-World Super-Resolution with efficient feature alignment.",
+      "image": "images/MM2022_FeMaSR.jpg",
+      "tags": ["Image Restoration"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2207.09814",
+        "github": "https://github.com/chaofengc/FeMaSR"
+      },
+      "github_repo": "chaofengc/FeMaSR",
+      "year": 2022,
+      "venue": "ACM MM",
+      "featured": true 
+    },
+    {
+      "id": "fastvqa",
+      "title": "FastVQA",
+      "description": "A fast and accurate video quality assessment method using efficient neural networks for real-time video quality evaluation.",
+      "image": "images/TPAMI2023_FastVQA.jpg",
+      "tags": ["Video Quality"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2207.02595",
+        "github": "https://github.com/VQAssessment/FAST-VQA-and-FasterVQA"
+      },
+      "github_repo": "VQAssessment/FAST-VQA-and-FasterVQA",
+      "year": 2023,
+      "venue": "TPAMI",
+      "featured": true
+    },
+    {
+      "id": "dfdnet",
+      "title": "DFDNet",
+      "description": "Deep Face Deblurring Network for high-quality face image restoration from blurry inputs using dictionary-based feature matching.",
+      "image": "images/ECCV2020_dfdnet.jpg",
+      "tags": ["Face Restoration"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2007.07618",
+        "github": "https://github.com/csxmli2016/DFDNet"
+      },
+      "github_repo": "csxmli2016/DFDNet",
+      "year": 2020,
+      "venue": "ECCV",
+      "featured": true
+    },
+    {
+      "id": "topiq",
+      "title": "IQA-PyTorch",
+      "description": "PyTorch Toolbox for Image Quality Assessment, including PSNR, SSIM, LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, TOPIQ, NIMA, DBCNN, BRISQUE, PI and more...",
+      "image": "images/arXiv2023_topiq.png",
+      "tags": ["Image Quality"],
+      "links": {
+        "github": "https://github.com/chaofengc/IQA-PyTorch"
+      },
+      "github_repo": "chaofengc/IQA-PyTorch",
+      "featured": true 
+    },
+    {
+      "id": "progressive_semantic_style",
+      "title": "PSFRGAN",
+      "description": "A progressive approach that combines semantic understanding with style transformation for high-quality blind face restoration.",
+      "image": "images/PSFR-GAN.jpg",
+      "tags": ["Face Restoration"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2005.06803",
+        "github": "https://github.com/chaofengc/PSFRGAN"
+      },
+      "github_repo": "chaofengc/PSFRGAN",
+      "year": 2021,
+      "venue": "CVPR",
+      "featured": true 
+    },
+    {
+      "id": "spatial_attention_face_sr",
+      "title": "SPARNet",
+      "description": "A face super-resolution method that learns spatial attention mechanisms to enhance facial details and improve reconstruction quality.",
+      "image": "images/TIP2020_SPARNet.png",
+      "tags": ["Face Restoration"],
+      "links": {
+        "paper": "https://arxiv.org/abs/1909.12764",
+        "github": "https://github.com/chaofengc/Face-SPARNet"
+      },
+      "github_repo": "chaofengc/Face-SPARNet",
+      "year": 2021,
+      "venue": "TIP",
+      "featured": false
+    }
+  ]
+}

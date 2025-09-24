@@ -322,20 +322,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!publicationsContainer) return;
     
-    // Clear container
-    publicationsContainer.innerHTML = '';
+    // Add loading class to prevent layout shifts
+    publicationsContainer.classList.add('publications-loading');
     
-    // Filter publications
-    let filteredPublications = publications;
-    if (filter !== 'all') {
-      filteredPublications = parser.filterByType(filter);
-    }
-    
-    // If no publications
-    if (filteredPublications.length === 0) {
-      publicationsContainer.innerHTML = '<div class="no-publications">No publications found matching the criteria</div>';
-      return;
-    }
+    // Use requestAnimationFrame to ensure smooth transition
+    requestAnimationFrame(() => {
+      // Clear container
+      publicationsContainer.innerHTML = '';
+      
+      // Filter publications
+      let filteredPublications = publications;
+      if (filter !== 'all') {
+        filteredPublications = parser.filterByType(filter);
+      }
+      
+      // If no publications
+      if (filteredPublications.length === 0) {
+        publicationsContainer.innerHTML = '<div class="no-publications">No publications found matching the criteria</div>';
+        publicationsContainer.classList.remove('publications-loading');
+        return;
+      }
     
     // Group publications by year
     const publicationsByYear = {};
@@ -370,13 +376,19 @@ document.addEventListener('DOMContentLoaded', function() {
       const yearPublications = document.createElement('div');
       yearPublications.className = 'year-publications';
       
-      publicationsByYear[year].forEach(pub => {
+      publicationsByYear[year].forEach((pub, index) => {
         const pubElement = createPublicationElement(pub, false);
+        // Add staggered animation delay
+        pubElement.style.animationDelay = `${index * 0.05}s`;
         yearPublications.appendChild(pubElement);
       });
       
       yearSection.appendChild(yearPublications);
       publicationsContainer.appendChild(yearSection);
+    });
+    
+    // Remove loading class after rendering is complete
+    publicationsContainer.classList.remove('publications-loading');
     });
   }
   
@@ -716,12 +728,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   /**
-   * Initialize
+   * Initialize the publications page
    */
   async function init() {
-    // Show loading state
+    // Show loading state with stable layout
     if (publicationsContainer) {
+      publicationsContainer.classList.add('publications-loading');
       publicationsContainer.innerHTML = '<div class="loading">Loading publications...</div>';
+      
+      // Set minimum height to prevent layout shift
+      publicationsContainer.style.minHeight = '400px';
     }
     
     // Load coauthors and publication config data

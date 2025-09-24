@@ -1,0 +1,104 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "title": "实验室团建活动",
+      "description": "2024年春季实验室团建活动，大家一起度过了愉快的时光，增进了团队凝聚力。",
+      "images": [
+        {
+          "src": "images/gallery/lab_team_building_1.svg",
+          "alt": "实验室团建合影",
+          "caption": "全体成员合影留念"
+        },
+        {
+          "src": "images/gallery/lab_team_building_2.svg",
+          "alt": "团建活动现场",
+          "caption": "团建活动精彩瞬间"
+        }
+      ],
+      "date": "2024-03-15",
+      "year": 2024,
+      "tags": ["团建", "团队", "合影"],
+      "category": "lab_life",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "CVPR 2024会议参会",
+      "description": "参加CVPR 2024国际计算机视觉会议，展示最新研究成果，与国际同行进行学术交流。",
+      "images": [
+        {
+          "src": "images/gallery/cvpr2024_1.svg",
+          "alt": "CVPR会议现场",
+          "caption": "会议现场展示区域"
+        },
+        {
+          "src": "images/gallery/cvpr2024_2.svg",
+          "alt": "论文展示",
+          "caption": "研究成果Poster展示"
+        },
+        {
+          "src": "images/gallery/cvpr2024_3.svg",
+          "alt": "学术交流",
+          "caption": "与国际同行学者深入交流"
+        }
+      ],
+      "date": "2024-06-20",
+      "year": 2024,
+      "tags": ["会议", "学术", "CVPR", "交流"],
+      "category": "academic",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "新加坡学术访问之旅",
+      "description": "前往新加坡进行学术访问，体验当地文化和美食，收获满满。",
+      "images": [
+        {
+          "src": "images/gallery/travel_singapore_1.svg",
+          "alt": "新加坡滨海湾",
+          "caption": "滨海湾标志性建筑"
+        },
+        {
+          "src": "images/gallery/travel_singapore_2.svg",
+          "alt": "新加坡美食",
+          "caption": "品尝当地特色美食"
+        }
+      ],
+      "date": "2024-08-10",
+      "year": 2024,
+      "tags": ["旅行", "新加坡", "美食", "文化"],
+      "category": "travel",
+      "featured": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "全部",
+      "description": "显示所有图片"
+    },
+    {
+      "id": "lab_life",
+      "name": "实验室生活",
+      "description": "实验室日常活动和团队建设"
+    },
+    {
+      "id": "academic",
+      "name": "学术活动",
+      "description": "学术会议、研讨会等学术性活动"
+    },
+    {
+      "id": "travel",
+      "name": "旅行",
+      "description": "学术访问、旅行等活动"
+    }
+  ],
+  "config": {
+    "itemsPerPage": 12,
+    "autoSlideInterval": 5000,
+    "showCaptions": true,
+    "enableLightbox": true,
+    "defaultCategory": "all"
+  }
+}

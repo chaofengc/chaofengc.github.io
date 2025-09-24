@@ -1,19 +1,71 @@
 {
-  "current_members": [],
-  "alumni": [],
-  "welcome_message": {
-    "title": "Welcome to Join Our Research Group!",
-    "description": "We are actively looking for passionate students/researchers to join our team. If you are interested in cutting-edge research and collaborative work, we would love to hear from you.",
-    "opportunities": [
-      "Masters positions available",
-      "Research internships for undergraduates and graduates",
-      "PhD positions available",
-      "Postdoctoral fellowships"
-    ],
-    "contact": {
-      "text": "For more information about joining our group, please check our",
-      "link_text": "openings page",
-      "link_url": "openings.html"
+  "phd_students": [
+    {
+      "name": "Alice Wang",
+      "title": "PhD Student (3rd year)",
+      "bio": "medical image analysis, generative adversarial networks.",
+      "image": "images/placeholder-person.svg",
+      "links": {
+        "email": "mailto:alice.wang@example.edu",
+        "scholar": "https://scholar.google.com/citations?user=alicewang",
+        "github": "https://github.com/alicewang"
+      }
     }
-  }
+  ],
+  "master_students": [
+    {
+      "name": "Bob Chen",
+      "title": "Master Student (2nd year)",
+      "bio": "computer vision, autonomous driving",
+      "image": "images/placeholder-person.svg",
+      "links": {
+        "email": "mailto:bob.chen@example.edu",
+        "github": "https://github.com/bobchen"
+      }
+    },
+    {
+      "name": "Carol Li",
+      "title": "Master Student (1st year)",
+      "bio": "natural language processing, multimodal learning.",
+      "image": "images/placeholder-person.svg",
+      "links": {
+        "email": "mailto:carol.li@example.edu",
+        "linkedin": "https://linkedin.com/in/carolli"
+      }
+    }
+  ],
+  "undergraduate_students": [
+    {
+      "name": "David Zhang",
+      "title": "Undergraduate Researcher (Senior)",
+      "bio": "image classification, data augmentation.",
+      "image": "images/placeholder-person.svg",
+      "links": {
+        "email": "mailto:david.zhang@example.edu",
+        "github": "https://github.com/davidzhang"
+      }
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Dr. Jane Smith",
+      "title": "Former Postdoc (2020-2023)",
+      "current_position": "Assistant Professor",
+      "image": "images/placeholder-person.svg",
+      "links": {
+        "homepage": "https://example.com/janesmith",
+        "scholar": "https://scholar.google.com/citations?user=janesmith"
+      }
+    },
+    {
+      "name": "John Doe",
+      "title": "PhD Graduate (2019-2023)",
+      "current_position": "Research Scientist",
+      "image": "images/placeholder-person.svg",
+      "links": {
+        "homepage": "https://johndoe.example.com",
+        "scholar": "https://scholar.google.com/citations?user=johndoe"
+      }
+    }
+  ]
 }

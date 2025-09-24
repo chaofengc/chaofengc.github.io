@@ -9,8 +9,10 @@ class NavigationGenerator {
         this.navigationItems = [
             { name: "About", href: "index.html", id: "home" },
             { name: "Publications", href: "publications.html", id: "publications" },
-            { name: "Group", href: "group.html", id: "group", hidden: true }, // Currently commented out
-            { name: "Openings", href: "openings.html", id: "openings" }
+            // { name: "Projects", href: "projects.html", id: "projects" },
+            // { name: "Group", href: "group.html", id: "group" },
+            { name: "Openings", href: "openings.html", id: "openings" },
+            // { name: "Gallery", href: "gallery.html", id: "gallery" }
         ];
     }
 
@@ -27,6 +29,8 @@ class NavigationGenerator {
             '': 'home', // Root path
             'publications.html': 'publications',
             'group.html': 'group',
+            'projects.html': 'projects',
+            'gallery.html': 'gallery',
             'openings.html': 'openings'
         };
         
@@ -90,7 +94,23 @@ class NavigationGenerator {
         // Insert at the beginning of body
         const body = document.body;
         if (body) {
+            // Add page loading class to prevent flash
+            body.classList.add('page-loading');
+            
             body.insertAdjacentHTML('afterbegin', navigationHTML);
+            
+            // 确保导航条立即可见，避免闪烁
+            const header = document.querySelector('.site-header');
+            if (header) {
+                // 强制重绘以确保样式立即应用
+                header.offsetHeight;
+                
+                // Remove loading class after navigation is ready
+                requestAnimationFrame(() => {
+                    body.classList.remove('page-loading');
+                    body.classList.add('page-loaded');
+                });
+            }
         }
     }
 
@@ -126,6 +146,7 @@ class NavigationGenerator {
      */
     initScrollEffect() {
         let ticking = false;
+        let isInitialized = false;
         
         const updateNavigation = () => {
             const header = document.querySelector('.site-header');
@@ -134,6 +155,7 @@ class NavigationGenerator {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const threshold = 100; // 滚动超过100px时触发透明效果
             
+            // 立即设置初始状态，避免闪烁
             if (scrollTop > threshold) {
                 header.classList.add('scrolled');
             } else {
@@ -150,11 +172,20 @@ class NavigationGenerator {
             }
         };
         
-        // 监听滚动事件
-        window.addEventListener('scroll', requestTick, { passive: true });
+        // 立即设置初始状态
+        const header = document.querySelector('.site-header');
+        if (header) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            }
+            isInitialized = true;
+        }
         
-        // 初始检查
-        updateNavigation();
+        // 监听滚动事件
+        window.addEventListener('scroll', () => {
+            requestTick();
+        }, { passive: true });
     }
 
     /**
