@@ -43,18 +43,24 @@
     "wu2024towards": {
       "image": "images/ECCV2024_CoInstruct.png",
       "pdf": "https://arxiv.org/abs/2402.16641",
-      "github": "https://github.com/Q-Future/Co-Instruct"
+      "github": "https://github.com/Q-Future/Co-Instruct",
+      "co_first_authors": ["Haoning Wu", "Hanwei Zhu", "Zicheng Zhang"],
+      "corresponding_authors": ["Weisi Lin"]
     },
     "chen2024enhancing": {
       "select": true,
       "image": "images/arXiv2023_texforce.jpg",
       "pdf": "https://arxiv.org/abs/2311.15657",
-      "github": "https://github.com/chaofengc/TexForce"
+      "github": "https://github.com/chaofengc/TexForce",
+      "co_first_authors": ["Chaofeng Chen", "Annan Wang"],
+      "corresponding_authors": ["Weisi Lin"]
     },
     "wu2024qalign": {
       "image": "images/onescorer.png",
       "pdf": "https://arxiv.org/abs/2312.17090",
-      "github": "https://github.com/Q-Future/Q-Align"
+      "github": "https://github.com/Q-Future/Q-Align",
+      "co_first_authors": ["Haoning Wu", "Zicheng Zhang"],
+      "corresponding_authors": ["Weisi Lin"]
     },
     "xu2024local": {
       "pdf": "https://arxiv.org/abs/2308.12001"
@@ -62,13 +68,17 @@
     "wu2024qinstruct": {
       "image": "images/qinstruct.jpg",
       "pdf": "https://arxiv.org/abs/2311.06783",
-      "github": "https://github.com/Q-Future/Q-Instruct"
+      "github": "https://github.com/Q-Future/Q-Instruct",
+      "co_first_authors": ["Haoning Wu", "Zicheng Zhang", "Erli Zhang"],
+      "corresponding_authors": ["Weisi Lin"]
     },
     "wu2024qbench": {
       "select": true,
       "image": "images/qbench.png",
       "pdf": "https://arxiv.org/abs/2309.14181",
-      "github": "https://github.com/Q-Future/Q-Bench"
+      "github": "https://github.com/Q-Future/Q-Bench",
+      "co_first_authors": ["Haoning Wu", "Zicheng Zhang", "Erli Zhang"],
+      "corresponding_authors": ["Weisi Lin"]
     },
     "chen2024iter": {
       "select": true,
@@ -115,7 +125,8 @@
       "select": true,
       "image": "images/MM2022_FeMaSR.jpg",
       "pdf": "https://arxiv.org/abs/2202.13142",
-      "github": "https://github.com/chaofengc/FeMaSR"
+      "github": "https://github.com/chaofengc/FeMaSR",
+      "co_first_authors": ["Chaofeng Chen", "Xinyu Shi"]
     },
     "liao2022tpqi": {
       "image": "images/MM2022_TPQI.jpg",
@@ -157,6 +168,7 @@
     "chen2018pyramid": {
       "image": "images/WACV2018_face_sketch_pcf.png",
       "pdf": "https://arxiv.org/abs/2009.08679",
+      "co_first_authors": ["Chaofeng Chen", "Xiao Tan"],
       "github": "https://github.com/chaofengc/Face-Sketch"
     },
     "liu2018charnet": {

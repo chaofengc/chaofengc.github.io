@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pub.author) {
       const authors = document.createElement('div');
       authors.className = 'publication-authors';
-      authors.innerHTML = formatAuthorsWithLinks(pub.author);
+      authors.innerHTML = formatAuthorsWithLinks(pub.author, pubConfig);
       contentDiv.appendChild(authors);
     }
     
@@ -155,9 +155,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pubConfig.venue) {
       venueText = `${pubConfig.venue}, ${pub.year}`;
     } else if (pub.type === 'article') {
-      venueText = `${pub.journal || ''}${pub.volume ? ', ' + pub.volume : ''}${pub.number ? '(' + pub.number + ')' : ''}${pub.pages ? ': ' + pub.pages : ''}, ${pub.year}`;
+      // venueText = `${pub.journal || ''}${pub.volume ? ', ' + pub.volume : ''}${pub.number ? '(' + pub.number + ')' : ''}, ${pub.year}`;
+      venueText = `${pub.journal || ''}, ${pub.year}`;
     } else if (pub.type === 'inproceedings' || pub.type === 'conference') {
-      venueText = `${pub.booktitle || ''}${pub.pages ? ', pp. ' + pub.pages : ''}, ${pub.year}`;
+      venueText = `${pub.booktitle || ''}, ${pub.year}`;
     } else {
       venueText = `${pub.publisher || ''}, ${pub.year}`;
     }
@@ -402,20 +403,34 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   /**
-   * Format author list with clickable links
+   * Format author list with clickable links and indicators
    * @param {string} authors Authors string
-   * @returns {string} Formatted author list with HTML links
+   * @param {Object} pubConfig Publication configuration object
+   * @returns {string} Formatted author list with HTML links and indicators
    */
-  function formatAuthorsWithLinks(authors) {
+  function formatAuthorsWithLinks(authors, pubConfig = {}) {
     const authorList = authors.split(' and ');
+    const coFirstAuthors = pubConfig.co_first_authors || [];
+    const correspondingAuthors = pubConfig.corresponding_authors || [];
+    
     return authorList.map(author => {
       const trimmedAuthor = author.trim();
       const coauthorInfo = coauthorsData?.coauthors?.[trimmedAuthor];
       
       // Make Chaofeng Chen bold (with or without asterisk)
       let formattedAuthor = trimmedAuthor;
-      if (trimmedAuthor === 'Chaofeng Chen' || trimmedAuthor === 'Chaofeng Chen*') {
+      if (trimmedAuthor === 'Chaofeng Chen') {
         formattedAuthor = `<strong>${trimmedAuthor}</strong>`;
+      }
+      
+      // Add co-first author indicator (*)
+      if (coFirstAuthors.includes(trimmedAuthor)) {
+        formattedAuthor += '<sup>*</sup>';
+      }
+      
+      // Add corresponding author indicator (envelope icon)
+      if (correspondingAuthors.includes(trimmedAuthor)) {
+        formattedAuthor += '<sup>✉</sup>';
       }
       
       if (coauthorInfo && coauthorInfo.website) {

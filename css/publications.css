@@ -963,3 +963,23 @@ body.publications-page .publication-venue a:hover {
     gap: 6px;
   }
 }
+
+/* Author Notation Styles */
+.author-notation-inline {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 0.45em;
+}
+
+.notation-item {
+  color: var(--light-text-color);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.notation-item sup {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-style: normal;
+}
