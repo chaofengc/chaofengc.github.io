@@ -7,7 +7,7 @@ class NavigationGenerator {
     constructor() {
         this.siteTitle = "CHEN Chaofeng";
         this.navigationItems = [
-            { name: "Home", href: "index.html", id: "home" },
+            { name: "About", href: "index.html", id: "home" },
             { name: "Publications", href: "publications.html", id: "publications" },
             { name: "Group", href: "group.html", id: "group", hidden: true }, // Currently commented out
             { name: "Openings", href: "openings.html", id: "openings" }

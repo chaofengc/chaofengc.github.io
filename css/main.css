@@ -90,7 +90,7 @@ ul, ol {
 
 /* 滚动时的透明效果 */
 .site-header.scrolled {
-  background-color: rgba(248, 249, 250, 0.85);
+  background-color: rgba(248, 249, 250, 0.9);
   /* backdrop-filter: blur(10px); */
   /* -webkit-backdrop-filter: blur(10px); */
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
