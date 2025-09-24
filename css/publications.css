@@ -300,7 +300,7 @@ body.publications-page .publication-venue a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
   justify-content: center;
   text-align: center;
   min-height: 50px; /* Prevent layout shift */
