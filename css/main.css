@@ -638,12 +638,6 @@ section h2 {
   min-height: 300px; /* Prevent layout shift during loading */
 }
 
-/* Group and Openings Pages */
-.group-section, .openings-section {
-  padding: 40px 0;
-  min-height: 60vh; /* Prevent layout shift */
-}
-
 .lab-title-row {
   display: flex;
   align-items: center;
@@ -821,7 +815,7 @@ section h2 {
 
 .group-description, .openings-intro {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 1.1em;
   color: var(--light-text-color);
 }
@@ -862,9 +856,9 @@ section h2 {
 }
 
 .opening-card {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: left;
-  padding: 18px 20px;
+  padding: 15px 20px;
 }
 
 .opening-card:hover {
