@@ -258,7 +258,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Initialize if we're on the group page
-  if (document.querySelector('.group-section')) {
+  // Check for group page elements to determine if we should initialize
+  if (document.getElementById('phd-members') || 
+      document.getElementById('master-members') || 
+      document.getElementById('undergraduate-members') || 
+      document.querySelector('.alumni-list')) {
     init();
   }
 });
