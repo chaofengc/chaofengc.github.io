@@ -94,23 +94,7 @@ class NavigationGenerator {
         // Insert at the beginning of body
         const body = document.body;
         if (body) {
-            // Add page loading class to prevent flash
-            body.classList.add('page-loading');
-            
             body.insertAdjacentHTML('afterbegin', navigationHTML);
-            
-            // 确保导航条立即可见，避免闪烁
-            const header = document.querySelector('.site-header');
-            if (header) {
-                // 强制重绘以确保样式立即应用
-                header.offsetHeight;
-                
-                // Remove loading class after navigation is ready
-                requestAnimationFrame(() => {
-                    body.classList.remove('page-loading');
-                    body.classList.add('page-loaded');
-                });
-            }
         }
     }
 

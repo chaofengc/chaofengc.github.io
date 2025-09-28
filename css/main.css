@@ -289,10 +289,65 @@ header {
   display: inline-block;
   margin-right: 15px;
   margin-bottom: 5px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  transform: translateY(-2px);
 }
 
 .contact-info i {
   margin-right: 5px;
+}
+
+/* 为每个联系方式设置特定的品牌颜色 */
+.contact-gmail i {
+  color: #EA4335;
+}
+
+.contact-gmail:hover {
+  color: #EA4335;
+}
+
+.contact-university i {
+  color: #115740;
+}
+
+.contact-university:hover {
+  color: #115740;
+}
+
+.contact-github i {
+  color: #333;
+}
+
+.contact-github:hover {
+  color: #333;
+}
+
+.contact-scholar i {
+  color: #4285F4;
+}
+
+.contact-scholar:hover {
+  color: #4285F4;
+}
+
+.contact-cv i {
+  color: #6B7280;
+}
+
+.contact-cv:hover {
+  color: #6B7280;
+}
+
+.contact-zhihu i {
+  color: #0084FF;
+}
+
+.contact-zhihu:hover {
+  color: #0084FF;
 }
 
 /* 内容部分 */
