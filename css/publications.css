@@ -226,6 +226,12 @@ body.publications-page .publication-links a {
   line-height: 1.15;
 }
 
+/* Acceptance info styling: bold red, placed after the year */
+.accept-info {
+  color: #c00;
+  font-weight: 700;
+}
+
 /* Inline links in venue for publications page */
 body.publications-page .publication-venue a {
   color: var(--accent-color);

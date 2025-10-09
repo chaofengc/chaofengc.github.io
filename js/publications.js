@@ -150,18 +150,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if we're on publications page
     const isPublicationsPage = document.body.classList.contains('publications-page');
     
-    // Build venue text
-    let venueText = '';
-    if (pubConfig.venue) {
-      venueText = `${pubConfig.venue}, ${pub.year}`;
-    } else if (pub.type === 'article') {
-      // venueText = `${pub.journal || ''}${pub.volume ? ', ' + pub.volume : ''}${pub.number ? '(' + pub.number + ')' : ''}, ${pub.year}`;
-      venueText = `${pub.journal || ''}, ${pub.year}`;
-    } else if (pub.type === 'inproceedings' || pub.type === 'conference') {
-      venueText = `${pub.booktitle || ''}, ${pub.year}`;
-    } else {
-      venueText = `${pub.publisher || ''}, ${pub.year}`;
+    // Build venue HTML with bold abbreviations and optional acceptance info
+    // Helper to bold abbreviations inside parentheses, e.g., (ECCV) -> (<strong>ECCV</strong>)
+    function boldAbbreviations(text) {
+      if (!text) return '';
+      return text.replace(/\(([^)]+)\)/g, '(<strong>$1</strong>)');
     }
+
+    const acceptInfo = pubConfig.accept_info ? `(<span class="accept-info">${pubConfig.accept_info}</span>)` : '';
+
+    let venueCore = '';
+    if (pubConfig.venue) {
+      venueCore = boldAbbreviations(pubConfig.venue);
+    } else if (pub.type === 'article') {
+      venueCore = boldAbbreviations(pub.journal || '');
+    } else if (pub.type === 'inproceedings' || pub.type === 'conference') {
+      venueCore = boldAbbreviations(pub.booktitle || '');
+    } else {
+      venueCore = boldAbbreviations(pub.publisher || '');
+    }
+
+    const venueHtml = `${venueCore}, ${pub.year || ''}${acceptInfo ? ' ' + acceptInfo : ''}`;
     
     // If on publications page, add inline links to venue
     if (isPublicationsPage) {
@@ -186,14 +195,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // BibTeX link
       inlineLinks.push(`<a href="#" class="cite-link" data-key="${pub.citeKey || pub.key || pub.id}">Cite</a>`);
       
-      // Combine venue text with links
+      // Combine venue HTML with links
       if (inlineLinks.length > 0) {
-        venue.innerHTML = `${venueText} | ${inlineLinks.join(' | ')}`;
+        venue.innerHTML = `${venueHtml} | ${inlineLinks.join(' | ')}`;
       } else {
-        venue.textContent = venueText;
+        venue.innerHTML = venueHtml;
       }
     } else {
-      venue.textContent = venueText;
+      venue.innerHTML = venueHtml;
     }
     
     contentDiv.appendChild(venue);

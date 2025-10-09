@@ -14,7 +14,8 @@
       "select": true,
       "image": "images/MM2024_QGround.jpg",
       "pdf": "https://arxiv.org/abs/2407.17035",
-      "github": "https://github.com/Q-Future/Q-Ground"
+      "github": "https://github.com/Q-Future/Q-Ground",
+      "accept_info": "Oral, 3.97%"
     },
     "wu2024t2iscorer": {
       "pdf": "",
@@ -22,11 +23,13 @@
     },
     "li2024grefine": {
       "pdf": "https://arxiv.org/abs/2404.18343",
-      "github": "https://github.com/Q-Future/Q-Refine"
+      "github": "https://github.com/Q-Future/Q-Refine",
+      "accept_info": "Oral, 3.97%"
     },
     "zhang2024lmmpcqa": {
       "pdf": "https://arxiv.org/abs/2404.18203",
-      "github": "https://github.com/Q-Future/LMM-PCQA"
+      "github": "https://github.com/Q-Future/LMM-PCQA",
+      "accept_info": "Oral, 3.97%"
     },
     "yao2024combining": {
       "pdf": "https://arxiv.org/abs/2410.09911",
@@ -45,7 +48,8 @@
       "pdf": "https://arxiv.org/abs/2402.16641",
       "github": "https://github.com/Q-Future/Co-Instruct",
       "co_first_authors": ["Haoning Wu", "Hanwei Zhu", "Zicheng Zhang"],
-      "corresponding_authors": ["Weisi Lin"]
+      "corresponding_authors": ["Weisi Lin"],
+      "accept_info": "Oral"
     },
     "chen2024enhancing": {
       "select": true,
@@ -78,7 +82,8 @@
       "pdf": "https://arxiv.org/abs/2309.14181",
       "github": "https://github.com/Q-Future/Q-Bench",
       "co_first_authors": ["Haoning Wu", "Zicheng Zhang", "Erli Zhang"],
-      "corresponding_authors": ["Weisi Lin"]
+      "corresponding_authors": ["Weisi Lin"],
+      "accept_info": "Spotlight, 4.96%"
     },
     "chen2024iter": {
       "select": true,
@@ -89,7 +94,8 @@
     "wu2023explainable": {
       "image": "",
       "pdf": "https://arxiv.org/abs/2305.12726",
-      "github": "https://github.com/VQAssessment/ExplainableVQA"
+      "github": "https://github.com/VQAssessment/ExplainableVQA",
+      "accept_info": "Oral"
     },
     "wu2023dover": {
       "image": "images/ICCV2023_DOVER.png",
@@ -126,11 +132,13 @@
       "image": "images/MM2022_FeMaSR.jpg",
       "pdf": "https://arxiv.org/abs/2202.13142",
       "github": "https://github.com/chaofengc/FeMaSR",
+      "accept_info": "Oral, 5.9%",
       "co_first_authors": ["Chaofeng Chen", "Xinyu Shi"]
     },
     "liao2022tpqi": {
       "image": "images/MM2022_TPQI.jpg",
       "pdf": "https://arxiv.org/abs/2207.03723",
+      "accept_info": "Oral, 5.9%",
       "github": "https://github.com/UoLMM/TPQI-VQA"
     },
     "hao2022unified": {
@@ -173,6 +181,7 @@
     },
     "liu2018charnet": {
       "image": "images/AAAI2018_char_net.png",
+      "accept_info": "Oral",
       "pdf": "http://www.visionlab.cs.hku.hk/publications/wliu_aaai18.pdf"
     },
     "liu2016starnet": {
