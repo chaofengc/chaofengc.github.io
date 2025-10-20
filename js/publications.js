@@ -100,175 +100,179 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {boolean} isIndexPage Whether this is for index page
    * @returns {HTMLElement} Publication element
    */
-  function createPublicationElement(pub, isIndexPage = false) {
-    const pubElement = document.createElement('div');
-    pubElement.className = 'publication-item';
-    
-    // Get publication config data
-    const pubConfig = publicationConfig?.publications?.[pub.citeKey] || {};
-    
-    // Add selected/highlighted class if select field is true, but not on index page
-    if (!isIndexPage && (pubConfig.select === true || pub.highlight === true)) {
-      pubElement.classList.add('publication-highlighted');
-    }
-    
-    // Image (left side) - only show on index page
-    if (isIndexPage) {
-      const image = document.createElement('img');
-      image.className = 'publication-image';
-      // Use image from publication config first, then fallback to pub.image or placeholder
-      image.src = pubConfig.image || pub.image || 'assets/publication-placeholder.jpg';
-      image.alt = pub.title || 'Publication';
-      image.onerror = function() {
-        this.src = 'https://via.placeholder.com/150x200/f0f0f0/808080?text=Publication';
-      };
-      pubElement.appendChild(image);
-    }
-    
-    // Content container (right side)
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'publication-content';
-    
-    // Title
-    const title = document.createElement('div');
-    title.className = 'publication-title';
-    title.textContent = pub.title || 'Untitled';
-    contentDiv.appendChild(title);
-    
-    // Authors
-    if (pub.author) {
-      const authors = document.createElement('div');
-      authors.className = 'publication-authors';
-      authors.innerHTML = formatAuthorsWithLinks(pub.author, pubConfig);
-      contentDiv.appendChild(authors);
-    }
-    
-    // Publication info
-    const venue = document.createElement('div');
-    venue.className = 'publication-venue';
-    
-    // Check if we're on publications page
-    const isPublicationsPage = document.body.classList.contains('publications-page');
-    
-    // Build venue HTML with bold abbreviations and optional acceptance info
-    // Helper to bold abbreviations inside parentheses, e.g., (ECCV) -> (<strong>ECCV</strong>)
-    function boldAbbreviations(text) {
-      if (!text) return '';
-      return text.replace(/\(([^)]+)\)/g, '(<strong>$1</strong>)');
-    }
-
-    const acceptInfo = pubConfig.accept_info ? `(<span class="accept-info">${pubConfig.accept_info}</span>)` : '';
-
-    let venueCore = '';
-    if (pubConfig.venue) {
-      venueCore = boldAbbreviations(pubConfig.venue);
-    } else if (pub.type === 'article') {
-      venueCore = boldAbbreviations(pub.journal || '');
-    } else if (pub.type === 'inproceedings' || pub.type === 'conference') {
-      venueCore = boldAbbreviations(pub.booktitle || '');
-    } else {
-      venueCore = boldAbbreviations(pub.publisher || '');
-    }
-
-    const venueHtml = `${venueCore}, ${pub.year || ''}${acceptInfo ? ' ' + acceptInfo : ''}`;
-    
-    // If on publications page, add inline links to venue
-    if (isPublicationsPage) {
-      const inlineLinks = [];
+    function createPublicationElement(pub, isIndexPage = false) {
+      const pubElement = document.createElement('div');
+      pubElement.className = 'publication-item';
       
-      // PDF link
-      if (pubConfig.pdf || pub.url || pub.pdf) {
-        inlineLinks.push(`<a href="${pubConfig.pdf || pub.url || pub.pdf || '#'}" target="_blank">PDF</a>`);
+      // Get publication config data
+      const pubConfig = publicationConfig?.publications?.[pub.citeKey] || {};
+      
+      // Add selected/highlighted class if select field is true, but not on index page
+      if (!isIndexPage && (pubConfig.select === true || pub.highlight === true)) {
+        pubElement.classList.add('publication-highlighted');
       }
       
-      // Code link (plain text, no badge)
-      const codeUrl = pubConfig.github || pub.github || pubConfig.code || pub.code;
-      if (codeUrl) {
-        inlineLinks.push(`<a href="${codeUrl}" target="_blank">GitHub</a>`);
+      // Image (left side) - only show on index page
+      if (isIndexPage) {
+        const image = document.createElement('img');
+        image.className = 'publication-image';
+        // Use image from publication config first, then fallback to pub.image or placeholder
+        image.src = pubConfig.image || pub.image || 'assets/publication-placeholder.jpg';
+        image.alt = pub.title || 'Publication';
+        image.onerror = function() {
+          this.src = 'https://via.placeholder.com/150x200/f0f0f0/808080?text=Publication';
+        };
+        pubElement.appendChild(image);
       }
       
-      // DOI link
-      if (pub.doi) {
-        inlineLinks.push(`<a href="https://doi.org/${pub.doi}" target="_blank">DOI</a>`);
+      // Content container (right side)
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'publication-content';
+      
+      // Title
+      const title = document.createElement('div');
+      title.className = 'publication-title';
+      title.textContent = pub.title || 'Untitled';
+      contentDiv.appendChild(title);
+      
+      // Authors
+      if (pub.author) {
+        const authors = document.createElement('div');
+        authors.className = 'publication-authors';
+        authors.innerHTML = formatAuthorsWithLinks(pub.author, pubConfig);
+        contentDiv.appendChild(authors);
       }
       
-      // BibTeX link
-      inlineLinks.push(`<a href="#" class="cite-link" data-key="${pub.citeKey || pub.key || pub.id}">Cite</a>`);
+      // Publication info
+      const venue = document.createElement('div');
+      venue.className = 'publication-venue';
       
-      // Combine venue HTML with links
-      if (inlineLinks.length > 0) {
-        venue.innerHTML = `${venueHtml} | ${inlineLinks.join(' | ')}`;
+      // Check if we're on publications page
+      const isPublicationsPage = document.body.classList.contains('publications-page');
+      
+      // Build venue HTML with bold abbreviations and optional acceptance info
+      // Helper to bold abbreviations inside parentheses, e.g., (ECCV) -> (<strong>ECCV</strong>)
+      function boldAbbreviations(text) {
+        if (!text) return '';
+        return text.replace(/\(([^)]+)\)/g, '(<strong>$1</strong>)');
+      }
+  
+      const acceptInfo = pubConfig.accept_info ? `(<span class="accept-info">${pubConfig.accept_info}</span>)` : '';
+  
+      let venueCore = '';
+      if (pubConfig.venue) {
+        venueCore = boldAbbreviations(pubConfig.venue);
+      } else if (pub.type === 'article') {
+        venueCore = boldAbbreviations(pub.journal || '');
+      } else if (pub.type === 'inproceedings' || pub.type === 'conference') {
+        venueCore = boldAbbreviations(pub.booktitle || '');
+      } else if (pub.type === 'preprint' || pub.type === 'misc' || 
+                (pub.archivePrefix && pub.archivePrefix.toLowerCase() === 'arxiv') ||
+                (pub.keywords && pub.keywords.includes('preprint'))) {
+        venueCore = boldAbbreviations('arXiv');
+      } else {
+        venueCore = boldAbbreviations(pub.publisher || '');
+      }
+  
+      const venueHtml = `${venueCore}, ${pub.year || ''}${acceptInfo ? ' ' + acceptInfo : ''}`;
+      
+      // If on publications page, add inline links to venue
+      if (isPublicationsPage) {
+        const inlineLinks = [];
+        
+        // PDF link
+        if (pubConfig.pdf || pub.url || pub.pdf) {
+          inlineLinks.push(`<a href="${pubConfig.pdf || pub.url || pub.pdf || '#'}" target="_blank">PDF</a>`);
+        }
+        
+        // Code link (plain text, no badge)
+        const codeUrl = pubConfig.github || pub.github || pubConfig.code || pub.code;
+        if (codeUrl) {
+          inlineLinks.push(`<a href="${codeUrl}" target="_blank">GitHub</a>`);
+        }
+        
+        // DOI link
+        if (pub.doi) {
+          inlineLinks.push(`<a href="https://doi.org/${pub.doi}" target="_blank">DOI</a>`);
+        }
+        
+        // BibTeX link
+        inlineLinks.push(`<a href="#" class="cite-link" data-key="${pub.citeKey || pub.key || pub.id}">Cite</a>`);
+        
+        // Combine venue HTML with links
+        if (inlineLinks.length > 0) {
+          venue.innerHTML = `${venueHtml} | ${inlineLinks.join(' | ')}`;
+        } else {
+          venue.innerHTML = venueHtml;
+        }
       } else {
         venue.innerHTML = venueHtml;
       }
-    } else {
-      venue.innerHTML = venueHtml;
-    }
-    
-    contentDiv.appendChild(venue);
-    
-    // Only create traditional links layout for index page
-    if (!isPublicationsPage) {
-      // Year and Links container
-      const yearLinksContainer = document.createElement('div');
-      yearLinksContainer.className = 'year-links-container';
-      contentDiv.appendChild(yearLinksContainer);
       
-      // Links
-      const links = document.createElement('div');
-      links.className = 'publication-links';
-      yearLinksContainer.appendChild(links);
+      contentDiv.appendChild(venue);
       
-      // PDF link from config
-      if (pubConfig.pdf || pub.url || pub.pdf) {
-        const pdfLink = document.createElement('a');
-        pdfLink.href = pubConfig.pdf || pub.url || pub.pdf || '#';
-        pdfLink.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
-        pdfLink.target = '_blank';
-        links.appendChild(pdfLink);
-      }
-      
-      // Code link from config or bib (check both 'github' and 'code' fields)
-      const codeUrl = pubConfig.github || pub.github || pubConfig.code || pub.code;
-      if (codeUrl) {
-        // GitHub stars badge for index page
-        if (codeUrl.includes('github.com')) {
-          const githubUrl = codeUrl.replace('https://github.com/', '').replace('http://github.com/', '');
-          const repoPath = githubUrl.split('/').slice(0, 2).join('/');
-          if (repoPath.includes('/')) {
-            const starsLink = document.createElement('a');
-            starsLink.href = codeUrl;
-            starsLink.target = '_blank';
-            starsLink.className = 'github-stars';
-            starsLink.innerHTML = `<img src="https://img.shields.io/github/stars/${repoPath}?style=social" alt="GitHub stars" style="vertical-align: middle;">`;
-            links.appendChild(starsLink);
+      // Only create traditional links layout for index page
+      if (!isPublicationsPage) {
+        // Year and Links container
+        const yearLinksContainer = document.createElement('div');
+        yearLinksContainer.className = 'year-links-container';
+        contentDiv.appendChild(yearLinksContainer);
+        
+        // Links
+        const links = document.createElement('div');
+        links.className = 'publication-links';
+        yearLinksContainer.appendChild(links);
+        
+        // PDF link from config
+        if (pubConfig.pdf || pub.url || pub.pdf) {
+          const pdfLink = document.createElement('a');
+          pdfLink.href = pubConfig.pdf || pub.url || pub.pdf || '#';
+          pdfLink.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
+          pdfLink.target = '_blank';
+          links.appendChild(pdfLink);
+        }
+        
+        // Code link from config or bib (check both 'github' and 'code' fields)
+        const codeUrl = pubConfig.github || pub.github || pubConfig.code || pub.code;
+        if (codeUrl) {
+          // GitHub stars badge for index page
+          if (codeUrl.includes('github.com')) {
+            const githubUrl = codeUrl.replace('https://github.com/', '').replace('http://github.com/', '');
+            const repoPath = githubUrl.split('/').slice(0, 2).join('/');
+            if (repoPath.includes('/')) {
+              const starsLink = document.createElement('a');
+              starsLink.href = codeUrl;
+              starsLink.target = '_blank';
+              starsLink.className = 'github-stars';
+              starsLink.innerHTML = `<img src="https://img.shields.io/github/stars/${repoPath}?style=social" alt="GitHub stars" style="vertical-align: middle;">`;
+              links.appendChild(starsLink);
+            }
           }
         }
+        
+        // DOI link
+        if (pub.doi) {
+          const doiLink = document.createElement('a');
+          doiLink.href = `https://doi.org/${pub.doi}`;
+          doiLink.innerHTML = '<i class="fas fa-external-link-alt"></i> DOI';
+          doiLink.target = '_blank';
+          links.appendChild(doiLink);
+        }
+        
+        // BibTeX citation
+        const citeLink = document.createElement('a');
+        citeLink.href = '#';
+        citeLink.innerHTML = '<i class="fas fa-quote-right"></i> Cite';
+        citeLink.onclick = function(e) {
+          e.preventDefault();
+          showBibtex(pub, pubElement);
+        };
+        links.appendChild(citeLink);
       }
       
-      // DOI link
-      if (pub.doi) {
-        const doiLink = document.createElement('a');
-        doiLink.href = `https://doi.org/${pub.doi}`;
-        doiLink.innerHTML = '<i class="fas fa-external-link-alt"></i> DOI';
-        doiLink.target = '_blank';
-        links.appendChild(doiLink);
-      }
-      
-      // BibTeX citation
-      const citeLink = document.createElement('a');
-      citeLink.href = '#';
-      citeLink.innerHTML = '<i class="fas fa-quote-right"></i> Cite';
-      citeLink.onclick = function(e) {
-        e.preventDefault();
-        showBibtex(pub, pubElement);
-      };
-      links.appendChild(citeLink);
+      pubElement.appendChild(contentDiv);
+      return pubElement;
     }
-    
-    pubElement.appendChild(contentDiv);
-    return pubElement;
-  }
   
   /**
    * Render publications for index page with journal and conference sections

@@ -1,5 +1,8 @@
 {
   "publications": {
+    "li20252dgaussiansplattingsemantic": {
+      "pdf": "https://arxiv.org/abs/2509.01964"
+    },
     "mi2025mvqa": {
       "image": "images/ICCV2025_mvqa.png",
       "pdf": "https://arxiv.org/abs/2504.16003"
