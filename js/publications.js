@@ -279,12 +279,14 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {Array} publications Publications array
    */
   function renderIndexPublications(publications) {
+    const preprintContainer = document.getElementById('preprint-publications');
     const journalContainer = document.getElementById('journal-publications');
     const conferenceContainer = document.getElementById('conference-publications');
     
-    if (!journalContainer || !conferenceContainer) return;
+    if (!journalContainer || !conferenceContainer || !preprintContainer) return;
     
     // Clear containers
+    preprintContainer.innerHTML = '';
     journalContainer.innerHTML = '';
     conferenceContainer.innerHTML = '';
     
@@ -295,10 +297,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Separate by type
+    const preprintPubs = selectedPublications.filter(pub => pub.type === 'preprint' || pub.type === 'misc'); 
     const journalPubs = selectedPublications.filter(pub => pub.type === 'article');
     const conferencePubs = selectedPublications.filter(pub => 
       pub.type === 'inproceedings' || pub.type === 'conference'
     );
+
+    // Render preprint publications
+    if (preprintPubs.length === 0) {
+      // Hide the entire preprint section
+      const preprintSection = preprintContainer.closest('.publication-section');
+      if (preprintSection) {
+        preprintSection.style.display = 'none';
+      }
+      preprintContainer.innerHTML = '<div class="no-publications">No selected preprint papers found</div>';
+    } else {
+      // Ensure the section is visible if there are preprints
+      const preprintSection = preprintContainer.closest('.publication-section');
+      if (preprintSection) {
+        preprintSection.style.display = 'block';
+      }
+      preprintPubs.forEach(pub => {
+        preprintContainer.appendChild(createPublicationElement(pub, true));
+      });
+    }
+
+    // Render conference publications
+    if (conferencePubs.length === 0) {
+      conferenceContainer.innerHTML = '<div class="no-publications">No selected conference papers found</div>';
+    } else {
+      conferencePubs.forEach(pub => {
+        conferenceContainer.appendChild(createPublicationElement(pub, true));
+      });
+    }
     
     // Render journal publications
     if (journalPubs.length === 0) {
@@ -306,15 +337,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       journalPubs.forEach(pub => {
         journalContainer.appendChild(createPublicationElement(pub, true));
-      });
-    }
-    
-    // Render conference publications
-    if (conferencePubs.length === 0) {
-      conferenceContainer.innerHTML = '<div class="no-publications">No selected conference papers found</div>';
-    } else {
-      conferencePubs.forEach(pub => {
-        conferenceContainer.appendChild(createPublicationElement(pub, true));
       });
     }
   }
@@ -763,9 +785,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (publicationsContainer) {
       publicationsContainer.classList.add('publications-loading');
       publicationsContainer.innerHTML = '<div class="loading">Loading publications...</div>';
-      
-      // Set minimum height to prevent layout shift
-      publicationsContainer.style.minHeight = '400px';
     }
     
     // Load coauthors and publication config data

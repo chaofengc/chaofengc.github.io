@@ -431,12 +431,6 @@ body.publications-page .publication-venue a:hover {
   margin: 0 5px;
 }
 
-.selected-publications .publications-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .selected-publications .publication-item {
   flex: 1;
   min-width: 300px;
