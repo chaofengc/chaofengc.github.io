@@ -190,6 +190,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (codeUrl) {
           inlineLinks.push(`<a href="${codeUrl}" target="_blank">GitHub</a>`);
         }
+
+        // Project link
+        if (pubConfig.project) {
+          inlineLinks.push(`<a href="${pubConfig.project}" target="_blank">Project</a>`);
+        }
         
         // DOI link
         if (pub.doi) {
@@ -230,6 +235,14 @@ document.addEventListener('DOMContentLoaded', function() {
           pdfLink.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
           pdfLink.target = '_blank';
           links.appendChild(pdfLink);
+        }
+
+        if (pubConfig.project) {
+          const projectLink = document.createElement('a');
+          projectLink.href = pubConfig.project;
+          projectLink.innerHTML = '<i class="fas fa-link"></i> Project';
+          projectLink.target = '_blank';
+          links.appendChild(projectLink);
         }
         
         // Code link from config or bib (check both 'github' and 'code' fields)

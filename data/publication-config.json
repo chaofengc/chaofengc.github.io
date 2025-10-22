@@ -5,6 +5,7 @@
       "select": true,
       "pdf": "https://arxiv.org/abs/2510.02034",
       "corresponding_authors": ["Chaofeng Chen"],
+      "github": "https://github.com/baiyunshu/gaussionmorphing",
       "project": "https://baiyunshu.github.io/GAUSSIANMORPHING.github.io/"
     },
     "lan2025text4segpp": {
@@ -15,7 +16,8 @@
     "li20252dgaussiansplattingsemantic": {
       "image": "images/arxiv2025_gsinpaint.png",
       "select": true,
-      "pdf": "https://arxiv.org/abs/2509.01964"
+      "pdf": "https://arxiv.org/abs/2509.01964",
+      "github": "https://github.com/hitlhy715/2DGS_inpaint"
     },
     "mi2025mvqa": {
       "image": "images/ICCV2025_mvqa.png",
