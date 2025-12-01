@@ -21,7 +21,8 @@
     },
     "mi2025mvqa": {
       "image": "images/ICCV2025_mvqa.png",
-      "pdf": "https://arxiv.org/abs/2504.16003"
+      "pdf": "https://arxiv.org/abs/2504.16003",
+      "accept_info": "Highlight, 2.5%"
     },
     "lan2025reimagining": {
       "select": true,
@@ -37,7 +38,7 @@
       "accept_info": "Oral, 3.97%"
     },
     "wu2024t2iscorer": {
-      "pdf": "",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3664647.3680939",
       "github": ""
     },
     "li2024grefine": {
