@@ -3,77 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHEN Chaofeng</title>
+    <title>招生信息 | CHEN Chaofeng</title>
     <link rel="icon" type="image/svg+xml" href="images/site/space.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="js/navigation.js"></script>
+    <style>
+        body {
+            font-family: var(--font-family);
+        }
+        
+        /* 1. 全屏视觉头图 (Hero Section) */
+        .hero-visual {
+            position: relative;
+            padding: 100px 20px;
+            margin: -20px calc(-50vw + 50%); /* Full bleed trick */
+            margin-bottom: 60px;
+            border-radius: 0 0 40px 40px;
+            /* 采用渐变加背景图的组合展现现代化视觉 */
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.85), rgba(22, 160, 133, 0.85)), 
+                        url('images/site/whu_castle.jpg') center/cover fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 40px 60px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            max-width: 800px;
+            animation: translateY 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+
+        @keyframes translateY {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-glass-card h1 {
+            font-size: 3.2em;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero-glass-card p {
+            font-size: 1.3em;
+            color: rgba(255,255,255,0.95);
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* 2. 卡片与布局优化 */
+        .opening-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .opening-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        /* 标题带渐变修饰线 */
+        .opening-card h2 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .opening-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .opening-card h2 i {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 3. 特性图标网格设计 (Feature Grid) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .feature-item {
+            background: var(--surface-color);
+            padding: 30px 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #ffffff, #f8fcfd);
+            border-radius: 16px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: rgba(74, 144, 226, 0.2);
+        }
+        .feature-item:hover::before {
+            opacity: 1;
+        }
+        .feature-icon-wrapper {
+            width: 65px;
+            height: 65px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(22, 160, 133, 0.1));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover .feature-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
+        .feature-item:hover .feature-icon-wrapper i {
+            -webkit-text-fill-color: white; /* 悬停时图标变白 */
+        }
+        .feature-icon-wrapper i {
+            font-size: 2em;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s;
+        }
+        .feature-item h3 {
+            color: var(--secondary-color);
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .feature-item p {
+            margin: 0;
+            color: var(--light-text-color);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* 4. 标签视觉强化 (Tags) */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .tag.visual-tag {
+            background: #fff;
+            color: var(--text-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95em;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .tag.visual-tag i {
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+        .tag.visual-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+        }
+        .tag.visual-tag:hover i {
+            color: white;
+        }
+
+        /* 5. 相册占位/图片展示模块 (环境与氛围) */
+        .gallery-wrap {
+            margin-top: 30px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 180px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 20px 15px 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            font-weight: 600;
+            font-size: 1em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* 6. 请求列表与应用模块优化 */
+        .req-list li {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            background: var(--surface-color);
+            padding: 15px 20px;
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        .req-list li:hover {
+            background: #f0f7ff;
+        }
+        .req-list i.bullet-icon {
+            color: var(--accent-color);
+            margin-right: 15px;
+            margin-top: 3px;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        .req-content strong {
+            color: var(--secondary-color);
+            font-size: 1.05em;
+        }
+        
+        /* 申请卡片 Glassmorphism UI */
+        .apply-container {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.03), rgba(22, 160, 133, 0.03));
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 30px;
+            border: 1px dashed rgba(74, 144, 226, 0.4);
+            position: relative;
+        }
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        .step-number {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+        .step-text {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .code-style {
+            background: rgba(0,0,0,0.06); 
+            padding: 8px 12px; 
+            border-radius: 6px; 
+            color: var(--secondary-color);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.05em;
+            display: inline-block;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero-visual {
+                padding: 60px 15px;
+                border-radius: 0 0 20px 20px;
+            }
+            .hero-glass-card {
+                padding: 30px 20px;
+                border-radius: 12px;
+            }
+            .hero-glass-card h1 {
+                font-size: 2.2em;
+            }
+            .hero-glass-card p {
+                font-size: 1.1em;
+            }
+            .opening-card {
+                padding: 25px 20px;
+            }
+            .apply-container {
+                padding: 25px 15px;
+            }
+            .apply-container p, .apply-container ul {
+                margin-left: 0 !important;
+                margin-top: 15px;
+            }
+            .step-indicator {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="page-content">
-        <div class="wrapper">
-            <section>
-                <h1 style="text-align: center; font-size: 28px; margin: 0 0 10px 0;">武汉大学陈超锋课题组学生招募</h1>
-                <div class="openings-intro">
-                    <p>各位同学好！欢迎对 <strong>计算机视觉</strong>、<strong>深度学习</strong> 等领域感兴趣的同学加入课题组！我们长期招募博士后、博士、硕士、访问学生及实习生，期待与你共同开展有影响力的研究。</p>
+    <div class="page-content" style="padding-top: 0;">
+        <!-- Hero Section -->
+        <div class="hero-visual">
+            <div class="hero-glass-card">
+                <h1>加入我们 / Join Us</h1>
+                <p>探索计算机视觉与大语言模型的无限可能</p>
+                <div style="margin-top: 20px; display: inline-block; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">
+                    <i class="fas fa-map-marker-alt" style="color: #ff6b6b; margin-right: 5px;"></i> 中国 · 武汉大学 · 人工智能学院 
                 </div>
+            </div>
+        </div>
 
-                <div class="opening-card">
-                    <h2>导师简介</h2>
-                    <p>
-                        我是<strong>陈超锋</strong>，2025年加入武汉大学人工智能学院。本科毕业于<strong>华中科技大学</strong>，于2021年初在<strong>香港大学</strong>获得博士学位。  
-                        在加入武汉大学之前，我曾在<strong>新加坡南洋理工大学</strong>从事博士后研究，并先后在<strong>香港中文大学（深圳）</strong>、<strong>腾讯</strong>和<strong>阿里巴巴</strong>等机构工作。  
-                        我的主要研究方向包括<strong>计算机视觉</strong>、<strong>图像处理</strong>、<strong>质量评估</strong>和<strong>生成式人工智能</strong>。近年来，在 <em>TPAMI</em>、<em>TIP</em>、<em>CVPR</em>、<em>ICCV</em>、<em>ECCV</em>、<em>ICLR</em>、<em>ACM MM</em> 和 <em>AAAI</em> 等国际顶级期刊与会议上发表论文 30 余篇。
+        <div class="wrapper">
+            <section style="border: none;">
+
+                <!-- 欢迎语 -->
+                <div class="opening-card" style="background: linear-gradient(to right, #ffffff, #f9fbff); border-left: 5px solid var(--primary-color);">
+                    <p style="font-size: 1.15em; line-height: 1.8; margin: 0; text-align: justify; color: #444;">
+                        🚀 各位同学好！非常欢迎对<strong>计算机视觉（CV）</strong>、<strong>深度学习</strong>及<strong>多模态人工智能</strong>感兴趣的优秀学子加入本课题组！我们长期招募博士研究生、硕士研究生、本科实习生以及博士后研究员。在这里，你将参与到最前沿的AI技术探索中，我们期待与你共同打造具有国际学术影响力的尖端研究成果。
                     </p>
                 </div>
 
+                <!-- 为什么选择我们 -->
                 <div class="opening-card">
-                    <h2>研究方向</h2>
-                    <ul>
-                        <li><strong>视觉生成与编辑</strong>：人脸/自然图像超分辨率、轻量化图像与视频恢复、图像风格转换等。</li>
-                        <li><strong>视觉质量评价</strong>：图像/视频质量与美学评估，并利用评估结果优化生成与编辑效果。</li>
-                        <li><strong>遥感影像处理</strong>：针对高分辨率遥感影像的分析与生成技术。</li>
-                    </ul>
-                    <p>建议查阅我近期的论文以进一步了解研究方向。</p>
+                    <h2><i class="fas fa-crown"></i> 为什么选择我们？</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon-wrapper"><i class="fas fa-satellite-dish"></i></div>
+                            <h3>前沿的研究方向</h3>
+                            <p>聚焦视觉大模型、生成式AI、图像视频质量评估等核心前沿领域，拒绝学术灌水，做有实际价值和影响力的顶会级科研。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-wrapper"><i class="fas fa-user-friends"></i></div>
+                            <h3>一对一细致指导</h3>
+                            <p>导师年轻有活力，亲自带教。从Idea讨论、框架设计到论文撰写提供手把手指导，绝无“放羊”式管理，助你扫清科研障碍。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-wrapper"><i class="fas fa-network-wired"></i></div>
+                            <h3>广阔的合作与发展</h3>
+                            <p>与NTU、HKU等顶尖高校及腾讯、阿里等头部大厂保持紧密合作。表现优异者不仅倾囊相助发表，更推荐海外交流或大厂高薪实习。</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="opening-card highlight">
-                    <h2>招生对象</h2>
-                    <ul>
-                        <li><strong>研究生（硕士/博士）</strong>：计算机、电子信息等相关专业背景。</li>
-                        <li><strong>本科科研实习/访问</strong>：面向本校及其他高校的大一至大三学生，预期科研时间不小于6个月。</li>
-                        <li><strong>博士后</strong>：须获得博士学位。</li>
+                <!-- 研究方向 -->
+                <div class="opening-card">
+                    <h2><i class="fas fa-compass"></i> 我们关注什么？</h2>
+                    <p style="margin-bottom: 20px;">课题组的研究旨在让AI更好地理解、重塑和生成视觉世界。目前主要的研究方向包括且不限于：</p>
+                    <div class="tag-container">
+                        <span class="tag visual-tag"><i class="fas fa-magic"></i> 视觉生成与编辑 (AIGC)</span>
+                        <span class="tag visual-tag"><i class="fas fa-robot"></i> 多模态大语言模型 (MLLM)</span>
+                        <span class="tag visual-tag"><i class="fas fa-check-double"></i> 图像/视频质量评估 (IQA/VQA)</span>
+                        <span class="tag visual-tag"><i class="fas fa-image"></i> 底层视觉与模型轻量化</span>
+                        <span class="tag visual-tag"><i class="fas fa-globe-asia"></i> AI for Remote Sensing</span>
+                    </div>
+                </div>
+
+                <!-- 期待要求 -->
+                <div class="opening-card">
+                    <h2><i class="fas fa-search-plus"></i> 我们期待怎样的你？</h2>
+                    <p>相比于你目前掌握的具体技能，我们更看重你的<strong>科研潜力、热情和踏实肯干的态度</strong>。如果你具备以下特质，请毫不犹豫地联系我：</p>
+                    <ul class="req-list" style="list-style: none; padding-left: 0; margin-top: 25px;">
+                        <li>
+                            <i class="fas fa-fire bullet-icon"></i> 
+                            <div class="req-content"><strong>强烈的好奇心与自驱力</strong><br><span style="color:#666; font-size:0.95em;">对突破AI技术边界充满渴望，面对挑战不畏缩，有主动探索未知领域的热情。</span></div>
+                        </li>
+                        <li>
+                            <i class="fas fa-code bullet-icon"></i> 
+                            <div class="req-content"><strong>扎实的数理与跨界编程基础</strong><br><span style="color:#666; font-size:0.95em;">熟练运用 Python、PyTorch 等深度学习框架，具备良好的编程习惯、推导及动手能力。</span></div>
+                        </li>
+                        <li>
+                            <i class="fas fa-language bullet-icon"></i> 
+                            <div class="req-content"><strong>良好的英文读写能力</strong><br><span style="color:#666; font-size:0.95em;">能无障碍阅读英文文献，撰写学术论文（CET-6 > 460，或有托福/雅思良好成绩）。</span></div>
+                        </li>
+                        <li style="background: rgba(243, 156, 18, 0.05); border: 1px dashed rgba(243, 156, 18, 0.3);">
+                            <i class="fas fa-star bullet-icon" style="color: #f39c12;"></i> 
+                            <div class="req-content"><strong style="color: #d68910;">加分项待遇</strong><br><span style="color:#666; font-size:0.95em;">有CV/机器学习顶会竞赛奖项、高Star开源库贡献，或已有论文档案发表者优先考核。</span></div>
+                        </li>
+                        <li style="background: rgba(231, 76, 60, 0.05); border: 1px solid rgba(231, 76, 60, 0.2);">
+                            <i class="fas fa-exclamation-triangle bullet-icon" style="color: var(--danger-color);"></i> 
+                            <div class="req-content"><strong style="color: var(--danger-color);">【非直博生特别要求】</strong><br><span style="color:#555; font-size:0.95em;">申请普博的同学，需以<strong>第一作者</strong>身份完成至少 1 篇CCF-A类国际会议或中科院一区长论文。</span></div>
+                        </li>
                     </ul>
                 </div>
 
+                <!-- 申请方式 -->
                 <div class="opening-card">
-                    <h2>研究生招收要求</h2>
-                    <ul>
-                        <li><strong>基本要求</strong>：获得保研资格或通过学校研究生招生考核。</li>
-                        <li><strong>科研兴趣</strong>：对计算机视觉、深度学习等领域有浓厚兴趣，乐于探索新技术。</li>
-                        <li><strong>目标规划</strong>：对未来科研方向有大致设想，明确想在课题组完成的工作。</li>
-                        <li><strong>能力要求</strong>：具备扎实的编程能力，良好的数学基础，以及较强的英文阅读与写作能力（<strong>CET-6 &gt; 460</strong>）。</li>
-                        <li><strong>提前准备</strong>：若通过保研，需在大四期间进入课题组提前熟悉研究背景，并力争在研究生入学前完成一篇论文投稿。</li>
-                        <li style="color: #e74c3c;"><strong>非直博士生要求</strong>：以<strong>第一作者</strong>身份完成至少<strong>1 篇长论文</strong> (发表CCF-A类国际期刊和会议优先)。</li>
-                    </ul>
-                </div>
+                    <h2><i class="fas fa-paper-plane"></i> 开启你的申请旅程</h2>
+                    <p style="font-size: 1.1em;">如果你准备好在AI前沿挥洒汗水，请通过以下方式联系我：</p>
+                    
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; margin-top: 20px;">
+                        <a href="mailto:chaofenghust@gmail.com" style="display:inline-flex; align-items:center; gap:8px; background:var(--primary-color); color:white; padding:10px 20px; border-radius:30px; font-weight:600; text-decoration:none; box-shadow:0 4px 10px rgba(74, 144, 226, 0.3); transition:all 0.3s;"><i class="fas fa-envelope"></i> chaofenghust@gmail.com</a>
+                        <a href="mailto:chaofengchen@whu.edu.cn" style="display:inline-flex; align-items:center; gap:8px; background:white; color:var(--primary-color); padding:10px 20px; border-radius:30px; border:2px solid var(--primary-color); font-weight:600; text-decoration:none; transition:all 0.3s;"><i class="fas fa-university"></i> chaofengchen@whu.edu.cn</a>
+                    </div>
+                    
+                    <div class="apply-container">
+                        <div class="step-indicator">
+                            <div class="step-number">1</div>
+                            <div class="step-text">规范邮件主题排版</div>
+                        </div>
+                        <p style="margin-left: 55px; margin-bottom: 25px;">
+                            <span class="code-style">职位申请 - 姓名 - 所在学校 - 现专业</span><br>
+                            <span style="color:#888; font-size:0.9em; margin-top: 8px; display:inline-block;">(例如：博士申请 - 李明 - 武汉大学 - 人工智能)</span>
+                        </p>
 
-                <div class="opening-card">
-                    <h2>申请方式</h2>
-                    <p>请将以下材料发送至邮箱：<a href="mailto:chaofenghust@gmail.com">chaofenghust@gmail.com</a> 或者 <a href="mailto:chaofengchen@whu.edu.cn">chaofengchen@whu.edu.cn</a>，邮件主题格式：</p>
-                    <p><strong>职位 - 姓名 - 学校 - 专业</strong>（例如：<em>研究生 - 张三 - XX大学 - 计算机科学</em>）</p>
-                    <ul>
-                        <li>个人简历</li>
-                        <li>成绩单</li>
-                        <li>期望的研究方向</li>
-                        <li>Github 及个人主页链接（如有）</li>
-                        <li>已发表论文或项目总结报告（如有）</li>
-                    </ul>
-                    <p>所有的申请邮件我都将仔细阅读和评估。<strong style="color: #e74c3c;">对于合适的学生，我会在一周之内给予回复。</strong>对与本课题组不匹配的学生的邮件，恕不能逐一回复，敬请谅解！</p>
+                        <div class="step-indicator">
+                            <div class="step-number">2</div>
+                            <div class="step-text">准备PDF格式附件材料</div>
+                        </div>
+                        <ul style="margin-left: 55px; margin-bottom: 30px; color: #444;">
+                            <li style="margin-bottom:8px;"><strong>学术简历：</strong>包含详细的教育背景、科研项目经历与获奖情况</li>
+                            <li style="margin-bottom:8px;"><strong>成绩证明：</strong>本科/硕士阶段的官方成绩单及排名</li>
+                            <li style="margin-bottom:8px;"><strong>个人陈述：</strong>在正文简述“为何加入我们”以及“您的后续职业规划”</li>
+                            <li style="margin-bottom:8px;"><strong>附加材料：</strong>GitHub链接、个人技术推文或已发表的论文原文</li>
+                        </ul>
+
+                        <div style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent-color); margin-left:10px;">
+                            <p style="margin: 0; color: #333; font-size: 0.95em; line-height: 1.6;">
+                                <i class="fas fa-bell" style="color: var(--accent-color); margin-right: 8px;"></i> 每封用心准备的申请邮件我都会亲自阅读。<strong>背景契合的同学，我将在一周内给您反馈并安排线上交流。</strong>若两周未获回复，可能受名额限制，恕难逐一回信。期待在武大与你相遇！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
+                    <h3 style="color: var(--primary-color); font-size: 2em; margin-bottom: 5px;">We build the future with AI</h3>
+                    <p style="color: var(--light-text-color);">期待顶峰相见</p>
                 </div>
             </section>
         </div>
