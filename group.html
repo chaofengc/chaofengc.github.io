@@ -3,76 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHEN Chaofeng</title>
+    <title>Group | CHEN Chaofeng</title>
     <link rel="icon" type="image/svg+xml" href="images/site/space.png">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/group.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/navigation.js"></script>
 </head>
 <body>
 
-    <div class="page-content">
-        <div class="wrapper">
-            <section>
+    <div class="page-content page-content--flush">
+        
+        <!-- Hero Section -->
+        <div class="group-hero">
+            <div class="group-hero-content">
                 <div class="lab-title-row">
-                        <div class="lab-logo">
-                            <img src="images/site/lab_logo_v2.png" alt="MindVision Lab Logo" class="lab-logo-img">
-                        </div>
-                        <h1 class="lab-name">MindVision Lab</h1>
+                    <div class="lab-logo">
+                        <img src="images/site/lab_logo_v2.png" alt="MindVision Lab Logo" class="lab-logo-img">
                     </div>
+                    <h1 class="lab-name">MindVision Lab</h1>
+                </div>
                 <p class="lab-subtitle">See Beyond Vision, Evolve Towards Intelligence</p>
                 
-                <div class="lab-intro">
-                    <div class="lab-description">
-                        <p style="text-align: center;margin-bottom: 5px;font-weight: bold;">Welcome to the MindVision Lab! 🤗</p>
-                        <p>
-                        💡 We believe in the profound power of visual intelligence. Our research is driven by the belief that machines, much like biological systems, can evolve toward human-level intelligence by learning to perceive, understand, and reason about the complex visual world.
-                        <br> 
-                        🎯 Our mission is to bridge the gap between artificial perception and true cognitive understanding. To achieve this, we focus on foundational research to build systems that don't just see pixels, but <strong>comprehend context, infer meaning, and interact with their environment</strong>.
-                        <br> 
-                        <span style="background-color: #f4f4f4; border: 1px solid #e0e0e0; padding: 2px 6px; border-radius: 5px; display: inline-block;margin-top:10px">
-                        Our current research interests are: 🎨 Vision Generation & Understanding , 📊 Image/Video Quality Assessment , and 🛰 AI for Remote Sensing .
-                        </span>
+                <div class="lab-intro-cards">
+                    <div class="intro-glass-card">
+                        <p class="welcome-text">👋 Welcome to MindVision!</p>
+                        <p class="intro-text">
+                            💡 We believe in the profound power of <strong>visual intelligence</strong>. Our research is driven by the belief that machines, much like biological systems, can evolve toward human-level intelligence by learning to perceive, understand, and reason about the complex visual world.
                         </p>
-                        <p class="lab-github-inline">
-                            <a href="https://github.com/MindVision-AI" target="_blank" class="lab-github-link" title="Visit our GitHub">
-                                <i class="fab fa-github"></i>
-                                <span>Visit our GitHub</span>
-                            </a>
+                        <p class="intro-text">
+                            🎯 Our mission is to bridge the gap between artificial perception and true cognitive understanding. To achieve this, we focus on foundational research to build systems that don't just see pixels, but <strong>comprehend context, infer meaning, and interact</strong> with their environment.
                         </p>
-                    </div>
-                    <div class="lab-photo-placeholder">
-                        <!-- Lab photo will be placed here -->
-                        <img src="images/site/whu_castle.jpg" alt="Lab Photo" class="lab-photo"></img>
+                        
+                        <div class="research-focus-cloud">
+                            <span class="focus-tag"><i class="fas fa-magic"></i> Vision Generation</span>
+                            <span class="focus-tag"><i class="fas fa-check-double"></i> Image/Video QA</span>
+                            <span class="focus-tag"><i class="fas fa-satellite"></i> AI for Remote Sensing</span>
+                            <a href="https://github.com/MindVision-AI" target="_blank" class="btn-github"><i class="fab fa-github"></i> Visit our GitHub</a>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <h2 class="subsection-title">PhD Students</h2>
+        <div class="wrapper">
+            <section class="team-section">
+                <!-- PhD Students -->
+                <div class="section-header">
+                    <h2 class="subsection-title">PhD Students</h2>
+                    <div class="title-underline"></div>
+                </div>
                 <div class="members-grid" id="phd-members">
-                    <!-- PhD members will be loaded dynamically -->
                     <div class="loading">Loading PhD students...</div>
                 </div>
 
-                <h2 class="subsection-title">Master Students</h2>
+                <!-- Master Students -->
+                <div class="section-header">
+                    <h2 class="subsection-title">Master Students</h2>
+                    <div class="title-underline"></div>
+                </div>
                 <div class="members-grid" id="master-members">
-                    <!-- Master members will be loaded dynamically -->
                     <div class="loading">Loading Master students...</div>
                 </div>
 
-                <h2 class="subsection-title">Undergraduate Students</h2>
+                <!-- Undergraduate Students -->
+                <div class="section-header">
+                    <h2 class="subsection-title">Undergraduates</h2>
+                    <div class="title-underline"></div>
+                </div>
                 <div class="members-grid" id="undergraduate-members">
-                    <!-- Undergraduate members will be loaded dynamically -->
                     <div class="loading">Loading Undergraduate students...</div>
                 </div>
 
-                <h2 class="subsection-title">Alumni</h2>
-                
-                <div class="alumni-list" id="alumni-list">
-                    <!-- Alumni will be loaded dynamically from data/members.json -->
-                    <div class="loading">Loading alumni...</div>
+                <!-- Alumni -->
+                <div class="section-header">
+                    <h2 class="subsection-title">Alumni</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="alumni-list-container">
+                    <div class="alumni-list" id="alumni-list">
+                        <div class="loading">Loading alumni...</div>
+                    </div>
                 </div>
             </section>
         </div>

@@ -1,0 +1,447 @@
+/* Group Page Specific Styles */
+.page-content--flush {
+    padding-top: 0;
+}
+
+/* === 1. Hero Section === */
+.group-hero {
+    position: relative;
+    padding: 120px 20px 80px;
+    margin: -20px calc(-50vw + 50%) 60px;
+    background: linear-gradient(135deg, rgba(26, 31, 44, 0.85), rgba(18, 55, 82, 0.88)), 
+                url('../images/site/whu_castle.jpg') center/cover fixed;
+    color: white;
+    text-align: center;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+}
+
+.group-hero-content {
+    max-width: 900px;
+    width: 100%;
+}
+
+.lab-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.lab-logo {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lab-logo-img {
+    width: 100%;
+    height: auto;
+}
+
+.lab-name {
+    font-size: 3.5em;
+    font-weight: 900;
+    margin: 0;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.lab-subtitle {
+    font-size: 1.4em;
+    color: #f39c12; /* highlight color */
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* === 2. Intro Glass Card === */
+.intro-glass-card {
+    background: rgba(15, 25, 40, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px 50px;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.welcome-text {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.intro-text strong {
+    color: white;
+    background: linear-gradient(120deg, rgba(243, 156, 18, 0.3) 0%, rgba(243, 156, 18, 0) 100%);
+    padding: 0 4px;
+}
+
+.research-focus-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.focus-tag {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.focus-tag:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.focus-tag i {
+    color: #f39c12;
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: var(--secondary-color);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-github:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* === 3. Sections & Typography === */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+
+.subsection-title {
+    font-size: 2.2em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.title-underline {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* === 4. Members Grid === */
+.members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+/* Member Card visually enhanced */
+.member-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    max-width: 320px;
+    flex: 1 1 280px;
+}
+
+.member-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: rgba(74, 144, 226, 0.2);
+}
+
+.member-card:hover::before {
+    transform: scaleX(1);
+}
+
+.member-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+}
+
+.member-card:hover .member-image {
+    transform: scale(1.05);
+}
+
+.member-name {
+    font-size: 1.4em;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.member-title {
+    font-size: 0.95em;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.member-bio {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.member-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.member-links a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.member-links a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+/* === 5. Alumni List === */
+.alumni-list-container {
+    background: transparent;
+    padding: 10px 0;
+    border: none;
+}
+
+.alumni-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 2;
+    column-gap: 30px;
+    border: none;
+    background: transparent;
+}
+
+.alumni-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-color);
+    break-inside: avoid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    background: var(--surface-color);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+
+.alumni-item:hover {
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+    border-radius: 12px;
+}
+
+.alumni-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.alumni-name {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.alumni-position-line {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.alumni-title {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+.alumni-current {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.alumni-links {
+    display: flex;
+    gap: 10px;
+}
+
+.alumni-links a {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--light-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+}
+
+.alumni-links a:hover {
+    background: var(--primary-color);
+    color: white !important;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+/* === Animations === */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 900px) {
+    .alumni-ul {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .group-hero {
+        padding: 90px 15px 50px;
+        border-radius: 0 0 25px 25px;
+        margin-bottom: 40px;
+    }
+    .lab-title-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .lab-name {
+        font-size: 2.2em;
+    }
+    .lab-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .intro-glass-card {
+        padding: 25px 20px;
+    }
+    .welcome-text {
+        font-size: 1.3em;
+    }
+    .intro-text {
+        font-size: 1.05em;
+    }
+    .focus-tag {
+        font-size: 0.85em;
+        padding: 6px 12px;
+    }
+    .members-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .alumni-list-container {
+        padding: 10px 0;
+    }
+    .alumni-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px;
+    }
+}
