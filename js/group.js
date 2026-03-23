@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     return `
       <div class="member-card">
-        <img src="${member.image}" alt="${member.name}" class="member-image" onerror="this.src='images/placeholder-person.svg'">
+        <img src="${member.image}" alt="${member.name}" class="member-image" onerror="this.src='images/site/placeholder-person.svg'">
         <h3 class="member-name">${member.name}</h3>
         <p class="member-title">${member.title}</p>
         ${member.bio ? `<p class="member-bio">${member.bio}</p>` : ''}

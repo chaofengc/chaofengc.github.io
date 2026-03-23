@@ -1,7 +1,7 @@
 {
   "publications": {
     "li2025gsmorph": {
-      "image": "images/arxiv2025_gsmorph.png",
+      "image": "images/publications/arxiv2025_gsmorph.png",
       "select": true,
       "pdf": "https://arxiv.org/abs/2510.02034",
       "corresponding_authors": ["Chaofeng Chen"],
@@ -9,30 +9,30 @@
       "project": "https://baiyunshu.github.io/GAUSSIANMORPHING.github.io/"
     },
     "lan2025text4segpp": {
-      "image": "images/arxiv2025_text4segpp.png",
+      "image": "images/publications/arxiv2025_text4segpp.png",
       "select": true,
       "pdf": "https://arxiv.org/abs/2509.06321"
     },
     "li20252dgaussiansplattingsemantic": {
-      "image": "images/arxiv2025_gsinpaint.png",
+      "image": "images/publications/arxiv2025_gsinpaint.png",
       "select": true,
       "pdf": "https://arxiv.org/abs/2509.01964",
       "github": "https://github.com/hitlhy715/2DGS_inpaint"
     },
     "mi2025mvqa": {
-      "image": "images/ICCV2025_mvqa.png",
+      "image": "images/publications/ICCV2025_mvqa.png",
       "pdf": "https://arxiv.org/abs/2504.16003",
       "accept_info": "Highlight, 2.5%"
     },
     "lan2025reimagining": {
       "select": true,
-      "image": "images/arXiv2024_Text4Seg.png",
+      "image": "images/publications/arXiv2024_Text4Seg.png",
       "pdf": "https://arxiv.org/abs/2410.09855",
       "github": "https://github.com/mc-lan/Text4Seg"
     },
     "chen2024qground": {
       "select": true,
-      "image": "images/MM2024_QGround.jpg",
+      "image": "images/publications/MM2024_QGround.jpg",
       "pdf": "https://arxiv.org/abs/2407.17035",
       "github": "https://github.com/Q-Future/Q-Ground",
       "accept_info": "Oral, 3.97%"
@@ -64,7 +64,7 @@
       "github": "https://github.com/mc-lan/ProxyCLIP"
     },
     "wu2024towards": {
-      "image": "images/ECCV2024_CoInstruct.png",
+      "image": "images/publications/ECCV2024_CoInstruct.png",
       "pdf": "https://arxiv.org/abs/2402.16641",
       "github": "https://github.com/Q-Future/Co-Instruct",
       "co_first_authors": ["Haoning Wu", "Hanwei Zhu", "Zicheng Zhang"],
@@ -73,14 +73,14 @@
     },
     "chen2024enhancing": {
       "select": true,
-      "image": "images/arXiv2023_texforce.jpg",
+      "image": "images/publications/arXiv2023_texforce.jpg",
       "pdf": "https://arxiv.org/abs/2311.15657",
       "github": "https://github.com/chaofengc/TexForce",
       "co_first_authors": ["Chaofeng Chen", "Annan Wang"],
       "corresponding_authors": ["Weisi Lin"]
     },
     "wu2024qalign": {
-      "image": "images/onescorer.png",
+      "image": "images/publications/onescorer.png",
       "pdf": "https://arxiv.org/abs/2312.17090",
       "github": "https://github.com/Q-Future/Q-Align",
       "co_first_authors": ["Haoning Wu", "Zicheng Zhang"],
@@ -90,7 +90,7 @@
       "pdf": "https://arxiv.org/abs/2308.12001"
     },
     "wu2024qinstruct": {
-      "image": "images/qinstruct.jpg",
+      "image": "images/publications/qinstruct.jpg",
       "pdf": "https://arxiv.org/abs/2311.06783",
       "github": "https://github.com/Q-Future/Q-Instruct",
       "co_first_authors": ["Haoning Wu", "Zicheng Zhang", "Erli Zhang"],
@@ -98,7 +98,7 @@
     },
     "wu2024qbench": {
       "select": true,
-      "image": "images/qbench.png",
+      "image": "images/publications/qbench.png",
       "pdf": "https://arxiv.org/abs/2309.14181",
       "github": "https://github.com/Q-Future/Q-Bench",
       "co_first_authors": ["Haoning Wu", "Zicheng Zhang", "Erli Zhang"],
@@ -107,7 +107,7 @@
     },
     "chen2024iter": {
       "select": true,
-      "image": "images/AAAI2024_ITER.jpg",
+      "image": "images/publications/AAAI2024_ITER.jpg",
       "pdf": "https://arxiv.org/abs/2312.05616",
       "github": "https://github.com/chaofengc/ITER"
     },
@@ -118,17 +118,17 @@
       "accept_info": "Oral"
     },
     "wu2023dover": {
-      "image": "images/ICCV2023_DOVER.png",
+      "image": "images/publications/ICCV2023_DOVER.png",
       "pdf": "https://arxiv.org/abs/2211.04894",
       "github": "https://github.com/VQAssessment/DOVER"
     },
     "wu2023buonavista": {
-      "image": "images/ICME2023_buona_vista.png",
+      "image": "images/publications/ICME2023_buona_vista.png",
       "pdf": "https://arxiv.org/abs/2302.13269",
       "github": "https://github.com/VQAssessment/BVQI"
     },
     "ning2023mimo": {
-      "image": "images/AAAI2023_MIMO.png",
+      "image": "images/publications/AAAI2023_MIMO.png",
       "pdf": "https://arxiv.org/abs/2212.04655",
       "github": "https://github.com/ningshuliang/MIMO-VP"
     },
@@ -143,20 +143,20 @@
       "github": "https://github.com/VQAssessment/FAST-VQA-and-FasterVQA"
     },
     "li2022redegnet": {
-      "image": "images/ECCV2022_ReDegNet.jpg",
+      "image": "images/publications/ECCV2022_ReDegNet.jpg",
       "pdf": "https://arxiv.org/abs/2210.00752",
       "github": "https://github.com/csxmli2016/ReDegNet"
     },
     "chen2022femasr": {
       "select": true,
-      "image": "images/MM2022_FeMaSR.jpg",
+      "image": "images/publications/MM2022_FeMaSR.jpg",
       "pdf": "https://arxiv.org/abs/2202.13142",
       "github": "https://github.com/chaofengc/FeMaSR",
       "accept_info": "Oral, 5.9%",
       "co_first_authors": ["Chaofeng Chen", "Xinyu Shi"]
     },
     "liao2022tpqi": {
-      "image": "images/MM2022_TPQI.jpg",
+      "image": "images/publications/MM2022_TPQI.jpg",
       "pdf": "https://arxiv.org/abs/2207.03723",
       "accept_info": "Oral, 5.9%",
       "github": "https://github.com/UoLMM/TPQI-VQA"
@@ -167,50 +167,50 @@
       "github": "https://github.com/haoosz/FFR-Net"
     },
     "chen2021hdrvideo": {
-      "image": "images/ICCV2021_HDRNet.jpg",
+      "image": "images/publications/ICCV2021_HDRNet.jpg",
       "pdf": "https://arxiv.org/abs/2103.14943",
       "github": "https://github.com/guanyingc/DeepHDRVideo",
       "project": "https://guanyingc.github.io/DeepHDRVideo/"
     },
     "chen2021psfrgan": {
       "select": true,
-      "image": "images/PSFR-GAN.jpg",
+      "image": "images/publications/PSFR-GAN.jpg",
       "pdf": "https://arxiv.org/abs/2009.08709",
       "github": "https://github.com/chaofengc/PSFRGAN"
     },
     "li2020dfdnet": {
       "select": true,
-      "image": "images/ECCV2020_dfdnet.jpg",
+      "image": "images/publications/ECCV2020_dfdnet.jpg",
       "pdf": "https://arxiv.org/abs/2008.00418",
       "github": "https://github.com/csxmli2016/DFDNet"
     },
     "chen2018facesketch": {
-      "image": "images/ACCV2018_face_sketch_wild.png",
+      "image": "images/publications/ACCV2018_face_sketch_wild.png",
       "pdf": "https://arxiv.org/abs/1812.04929",
       "github": "https://github.com/chaofengc/Face-Sketch-Wild"
     },
     "liu2018safe": {
-      "image": "images/ACCV2018_scale_aware_ocr.png",
+      "image": "images/publications/ACCV2018_scale_aware_ocr.png",
       "pdf": "https://arxiv.org/abs/1901.05770"
     },
     "chen2018pyramid": {
-      "image": "images/WACV2018_face_sketch_pcf.png",
+      "image": "images/publications/WACV2018_face_sketch_pcf.png",
       "pdf": "https://arxiv.org/abs/2009.08679",
       "co_first_authors": ["Chaofeng Chen", "Xiao Tan"],
       "github": "https://github.com/chaofengc/Face-Sketch"
     },
     "liu2018charnet": {
-      "image": "images/AAAI2018_char_net.png",
+      "image": "images/publications/AAAI2018_char_net.png",
       "accept_info": "Oral",
       "pdf": "http://www.visionlab.cs.hku.hk/publications/wliu_aaai18.pdf"
     },
     "liu2016starnet": {
-      "image": "images/BMVC2016_star_net.png",
+      "image": "images/publications/BMVC2016_star_net.png",
       "pdf": "http://www.visionlab.cs.hku.hk/publications/wliu_bmvc16.pdf"
     },
     "chen2024topiq": {
       "select": true,
-      "image": "images/arXiv2023_topiq.png",
+      "image": "images/publications/arXiv2023_topiq.png",
       "pdf": "https://arxiv.org/abs/2308.03060",
       "github": "https://github.com/chaofengc/IQA-PyTorch"
     },
@@ -219,28 +219,28 @@
     },
     "wu2023neighbourhood": {
       "select": true,
-      "image": "images/TPAMI2023_FastVQA.jpg",
+      "image": "images/publications/TPAMI2023_FastVQA.jpg",
       "pdf": "https://arxiv.org/abs/2210.05357",
       "github": "https://github.com/timothyhtimothy/FAST-VQA-and-FasterVQA"
     },
     "chen2023semisupervised": {
-      "image": "images/CVIU2023_FaceSCG.png",
+      "image": "images/publications/CVIU2023_FaceSCG.png",
       "pdf": "https://arxiv.org/abs/2307.10281",
       "github": "https://github.com/chaofengc/Face-Sketch-SCG"
     },
     "wu2023discovqa": {
-      "image": "images/TCSVT2023_DisCoVQA.png",
+      "image": "images/publications/TCSVT2023_DisCoVQA.png",
       "pdf": "https://arxiv.org/abs/2206.09853",
       "github": "https://github.com/QualityAssessment/DisCoVQA"
     },
     "yang2023deepface": {
-      "image": "images/TIP2021_FaceVideoInpaint.png",
+      "image": "images/publications/TIP2021_FaceVideoInpaint.png",
       "pdf": "https://arxiv.org/abs/2109.00681",
       "project": "https://ywq.github.io/FVIP/"
     },
     "chen2021sparnet": {
       "select": true,
-      "image": "images/TIP2020_SPARNet.png",
+      "image": "images/publications/TIP2020_SPARNet.png",
       "pdf": "https://arxiv.org/abs/2012.01211",
       "github": "https://github.com/chaofengc/Face-SPARNet"
     }
