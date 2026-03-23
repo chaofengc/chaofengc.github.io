@@ -315,12 +315,26 @@ class GalleryManager {
 
         // Add indicator click events
         indicators.forEach((indicator, index) => {
+            indicator.setAttribute('tabindex', '0');
+            indicator.setAttribute('role', 'button');
+            indicator.setAttribute('aria-label', `View image ${index + 1}`);
             indicator.addEventListener('click', (e) => {
                 e.stopPropagation(); // Prevent opening lightbox
                 currentIndex = index;
                 showImage(currentIndex);
                 stopAutoPlay();
                 startAutoPlay(); // Restart auto-play
+            });
+
+            indicator.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    currentIndex = index;
+                    showImage(currentIndex);
+                    stopAutoPlay();
+                    startAutoPlay();
+                }
             });
         });
 
@@ -549,7 +563,10 @@ class GalleryManager {
      */
     showLoading(show) {
         const loadingIndicator = document.getElementById('loadingIndicator');
-        loadingIndicator.style.display = show ? 'flex' : 'none';
+        if (loadingIndicator) {
+            loadingIndicator.style.display = show ? 'flex' : 'none';
+            loadingIndicator.setAttribute('aria-busy', show ? 'true' : 'false');
+        }
     }
 
     /**

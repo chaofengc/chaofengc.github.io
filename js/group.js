@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .map(member => createMemberCard(member))
           .join('');
       } else {
-        phdGrid.innerHTML = '<p class="no-members">No PhD students to display yet.</p>';
+        phdGrid.innerHTML = '<p class="no-members state-message">No PhD students to display yet.</p>';
       }
     }
     
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .map(member => createMemberCard(member))
           .join('');
       } else {
-        masterGrid.innerHTML = '<p class="no-members">No Master students to display yet.</p>';
+        masterGrid.innerHTML = '<p class="no-members state-message">No Master students to display yet.</p>';
       }
     }
     
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .map(member => createMemberCard(member))
           .join('');
       } else {
-        undergraduateGrid.innerHTML = '<p class="no-members">No Undergraduate students to display yet.</p>';
+        undergraduateGrid.innerHTML = '<p class="no-members state-message">No Undergraduate students to display yet.</p>';
       }
     }
     
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </ul>
         `;
       } else {
-        alumniList.innerHTML = '<p class="no-alumni">No alumni to display yet.</p>';
+        alumniList.innerHTML = '<p class="no-alumni state-message">No alumni to display yet.</p>';
       }
     }
   }
@@ -225,16 +225,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const alumniList = document.querySelector('.alumni-list');
     
     if (phdGrid) {
-      phdGrid.innerHTML = '<div class="loading">Loading PhD students...</div>';
+      phdGrid.innerHTML = '<div class="loading" aria-busy="true">Loading PhD students...</div>';
     }
     if (masterGrid) {
-      masterGrid.innerHTML = '<div class="loading">Loading Master students...</div>';
+      masterGrid.innerHTML = '<div class="loading" aria-busy="true">Loading Master students...</div>';
     }
     if (undergraduateGrid) {
-      undergraduateGrid.innerHTML = '<div class="loading">Loading Undergraduate students...</div>';
+      undergraduateGrid.innerHTML = '<div class="loading" aria-busy="true">Loading Undergraduate students...</div>';
     }
     if (alumniList) {
-      alumniList.innerHTML = '<div class="loading">Loading alumni...</div>';
+      alumniList.innerHTML = '<div class="loading" aria-busy="true">Loading alumni...</div>';
     }
     
     const groupData = await loadGroupMembers();
@@ -243,16 +243,16 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('Failed to load group members data');
       if (phdGrid) {
-        phdGrid.innerHTML = '<p>Failed to load PhD students data.</p>';
+        phdGrid.innerHTML = '<p class="state-message is-error">Failed to load PhD students data.</p>';
       }
       if (masterGrid) {
-        masterGrid.innerHTML = '<p>Failed to load Master students data.</p>';
+        masterGrid.innerHTML = '<p class="state-message is-error">Failed to load Master students data.</p>';
       }
       if (undergraduateGrid) {
-        undergraduateGrid.innerHTML = '<p>Failed to load Undergraduate students data.</p>';
+        undergraduateGrid.innerHTML = '<p class="state-message is-error">Failed to load Undergraduate students data.</p>';
       }
       if (alumniList) {
-        alumniList.innerHTML = '<p>Failed to load alumni data.</p>';
+        alumniList.innerHTML = '<p class="state-message is-error">Failed to load alumni data.</p>';
       }
     }
   }

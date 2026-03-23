@@ -73,7 +73,8 @@ class NavigationGenerator {
             .filter(item => !item.hidden) // Filter out hidden items
             .map(item => {
                 const activeClass = item.id === currentPage ? ' active' : '';
-                return `<a class="page-link${activeClass}" href="${item.href}">${item.name}</a>`;
+                const currentAttr = item.id === currentPage ? ' aria-current="page"' : '';
+                return `<a class="page-link${activeClass}" href="${item.href}"${currentAttr}>${item.name}</a>`;
             })
             .join('\n                            ');
     }
@@ -118,11 +119,34 @@ class NavigationGenerator {
             document.addEventListener('DOMContentLoaded', () => {
                 this.insertNavigation();
                 this.initScrollEffect();
+                this.initMenuAccessibility();
             });
         } else {
             this.insertNavigation();
             this.initScrollEffect();
+            this.initMenuAccessibility();
         }
+    }
+
+    /**
+     * Add keyboard/mobile behavior for nav drawer
+     */
+    initMenuAccessibility() {
+        const navTrigger = document.getElementById('nav-trigger');
+        if (!navTrigger) return;
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navTrigger.checked) {
+                navTrigger.checked = false;
+            }
+        });
+
+        const navLinks = document.querySelectorAll('.site-nav .page-link');
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                navTrigger.checked = false;
+            });
+        });
     }
 
     /**

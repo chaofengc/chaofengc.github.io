@@ -2,35 +2,20 @@
  * Simple animations for the academic portfolio website
  */
 document.addEventListener('DOMContentLoaded', function() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Add fade-in animation to main sections
     const sections = document.querySelectorAll('.profile-section, .research-interests, .projects-section, .publications-list');
     
-    // Simple fade-in for sections
-    sections.forEach((section, index) => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        
-        // Stagger the animations
-        setTimeout(() => {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }, 100 * index);
-    });
-    
-    // Add hover effects to project cards and publication items
-    const cards = document.querySelectorAll('.project-card, .publication-item');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px)';
-            this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
+    if (!prefersReducedMotion) {
+        // Simple staggered fade-in for sections using CSS classes.
+        sections.forEach((section, index) => {
+            section.classList.add('fade-in-section');
+            setTimeout(() => {
+                section.classList.add('is-visible');
+            }, 80 * index);
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-        });
-    });
+    }
     
     // Smooth scroll for navigation links
     const navLinks = document.querySelectorAll('.site-nav .page-link');
@@ -45,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
                     });
                 }
             }

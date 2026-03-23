@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createPublicationElement(pub, isIndexPage = false) {
       const pubElement = document.createElement('div');
       pubElement.className = 'publication-item';
+      pubElement.classList.add(isIndexPage ? 'publication-item--index' : 'publication-item--page');
       
       // Get publication config data
       const pubConfig = publicationConfig?.publications?.[pub.citeKey] || {};
@@ -368,6 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add loading class to prevent layout shifts
     publicationsContainer.classList.add('publications-loading');
+    publicationsContainer.setAttribute('aria-busy', 'true');
     
     // Use requestAnimationFrame to ensure smooth transition
     requestAnimationFrame(() => {
@@ -382,8 +384,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // If no publications
       if (filteredPublications.length === 0) {
-        publicationsContainer.innerHTML = '<div class="no-publications">No publications found matching the criteria</div>';
+        publicationsContainer.innerHTML = '<div class="no-publications state-message">No publications found matching the criteria</div>';
         publicationsContainer.classList.remove('publications-loading');
+        publicationsContainer.setAttribute('aria-busy', 'false');
         return;
       }
     
@@ -433,6 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Remove loading class after rendering is complete
     publicationsContainer.classList.remove('publications-loading');
+    publicationsContainer.setAttribute('aria-busy', 'false');
     });
   }
   

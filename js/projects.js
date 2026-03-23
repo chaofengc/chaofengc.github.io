@@ -17,7 +17,7 @@ class ProjectsManager {
             
             if (projectsContainer) {
                 projectsContainer.style.minHeight = '400px';
-                projectsContainer.innerHTML = '<div class="loading">Loading projects...</div>';
+                projectsContainer.innerHTML = '<div class="loading" aria-busy="true">Loading projects...</div>';
             }
             
             if (filterContainer) {
@@ -226,7 +226,7 @@ class ProjectsManager {
         const projectsToRender = filteredProjects || this.projects;
         
         if (projectsToRender.length === 0) {
-            container.innerHTML = '<div class="no-projects">No projects found for the selected filter.</div>';
+            container.innerHTML = '<div class="no-projects state-message">No projects found for the selected filter.</div>';
             return;
         }
 
@@ -395,7 +395,7 @@ class ProjectsManager {
         const container = document.getElementById('projectsContainer');
         if (container) {
             container.innerHTML = `
-                <div class="error-message">
+                <div class="error-message state-message is-error">
                     <i class="fas fa-exclamation-triangle"></i>
                     <p>${message}</p>
                 </div>

@@ -12,10 +12,10 @@
     function createNewsItem(item) {
         var date = item.date ? escapeHtml(item.date) : '';
         var contentHtml = item.content_html || escapeHtml(item.content || '');
-        var pinStyle = item.pin ? ' style="color: red;"' : '';
+        var pinClass = item.pin ? ' news-item-pinned' : '';
 
         return '' +
-            '<div class="news-item"' + pinStyle + '>' +
+            '<div class="news-item' + pinClass + '">' +
             '<span class="date">' + date + '</span>' +
             '<span class="content">' + contentHtml + '</span>' +
             '</div>';
@@ -26,6 +26,8 @@
         if (!newsScroll) {
             return;
         }
+
+        newsScroll.setAttribute('aria-busy', 'true');
 
         try {
             var response = await fetch('data/news.json');
@@ -45,10 +47,12 @@
                     '<span class="date">-</span>' +
                     '<span class="content">No news available.</span>' +
                     '</div>';
+                newsScroll.setAttribute('aria-busy', 'false');
                 return;
             }
 
             newsScroll.innerHTML = orderedNews.map(createNewsItem).join('');
+            newsScroll.setAttribute('aria-busy', 'false');
         } catch (error) {
             console.error('Failed to load news:', error);
             newsScroll.innerHTML = '' +
@@ -56,6 +60,7 @@
                 '<span class="date">!</span>' +
                 '<span class="content">Failed to load news data.</span>' +
                 '</div>';
+            newsScroll.setAttribute('aria-busy', 'false');
         }
     }
 

@@ -12,9 +12,9 @@
   margin-bottom: 1px;
   padding: 6px;
   border: 1px solid rgba(0,0,0,0.04);
-  border-radius: 3px;
+  border-radius: var(--border-radius-sm);
   background-color: var(--background-color);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  box-shadow: var(--box-shadow-sm);
   transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   display: flex;
   align-items: flex-start;
@@ -25,13 +25,13 @@
 
 .publication-item:hover {
   transform: translateY(-1px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  box-shadow: var(--box-shadow);
 }
 
 /* Highlighted/Selected Publications */
 .publication-highlighted {
-  background: linear-gradient(135deg, #fff8dc 0%, #f9f9f9 100%);
-  border: 1px solid #f0c987;
+  background: linear-gradient(135deg, var(--highlight-bg) 0%, #f9f9f9 100%);
+  border: 1px solid var(--highlight-border);
   box-shadow: 0 2px 8px rgba(240, 201, 135, 0.2);
 }
 
@@ -41,125 +41,147 @@
 }
 
 /* Compact styling for index page */
-body.index-page .publication-item {
+body.index-page .publication-item,
+.publication-item--index {
   margin-bottom: 0px;
   padding: 4px;
   gap: 4px;
   border-radius: 3px;
 }
 
-body.index-page .publication-image {
+body.index-page .publication-image,
+.publication-item--index .publication-image {
   flex: 0 0 140px;
   width: 140px;
   height: 90px;
   margin-right: 16px;
 }
 
-body.index-page .publication-title {
+body.index-page .publication-title,
+.publication-item--index .publication-title {
   font-size: 1.05em;
   margin-bottom: 2px;
   line-height: 1.1;
 }
 
-body.index-page .publication-authors {
+body.index-page .publication-authors,
+.publication-item--index .publication-authors {
   font-size: 0.9em;
   margin-bottom: 2px;
   line-height: 1.1;
 }
 
-body.index-page .publication-venue {
+body.index-page .publication-venue,
+.publication-item--index .publication-venue {
   font-size: 0.85em;
   margin-bottom: 2px;
   line-height: 1.1;
 }
 
-body.index-page .year-links-container {
+body.index-page .year-links-container,
+.publication-item--index .year-links-container {
   margin-top: 2px;
 }
 
 /* Enhanced visibility for PDF, star, and citation regions on index page */
-body.index-page .publication-links a {
+body.index-page .publication-links a,
+.publication-item--index .publication-links a {
   font-size: 0.85em;
   padding: 2px 4px;
   font-weight: 500;
 }
 
-body.index-page .github-stars {
+body.index-page .github-stars,
+.publication-item--index .github-stars {
   font-size: 1.0em;
   font-weight: 500;
 }
 
 /* Adjust spacing for enhanced visibility elements on index page */
-body.index-page .publication-links {
+body.index-page .publication-links,
+.publication-item--index .publication-links {
   margin-top: 4px;
 }
 
-body.index-page .publication-links a {
+body.index-page .publication-links a,
+.publication-item--index .publication-links a {
   margin-right: 10px;
   margin-bottom: 6px;
 }
 
 /* Ensure proper spacing and alignment for compact layout */
-body.index-page .publication-content {
+body.index-page .publication-content,
+.publication-item--index .publication-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 /* Maintain hover effects for compact cards */
-body.index-page .publication-item:hover {
+body.index-page .publication-item:hover,
+.publication-item--index:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
 /* Reduced font sizes for publications page */
-body.publications-page .publication-title {
+body.publications-page .publication-title,
+.publication-item--page .publication-title {
   font-size: 1.0em;
   margin-bottom: 3px;
   line-height: 1.15;
 }
 
-body.publications-page .publication-authors {
+body.publications-page .publication-authors,
+.publication-item--page .publication-authors {
   font-size: 0.85em;
   margin-bottom: 2px;
   line-height: 1.15;
 }
 
-body.publications-page .publication-venue {
+body.publications-page .publication-venue,
+.publication-item--page .publication-venue {
   font-size: 0.8em;
   margin-bottom: 3px;
   line-height: 1.15;
 }
 
-body.publications-page .publication-links a {
+body.publications-page .publication-links a,
+.publication-item--page .publication-links a {
   font-size: 0.7em;
 }
 
-body.publications-page .github-stars {
+body.publications-page .github-stars,
+.publication-item--page .github-stars {
   font-size: 0.8em;
 }
 
-body.publications-page .filter-btn {
+body.publications-page .filter-btn,
+.publications-page .filter-btn {
   font-size: 14px;
   padding: 8px 16px;
 }
 
 /* Adjust spacing for publications page with smaller fonts */
-body.publications-page .publication-item {
+body.publications-page .publication-item,
+.publication-item--page {
   padding: 6px;
   margin-bottom: 1px;
 }
 
-body.publications-page .year-links-container {
+body.publications-page .year-links-container,
+.publication-item--page .year-links-container {
   margin-top: 2px;
   gap: 4px;
 }
 
-body.publications-page .publication-links {
+body.publications-page .publication-links,
+.publication-item--page .publication-links {
   margin-top: 8px;
 }
 
-body.publications-page .publication-links a {
+body.publications-page .publication-links a,
+.publication-item--page .publication-links a {
   margin-right: 8px;
   margin-bottom: 4px;
 }
@@ -169,7 +191,7 @@ body.publications-page .publication-links a {
   width: 140px;
   height: 90px;
   border-radius: 2px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   object-fit: cover;
   display: block;
   margin: 0;
@@ -218,12 +240,13 @@ body.publications-page .publication-links a {
 
 /* Acceptance info styling: bold red, placed after the year */
 .accept-info {
-  color: #c00;
+  color: var(--danger-color);
   font-weight: 700;
 }
 
 /* Inline links in venue for publications page */
-body.publications-page .publication-venue a {
+body.publications-page .publication-venue a,
+.publication-item--page .publication-venue a {
   color: var(--accent-color);
   text-decoration: none;
   font-style: normal;
@@ -231,7 +254,8 @@ body.publications-page .publication-venue a {
   transition: color var(--transition-speed) ease;
 }
 
-body.publications-page .publication-venue a:hover {
+body.publications-page .publication-venue a:hover,
+.publication-item--page .publication-venue a:hover {
   color: var(--primary-color);
   text-decoration: underline;
 }
@@ -297,7 +321,7 @@ body.publications-page .publication-venue a:hover {
   border-radius: 25px;
   cursor: pointer;
   transition: all var(--transition-speed) ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: var(--box-shadow-sm);
   font-size: 15px;
   margin: 0 8px 12px;
 }
@@ -312,6 +336,11 @@ body.publications-page .publication-venue a:hover {
   background-color: var(--primary-color);
   color: white;
   box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.publications-loading {
+  opacity: 0.75;
+  transition: opacity var(--transition-fast) ease;
 }
 
 /* Featured Publications Styles */
@@ -360,6 +389,11 @@ body.publications-page .publication-venue a:hover {
   background-color: var(--background-color);
 }
 
+.selected-publications .publication-section + .publication-section {
+  margin-top: 12px;
+  padding-top: 8px;
+}
+
 /* Loading State */
 .loading {
   text-align: center;
@@ -374,7 +408,7 @@ body.publications-page .publication-venue a:hover {
 }
 
 /* Responsive Design - Compact Layout */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .publications-list {
     gap: 1px;
   }
@@ -659,7 +693,7 @@ body.publications-page .publication-venue a:hover {
 }
 
 /* Medium screens (tablets) */
-@media screen and (max-width: 1024px) and (min-width: 769px) {
+@media screen and (max-width: 1200px) and (min-width: 901px) {
   .publication-item {
     padding: 5px;
     gap: 5px;
@@ -708,7 +742,7 @@ body.publications-page .publication-venue a:hover {
 }
 
 /* Mobile responsive for inline citation */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .citation-container {
     margin: 6px 0;
     border-radius: 4px;
@@ -760,7 +794,7 @@ body.publications-page .publication-venue a:hover {
 }
 
 /* Small screens */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .citation-container {
     margin: 4px 0;
     border-radius: 3px;
@@ -833,7 +867,7 @@ body.publications-page .publication-venue a:hover {
 }
 
 /* Responsive adjustments for year grouping */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .year-header {
     font-size: 1.5em;
     margin-bottom: 15px;
