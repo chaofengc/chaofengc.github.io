@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to load coauthors data
   async function loadCoauthorsData() {
     try {
-      const response = await fetch('data/coauthor-info.json');
+      const response = await fetch('data/coauthor.json');
       if (!response.ok) {
         throw new Error('Failed to load coauthor info');
       }

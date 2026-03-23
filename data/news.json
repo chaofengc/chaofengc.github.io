@@ -1,0 +1,122 @@
+{
+  "news": [
+    {
+      "date": "⭐",
+      "pin": true,
+      "content_html": "Use <code style='color: black; background-color: yellow;'>pip install pyiqa</code> to try our PyTorch toolbox for Image Quality Assessment <a href='https://github.com/chaofengc/IQA-PyTorch' target='_blank'>IQA-PyTorch</a> <img alt='GitHub Repo stars' src='https://img.shields.io/github/stars/chaofengc/IQA-PyTorch'> <a href='https://pepy.tech/projects/pyiqa'><img src='https://static.pepy.tech/personalized-badge/pyiqa?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads' alt='PyPI Downloads'></a>"
+    },
+    {
+      "date": "⭐",
+      "pin": true,
+      "content_html": "Find a comprehensive survey about Image Quality Assessment here: <a href='https://github.com/chaofengc/Awesome-Image-Quality-Assessment' target='_blank'>Awesome-Image-Quality-Assessment</a> <img alt='GitHub Repo stars' src='https://img.shields.io/github/stars/chaofengc/Awesome-Image-Quality-Assessment'>"
+    },
+    {
+      "date": "2025-07",
+      "content_html": "One paper is accepted by ICCV2025 (<span style='color:red;'>Highlight</span>)!"
+    },
+    {
+      "date": "2025-01",
+      "content_html": "Our work <a href='https://github.com/mc-lan/Text4Seg' target='_blank'>Text4Seg</a> is accepted by ICLR2025!"
+    },
+    {
+      "date": "2024-07",
+      "content_html": "Four papers are accepted by ACM MM2024 with three <span style='color:red;'>Oral (3.97%)</span> presentations!"
+    },
+    {
+      "date": "2024-07",
+      "content_html": "Five papers are accepted by ECCV2024 (1 first-authored, 1 Oral)!"
+    },
+    {
+      "date": "2024-05",
+      "content_html": "<a href='https://github.com/Q-Future/Q-Align' target='_blank'>Q-Align</a> is accepted by ICML2024!"
+    },
+    {
+      "date": "2024-02",
+      "content_html": "Two papers (Co-authored) about IQA are accepted by CVPR2024!"
+    },
+    {
+      "date": "2024-01",
+      "content_html": "<a href='https://github.com/Q-Future/Q-Bench' target='_blank'>Q-Bench</a> is accepted as <span style='color:red;'>spotlight paper (4.96%)</span> by ICLR2024!"
+    },
+    {
+      "date": "2024-01",
+      "content_html": "<a href='https://github.com/chaofengc/IQA-PyTorch' target='_blank'>TOPIQ</a> is accepted by Transactions on Image Processing (TIP)."
+    },
+    {
+      "date": "2023-12",
+      "content_html": "One paper about image super-resolution is accepted by AAAI2024."
+    },
+    {
+      "date": "2023-10",
+      "content_html": "We release <a href='https://q-future.github.io/Q-Instruct/' target='_blank'>Q-Instruct</a>, a multi-modality dataset for low-level visual instruction tuning with large visual language models."
+    },
+    {
+      "date": "2023-09",
+      "content_html": "We release <a href='https://github.com/VQAssessment/Q-Bench' target='_blank'>Q-Bench</a>, a systematic benchmark for multi-modality LLMs (MLLMs) on low-level vision and visual quality assessment."
+    },
+    {
+      "date": "2023-09",
+      "content_html": "Extension of <a href='https://github.com/VQAssessment/FAST-VQA-and-FasterVQA' target='_blank'>FAST-VQA (FasterVQA)</a> get accepted by TPAMI."
+    },
+    {
+      "date": "2023-07",
+      "content_html": "One paper about video quality assessment is accepted by ACM MM 2023."
+    },
+    {
+      "date": "2023-07",
+      "content_html": "One paper about video quality assessment is accepted by ICCV 2023."
+    },
+    {
+      "date": "2023-03",
+      "content_html": "One paper about video quality assessment is accepted by ICME 2023."
+    },
+    {
+      "date": "2023-02",
+      "content_html": "One paper about video quality assessment is accepted by TCSVT 2023."
+    },
+    {
+      "date": "2022-12",
+      "content_html": "One paper about video prediction is accepted by AAAI 2023."
+    },
+    {
+      "date": "2022-11",
+      "content_html": "Our research team, <a href='https://github.com/QualityAssessment' target='_blank'>NTU Visual Quality Assessment Group</a> is created, which aims to build efficient and explainable Visual Quality Assessment approaches."
+    },
+    {
+      "date": "2022-09",
+      "content_html": "One paper is accepted by NeurIPS 2022."
+    },
+    {
+      "date": "2022-07",
+      "content_html": "Three papers have been accepted by ECCV2022."
+    },
+    {
+      "date": "2022-06",
+      "content_html": "Two papers, including <a href='https://arxiv.org/abs/2202.13142' target='_blank'>QuanTexSR (renamed as FeMaSR)</a> have been accepted by ACM MM2022 as <span style='color:red;'>Oral presentation (5.9%)</span>."
+    },
+    {
+      "date": "2022-06",
+      "content_html": "One paper, <a href='https://arxiv.org/abs/2202.07358' target='_blank'>FFRNet</a> about masked face recognition has been accepted by ICIP2022."
+    },
+    {
+      "date": "2022-03",
+      "content_html": "We release our work about blind image resolution, <a href='https://arxiv.org/abs/2202.13142' target='_blank'>QuanTexSR</a>, together with the codes in <a href='https://github.com/chaofengc/QuanTexSR' target='_blank'>Github</a>."
+    },
+    {
+      "date": "2022-02",
+      "content_html": "We release a PyTorch toolbox for IQA <a href='https://github.com/chaofengc/IQA-PyTorch' target='_blank'><img class='imgbadge' src='https://img.shields.io/github/stars/Chaofengc/IQA-PyTorch?style=social'></a> as well as a comprehensive survey <a href='https://github.com/chaofengc/Awesome-Image-Quality-Assessment' target='_blank'><img class='imgbadge' src='https://img.shields.io/github/stars/Chaofengc/Awesome-Image-Quality-Assessment?style=social'></a>."
+    },
+    {
+      "date": "2021-07",
+      "content_html": "One paper about HDR video reconstruction is accepted by ICCV 2021."
+    },
+    {
+      "date": "2021-03",
+      "content_html": "Our paper <a href='https://github.com/chaofengc/PSFRGAN' target='_blank'>PSFR-GAN</a> about face SR has been accepted by CVPR2021."
+    },
+    {
+      "date": "2020-11",
+      "content_html": "Our paper <a href='https://github.com/chaofengc/Face-SPARNet' target='_blank'>SPARNet</a> about face SR has been accepted by TIP2020."
+    }
+  ]
+}

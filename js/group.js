@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
    */
   async function loadGroupMembers() {
     try {
-      const response = await fetch('data/group-members.json');
+      const response = await fetch('data/members.json');
       if (!response.ok) {
         throw new Error('Failed to load group members data');
       }
