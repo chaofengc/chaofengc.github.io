@@ -12,8 +12,8 @@ class ProjectsManager {
     async init() {
         try {
             // Add loading state to prevent layout shifts
-            const projectsContainer = document.getElementById('projects-container');
-            const filterContainer = document.getElementById('filter-tags');
+            const projectsContainer = document.getElementById('projectsContainer');
+            const filterContainer = document.getElementById('filterTags');
             
             if (projectsContainer) {
                 projectsContainer.style.minHeight = '400px';
@@ -200,7 +200,6 @@ class ProjectsManager {
         allButton.className = 'filter-tag active';
         allButton.setAttribute('data-tag', 'all');
         allButton.textContent = 'All Projects';
-        allButton.addEventListener('click', () => this.filterProjects('all'));
         filterTagsContainer.appendChild(allButton);
 
         // Add Featured filter button
@@ -208,7 +207,6 @@ class ProjectsManager {
         featuredButton.className = 'filter-tag';
         featuredButton.setAttribute('data-tag', 'featured');
         featuredButton.textContent = 'Featured';
-        featuredButton.addEventListener('click', () => this.filterProjects('featured'));
         filterTagsContainer.appendChild(featuredButton);
 
         // Add tag buttons (从项目tags字段自动生成)
@@ -217,7 +215,6 @@ class ProjectsManager {
             tagButton.className = 'filter-tag';
             tagButton.setAttribute('data-tag', tag);
             tagButton.textContent = tag;
-            tagButton.addEventListener('click', () => this.filterProjects(tag));
             filterTagsContainer.appendChild(tagButton);
         });
     }
@@ -392,39 +389,6 @@ class ProjectsManager {
                 this.filterProjects(tag);
             }
         });
-
-        // Mobile navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (hamburger && navMenu) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-        }
-
-        // Smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
     }
 
     showError(message) {
@@ -444,46 +408,3 @@ class ProjectsManager {
 document.addEventListener('DOMContentLoaded', () => {
     new ProjectsManager();
 });
-
-// Add some utility functions for enhanced functionality
-window.ProjectsUtils = {
-    // Function to search projects
-    searchProjects: function(query) {
-        const projectsManager = window.projectsManager;
-        if (!projectsManager) return;
-
-        const filteredProjects = projectsManager.projects.filter(project => 
-            project.title.toLowerCase().includes(query.toLowerCase()) ||
-            project.description.toLowerCase().includes(query.toLowerCase()) ||
-            project.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
-        );
-
-        projectsManager.renderProjects(filteredProjects);
-        projectsManager.updateStats(filteredProjects);
-    },
-
-    // Function to sort projects
-    sortProjects: function(sortBy) {
-        const projectsManager = window.projectsManager;
-        if (!projectsManager) return;
-
-        let sortedProjects = [...projectsManager.projects];
-        
-        switch(sortBy) {
-            case 'stars':
-                sortedProjects.sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0));
-                break;
-            case 'year':
-                sortedProjects.sort((a, b) => (b.year || 0) - (a.year || 0));
-                break;
-            case 'title':
-                sortedProjects.sort((a, b) => a.title.localeCompare(b.title));
-                break;
-            case 'featured':
-                sortedProjects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-                break;
-        }
-
-        projectsManager.renderProjects(sortedProjects);
-    }
-};

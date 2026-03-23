@@ -130,7 +130,6 @@ class NavigationGenerator {
      */
     initScrollEffect() {
         let ticking = false;
-        let isInitialized = false;
         
         const updateNavigation = () => {
             const header = document.querySelector('.site-header');
@@ -163,7 +162,6 @@ class NavigationGenerator {
             if (scrollTop > 100) {
                 header.classList.add('scrolled');
             }
-            isInitialized = true;
         }
         
         // 监听滚动事件

@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const publicationsContainer = document.getElementById('publications-container') || 
                                document.querySelector('.publications-container');
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const bibFileInput = document.getElementById('bib-file');
-  const parseBibButton = document.getElementById('parse-bib');
   
   // Default BIB data (example)
   let defaultBibData = `
@@ -90,9 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Store current publication data
   let currentPublications = [];
   let currentFilter = 'all';
-  
-  // Additional coauthors data for enhanced functionality
-  let additionalCoauthorsData = {};
   
   /**
    * Create a publication element
@@ -442,15 +437,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   /**
-   * Format author list
-   * @param {string} authors Authors string
-   * @returns {string} Formatted author list
-   */
-  function formatAuthors(authors) {
-    return authors.split(' and ').join(', ');
-  }
-  
-  /**
    * Format author list with clickable links and indicators
    * @param {string} authors Authors string
    * @param {Object} pubConfig Publication configuration object
@@ -534,54 +520,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Expand the citation
     expandCitation(citationContainer, publication, bibtexText);
-  }
-  
-  /**
-   * Find the appropriate insertion point for the citation container
-   * @param {HTMLElement} triggerElement The element that triggered the citation
-   * @param {HTMLElement} publicationElement The publication container
-   * @returns {HTMLElement|null} The element after which to insert the citation
-   */
-  function findInsertionPoint(triggerElement, publicationElement) {
-    // Start from the trigger element and walk up to find the containing line
-    let currentElement = triggerElement;
-    
-    // Walk up the DOM tree to find the line-level container
-    while (currentElement && currentElement !== publicationElement) {
-      // Look for specific publication elements that represent lines
-      if (currentElement.classList.contains('publication-venue') ||
-          currentElement.classList.contains('publication-title') ||
-          currentElement.classList.contains('publication-authors')) {
-        // Insert after this line element to create a new line
-        return { element: currentElement, position: 'afterend' };
-      }
-      
-      const parent = currentElement.parentElement;
-      
-      // Check if current element is a direct child of publication-content
-      if (parent && parent.classList.contains('publication-content')) {
-        // This element is a direct child of publication-content
-        // Insert after this element to create a new line
-        return { element: currentElement, position: 'afterend' };
-      }
-      
-      // Check if current element is publication-content itself
-      if (currentElement.classList.contains('publication-content')) {
-        // Insert at the end of publication-content
-        return { element: currentElement, position: 'beforeend' };
-      }
-      
-      currentElement = parent;
-    }
-    
-    // Fallback: find publication-content and insert at the end
-    const publicationContent = publicationElement.querySelector('.publication-content');
-    if (publicationContent) {
-      return { element: publicationContent, position: 'beforeend' };
-    }
-    
-    // Final fallback: insert at the end of publication element
-    return { element: publicationElement, position: 'beforeend' };
   }
   
   /**
@@ -739,28 +677,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Re-render
         renderPublications(currentPublications, currentFilter);
       });
-    });
-  }
-  
-  /**
-   * Handle BIB file upload
-   */
-  if (parseBibButton && bibFileInput) {
-    parseBibButton.addEventListener('click', function() {
-      if (!bibFileInput.files || bibFileInput.files.length === 0) {
-        console.log('Please select a BIB file first');
-        return;
-      }
-      
-      const file = bibFileInput.files[0];
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        const bibContent = e.target.result;
-        processBibContent(bibContent);
-      };
-      
-      reader.readAsText(file);
     });
   }
   
