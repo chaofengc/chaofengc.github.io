@@ -1263,19 +1263,46 @@ section h2 {
 }
 
 .opening-detail-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   text-decoration: none;
   font-weight: 700;
-  color: #fff;
-  background: #c2571a;
-  border: 1px solid #a74713;
+  color: #9e3f12;
+  background: linear-gradient(180deg, #fff4eb 0%, #ffe9d8 100%);
+  border: 1px solid #e0b188;
   border-radius: 999px;
-  padding: 5px 12px;
-  transition: background-color var(--transition-speed) ease;
+  padding: 4px 11px;
+  box-shadow: 0 2px 8px rgba(176, 90, 28, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.opening-detail-link::after {
+  content: "→";
+  font-weight: 700;
+  font-size: 0.8rem;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
 }
 
 .opening-detail-link:hover {
-  background: #a74713;
+  color: #7d2f0c;
+  background: linear-gradient(180deg, #ffe8d4 0%, #ffd9bd 100%);
+  box-shadow: 0 5px 14px rgba(176, 90, 28, 0.2);
+  transform: translateY(-1px);
+}
+
+.opening-detail-link:hover::after {
+  transform: translateX(2px);
+}
+
+.opening-detail-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(194, 87, 26, 0.26), 0 5px 14px rgba(176, 90, 28, 0.2);
+}
+
+.opening-detail-link:active {
+  transform: translateY(0);
 }
 
 .opening-detail-link-inline {
