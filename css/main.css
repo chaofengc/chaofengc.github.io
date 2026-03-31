@@ -1098,34 +1098,201 @@ section h2 {
 }
 
 .opening-highlight {
-  background-color: var(--highlight-bg);
+  background: linear-gradient(135deg, #fffdf8 0%, var(--highlight-bg) 100%);
   border: 1px solid var(--highlight-border);
+  border-left: 4px solid #d98324;
   border-radius: var(--border-radius);
-  padding: 15px;
+  padding: 16px;
   margin: 20px 0;
-  box-shadow: var(--box-shadow-sm);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
 .opening-highlight-title {
-  color: var(--danger-color);
+  color: #a33f13;
   font-weight: 700;
   font-size: 1.1rem;
 }
 
+.opening-highlight-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .opening-highlight hr {
   border: none;
-  border-top: 1px solid var(--highlight-border);
-  margin: 10px 0;
+  border-top: 1px dashed #ebc78c;
+  margin: 10px 0 14px;
 }
 
 .opening-highlight p {
-  margin: 6px 0;
+  margin: 8px 0;
   color: var(--text-color);
+  line-height: 1.65;
 }
 
 .opening-highlight-accent {
   color: var(--danger-color);
   font-weight: 700;
+}
+
+.opening-highlight-intro {
+  margin: 6px 0;
+}
+
+.opening-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.opening-status-card {
+  background: #fff;
+  border: 1px solid #e9dfcf;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+  animation: openingCardEnter 0.45s ease both;
+}
+
+.opening-status-card:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.opening-status-card:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.opening-status-card:hover {
+  transform: translateY(-3px);
+}
+
+.opening-status-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.opening-role {
+  font-weight: 700;
+  color: #4d4032;
+}
+
+.opening-status-badge {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.opening-status-card.is-open {
+  border-color: #7ecb8d;
+  background: linear-gradient(180deg, #f4fff5 0%, #e8fbe9 100%);
+  box-shadow: 0 8px 18px rgba(38, 166, 91, 0.16);
+}
+
+.opening-status-card.is-open:hover {
+  box-shadow: 0 14px 28px rgba(28, 150, 82, 0.24);
+}
+
+.opening-status-card.is-open:hover .opening-status-badge {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 5px 10px rgba(24, 129, 63, 0.24);
+}
+
+.opening-status-card.is-open .opening-status-badge {
+  color: #ffffff;
+  background: #1f9d4f;
+  border: 1px solid #18813f;
+}
+
+.opening-status-card.is-closed {
+  border-color: #dde2e8;
+  background: linear-gradient(180deg, #f8f9fb 0%, #f3f5f8 100%);
+  box-shadow: none;
+}
+
+.opening-status-card.is-closed:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(136, 145, 157, 0.1);
+}
+
+.opening-status-card.is-closed .opening-status-badge {
+  color: #7b838d;
+  background: #eceff3;
+  border: 1px solid #d9dfe6;
+}
+
+.opening-status-card.is-closed .opening-role,
+.opening-status-card.is-closed p {
+  color: #8b939d;
+}
+
+.opening-status-card.is-longterm .opening-status-badge {
+  color: #0d496e;
+  background: #d9edff;
+  border-color: #b8dcfb;
+}
+
+.opening-status-card p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: #4f4f4f;
+}
+
+@keyframes openingCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.opening-highlight-footer {
+  margin-top: 12px;
+}
+
+.opening-detail-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: #c2571a;
+  border: 1px solid #a74713;
+  border-radius: 999px;
+  padding: 5px 12px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.opening-detail-link:hover {
+  background: #a74713;
+}
+
+.opening-detail-link-inline {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 960px) {
+  .opening-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opening-highlight-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
