@@ -381,9 +381,7 @@ body.publications-page .publication-venue a:hover,
 }
 
 .selected-publications .publication-item {
-  flex: 1;
   min-width: 300px;
-  padding: 25px;
   border: 1px solid rgba(0,0,0,0.05);
   border-radius: var(--border-radius);
   background-color: var(--background-color);
