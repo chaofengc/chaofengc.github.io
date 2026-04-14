@@ -243,6 +243,15 @@
       "image": "images/publications/TIP2020_SPARNet.png",
       "pdf": "https://arxiv.org/abs/2012.01211",
       "github": "https://github.com/chaofengc/Face-SPARNet"
+    },
+    "sun2026prompt": {
+      "pdf": "https://doi.org/10.1109/TMM.2026.3668530"
+    },
+    "li2025denoised": {
+      "pdf": "https://doi.org/10.1109/TMM.2025.3632644"
+    },
+    "li2024continual": {
+      "pdf": "https://doi.org/10.1109/TCSVT.2024.3411477"
     }
   }
 }
