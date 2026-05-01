@@ -11,7 +11,7 @@ class NavigationGenerator {
             // { name: "Group", href: "group.html", id: "group" },
             { name: "Publications", href: "publications.html", id: "publications" },
             // { name: "Projects", href: "projects.html", id: "projects" },
-            { name: "Openings", href: "openings.html", id: "openings" },
+            { name: "Join us", href: "openings.html", id: "openings" },
             // { name: "Gallery", href: "gallery.html", id: "gallery" }
         ];
     }
