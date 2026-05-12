@@ -484,17 +484,34 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {HTMLElement} publicationElement The publication item element
    */
   function showBibtex(publication, publicationElement, triggerElement = null) {
-    const bibtexText = `@${publication.type}{${publication.citeKey},
-  title={${publication.title || ''}},
-  author={${publication.author || ''}},
-  ${publication.journal ? `journal={${publication.journal}},` : ''}
-  ${publication.booktitle ? `booktitle={${publication.booktitle}},` : ''}
-  ${publication.volume ? `volume={${publication.volume}},` : ''}
-  ${publication.number ? `number={${publication.number}},` : ''}
-  ${publication.pages ? `pages={${publication.pages}},` : ''}
-  ${publication.year ? `year={${publication.year}},` : ''}
-  ${publication.publisher ? `publisher={${publication.publisher}}` : ''}
-}`;
+    const bibtexFields = [
+      `    title={${publication.title || ''}}`,
+      `    author={${publication.author || ''}}`
+    ];
+
+    if (publication.journal) {
+      bibtexFields.push(`    journal={${publication.journal}},`);
+    }
+    if (publication.booktitle) {
+      bibtexFields.push(`    booktitle={${publication.booktitle}},`);
+    }
+    if (publication.volume) {
+      bibtexFields.push(`    volume={${publication.volume}},`);
+    }
+    if (publication.number) {
+      bibtexFields.push(`    number={${publication.number}},`);
+    }
+    if (publication.pages) {
+      bibtexFields.push(`    pages={${publication.pages}},`);
+    }
+    if (publication.year) {
+      bibtexFields.push(`    year={${publication.year}},`);
+    }
+    if (publication.publisher) {
+      bibtexFields.push(`    publisher={${publication.publisher}}`);
+    }
+
+    const bibtexText = [`@${publication.type}{${publication.citeKey},`, ...bibtexFields, '}'].join('\n');
     
     // Find existing citation container
     let citationContainer = publicationElement.querySelector('.citation-container');
