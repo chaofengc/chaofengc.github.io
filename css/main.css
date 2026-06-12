@@ -567,6 +567,34 @@ section h2 {
     }
 }
 
+    #clustrmap-container {
+      width: 25%;
+      min-width: 220px;
+      max-width: 280px;
+      margin: 24px auto 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    #clustrmap-container iframe,
+    #clustrmap-container img,
+    #clustrmap-container canvas,
+    #clustrmap-container svg,
+    #clustrmap-container > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      margin: 0 auto;
+      display: block;
+    }
+
+    @media screen and (max-width: 900px) {
+      #clustrmap-container {
+        width: min(60%, 280px);
+        min-width: 0;
+      }
+    }
+
 /* Simple Footer Styles */
 .site-footer {
   border-top: 1px solid var(--border-color);
