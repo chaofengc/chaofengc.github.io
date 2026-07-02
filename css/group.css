@@ -176,10 +176,9 @@
 
 /* === 4. Members Grid === */
 .members-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
     margin-bottom: 20px;
 }
 
@@ -196,8 +195,9 @@
     overflow: hidden;
     z-index: 1;
     width: 100%;
-    max-width: 320px;
-    flex: 1 1 280px;
+    max-width: 260px;
+    padding: 26px 16px;
+    justify-self: center;
 }
 
 .member-card::before {
@@ -394,7 +394,17 @@
 }
 
 /* === Mobile Responsive === */
+@media (max-width: 1200px) {
+    .members-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 900px) {
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .alumni-ul {
         column-count: 1;
     }
@@ -431,9 +441,8 @@
         padding: 6px 12px;
     }
     .members-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     .alumni-list-container {
         padding: 10px 0;
