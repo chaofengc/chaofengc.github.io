@@ -676,10 +676,6 @@ section h2 {
   transition: transform var(--transition-speed) ease;
 }
 
-.lab-logo:hover .lab-logo-img {
-  transform: scale(1.05);
-}
-
 .lab-name {
   font-size: 3em;
   font-weight: 600;
