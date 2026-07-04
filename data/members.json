@@ -15,7 +15,9 @@
       "bio": "remote sensing",
       "image": "images/person/jianlong.png",
       "links": {
-        "homepage": "https://elaxegan.github.io/"
+        "homepage": "https://elaxegan.github.io/",
+        "scholar": "https://scholar.google.com/citations?user=3WKpzJ0AAAAJ&hl=en",
+        "github": "https://github.com/elaxEgan"
       }
     }
   ],
@@ -23,21 +25,23 @@
     {
       "name": "Yu Jiang",
       "title": "Master, 2026 Fall -",
-      "bio": "",
+      "bio": "3D/video generation",
       "image": "images/person/yujiang.png",
-      "links": {}
+      "links": {
+        "github": "https://github.com/jiangyuabc"
+      }
     },
     {
       "name": "Lan Tan",
       "title": "Master, 2026 Fall -",
-      "bio": "",
+      "bio": "image restoration",
       "image": "images/site/placeholder-person.svg",
       "links": {}
     },
     {
       "name": "Haoran Gao",
       "title": "Master, 2026 Fall -",
-      "bio": "",
+      "bio": "agent",
       "image": "images/person/haoran.png",
       "links": {}
     },
@@ -53,7 +57,7 @@
     {
       "name": "Ailimulati Yusupu",
       "title": "Undergraduate",
-      "bio": "",
+      "bio": "image generation",
       "image": "images/person/alimu.jpg",
       "links": {
         "email": "mailto:alimuratysp@gmail.com",
