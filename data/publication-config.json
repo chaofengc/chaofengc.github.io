@@ -1,5 +1,9 @@
 {
   "publications": {
+    "li2026etpdesigner": {
+      "pdf": "https://arxiv.org/abs/2607.19947",
+      "corresponding_authors": ["Chaofeng Chen"]
+    },
     "li2025gsmorph": {
       "image": "images/publications/arxiv2025_gsmorph.png",
       "select": true,
