@@ -54,16 +54,15 @@
     }
   ],
   "undergraduate_students": [
+  ],
+  "alumni": [
     {
       "name": "Ailimulati Yusupu",
-      "title": "Undergraduate",
-      "bio": "image generation",
-      "image": "images/person/alimu.jpg",
+      "title": "Master",
+      "current_position": "Texas A&M University, Advisor: Dr. Zhengzhong Tu",
       "links": {
-        "email": "mailto:alimuratysp@gmail.com",
         "homepage": "https://alimuratyusup.github.io"
       }
     }
-  ],
-  "alumni": []
+  ]
 }

@@ -191,11 +191,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const undergraduateGrid = document.getElementById('undergraduate-members');
     if (undergraduateGrid) {
       if (data.undergraduate_students && data.undergraduate_students.length > 0) {
+        const undergraduateHeader = document.getElementById('undergraduate-section-header');
+        if (undergraduateHeader) {
+          undergraduateHeader.style.display = '';
+        }
+        undergraduateGrid.style.display = '';
         undergraduateGrid.innerHTML = data.undergraduate_students
           .map(member => createMemberCard(member))
           .join('');
       } else {
-        undergraduateGrid.innerHTML = '<p class="no-members state-message">No Undergraduate students to display yet.</p>';
+        const undergraduateHeader = document.getElementById('undergraduate-section-header');
+        if (undergraduateHeader) {
+          undergraduateHeader.style.display = 'none';
+        }
+        undergraduateGrid.style.display = 'none';
       }
     }
     
