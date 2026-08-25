@@ -1,5 +1,8 @@
 {
   "publications": {
+    "ma2026desap": {
+      "pdf": "https://arxiv.org/abs/2604.11240"
+    },
     "li2026etpdesigner": {
       "pdf": "https://arxiv.org/abs/2607.19947",
       "corresponding_authors": ["Chaofeng Chen"]
