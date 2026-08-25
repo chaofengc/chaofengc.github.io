@@ -1,5 +1,9 @@
 {
   "publications": {
+    "gan2026geomar": {
+      "pdf": "https://arxiv.org/abs/2608.03923",
+      "github": "https://github.com/BRL-SYSU/GeoMAR"
+    },
     "ma2026desap": {
       "pdf": "https://arxiv.org/abs/2604.11240"
     },
