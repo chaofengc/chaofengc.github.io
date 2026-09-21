@@ -9,7 +9,8 @@
     },
     "li2026etpdesigner": {
       "pdf": "https://arxiv.org/abs/2607.19947",
-      "corresponding_authors": ["Chaofeng Chen"]
+      "corresponding_authors": ["Chaofeng Chen"],
+      "accept_info": "Oral"
     },
     "li2025gsmorph": {
       "image": "images/publications/arxiv2025_gsmorph.png",
