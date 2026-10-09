@@ -224,7 +224,8 @@
       "select": true,
       "image": "images/publications/arXiv2023_topiq.png",
       "pdf": "https://arxiv.org/abs/2308.03060",
-      "github": "https://github.com/chaofengc/IQA-PyTorch"
+      "github": "https://github.com/chaofengc/IQA-PyTorch",
+      "accept_info": "ESI Highly Cited Paper · 26.5/6"
     },
     "hou2023transparent": {
       "pdf": "https://ieeexplore.ieee.org/abstract/document/10235894"
