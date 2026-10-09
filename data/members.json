@@ -1,15 +1,6 @@
 {
   "phd_students": [
     {
-      "name": "Yuheng Xu",
-      "title": "PhD, 2026 Fall -",
-      "bio": "continual learning/domain adaptation",
-      "image": "images/person/yuheng.jpg",
-      "links": {
-        "email": "mailto:zeruagogogo@gmail.com"
-      }
-    },
-    {
       "name": "Jianlong He",
       "title": "PhD, 2026 Fall -",
       "bio": "remote sensing",
