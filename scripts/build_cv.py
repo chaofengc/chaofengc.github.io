@@ -245,8 +245,10 @@ section("Research Experience")
 for role, institution, date in CV["experience"]:
     story.append(dated(f"<b>{escape(role)}</b><br/>{escape(institution)}", date, SMALL))
 section("Education")
-for institution, degree, date in CV["education"]:
-    story.append(dated(f"<b>{escape(institution)}</b> - {escape(degree)}", date, SMALL))
+for institution, degree, date, *details in CV["education"]:
+    entry = [dated(f"<b>{escape(institution)}</b> - {escape(degree)}", date, SMALL)]
+    entry.extend(p(escape(detail), SMALL) for detail in details)
+    story.append(KeepTogether(entry))
 
 section("Selected Publications")
 story.append(p("Full list: " + link(CV["scholar"], "Google Scholar") + ". * Equal contribution; # Corresponding author.", SMALL))
