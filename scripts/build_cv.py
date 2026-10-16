@@ -12,7 +12,7 @@ import re
 from xml.sax.saxutils import escape
 
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
@@ -27,9 +27,9 @@ CV = json.loads((ROOT / "data/cv.json").read_text())
 CONFIG = json.loads((ROOT / "data/publication-config.json").read_text())["publications"]
 OUTPUT = ROOT / "assets/Resume_ChenChaofeng_en.pdf"
 ACCENT = colors.HexColor("#17406b")
-SIDE_MARGIN = 45
-TOP_MARGIN = 36
-BOTTOM_MARGIN = 40
+SIDE_MARGIN = 50
+TOP_MARGIN = 40
+BOTTOM_MARGIN = 44
 FONT_DIRS = [
     Path(os.environ.get("CV_FONT_DIR", "/usr/share/fonts/truetype/dejavu")),
     Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/Resources/fonts/truetype",
@@ -48,13 +48,14 @@ if CJK.exists():
     pdfmetrics.registerFont(TTFont("CV-Chinese", str(CJK), subfontIndex=0))
 
 BODY = ParagraphStyle("body", fontName="CV", fontSize=9, leading=12, spaceAfter=3, textColor=colors.HexColor("#20262d"))
-SMALL = ParagraphStyle("small", parent=BODY, fontSize=8.3, leading=10.8, spaceAfter=2)
-ACTIVITY_ITEM = ParagraphStyle("activity-item", parent=SMALL, leftIndent=12, bulletIndent=2, bulletFontName="CV", bulletFontSize=8.3)
-PUB = ParagraphStyle("pub", parent=BODY, fontSize=8.8, leading=11.5, leftIndent=22, firstLineIndent=-22, spaceAfter=6)
-SECTION = ParagraphStyle("section", parent=BODY, fontName="CV-Bold", fontSize=10.4, leading=14, textColor=ACCENT, spaceBefore=9, spaceAfter=4, keepWithNext=True)
+SMALL = ParagraphStyle("small", parent=BODY, fontSize=8.5, leading=11.8, spaceAfter=3)
+DATE = ParagraphStyle("date", parent=SMALL, alignment=TA_RIGHT, textColor=colors.HexColor("#657180"))
+ACTIVITY_ITEM = ParagraphStyle("activity-item", parent=SMALL, leftIndent=12, bulletIndent=2, bulletFontName="CV", bulletFontSize=8.5)
+PUB = ParagraphStyle("pub", parent=BODY, fontSize=9, leading=12.2, leftIndent=24, firstLineIndent=-24, spaceAfter=7)
+SECTION = ParagraphStyle("section", parent=BODY, fontName="CV-Bold", fontSize=10.4, leading=14, textColor=ACCENT, spaceBefore=12, spaceAfter=4, keepWithNext=True)
 SECTION_ICON = ParagraphStyle("section-icon", parent=SECTION, leftIndent=17)
 CONTACT = ParagraphStyle("contact", parent=BODY, fontSize=8.5, leading=12, leftIndent=14, spaceAfter=0)
-SUB = ParagraphStyle("sub", parent=SECTION, fontSize=9.5, leading=12, spaceBefore=7, spaceAfter=5)
+SUB = ParagraphStyle("sub", parent=SECTION, fontSize=9.5, leading=12, spaceBefore=10, spaceAfter=6)
 TITLE = ParagraphStyle("title", parent=BODY, fontName="CV-Bold", fontSize=21, leading=27, alignment=TA_CENTER, spaceAfter=3)
 CENTER = ParagraphStyle("center", parent=BODY, alignment=TA_CENTER)
 
@@ -164,11 +165,13 @@ def section(title):
         "Honors and Awards": "awards",
     }[title]
     story.append(IconParagraph(title.upper(), SECTION_ICON, icon, 12))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=ACCENT, spaceAfter=5))
+    rule = HRFlowable(width="100%", thickness=0.5, color=ACCENT, spaceAfter=6)
+    rule.keepWithNext = True
+    story.append(rule)
 
 
 def dated(left, date, style=BODY):
-    row = Table([[p(left, style), p(escape(date), SMALL)]], colWidths=[WIDTH - 116, 116])
+    row = Table([[p(left, style), p(escape(date), DATE)]], colWidths=[WIDTH - 110, 110])
     row.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (-1, -1), 0), ("TOPPADDING", (0, 0), (-1, -1), 0), ("BOTTOMPADDING", (0, 0), (-1, -1), 2)]))
     return row
 
@@ -202,7 +205,7 @@ def publication(key, number):
     for author in entry["author"].split(" and "):
         text = escape(author)
         if author == "Chaofeng Chen":
-            text = f"<b>{text}</b>"
+            text = "<b>Chaofeng&#160;Chen</b>"
         if author in config.get("co_first_authors", []):
             text += "<super>*</super>"
         if author in config.get("corresponding_authors", []):
@@ -229,7 +232,7 @@ def publication(key, number):
     if not url and entry.get("eprint"):
         url = f"https://arxiv.org/abs/{entry['eprint']}"
     title = link(url, entry["title"]) if url else escape(entry["title"])
-    return p(f"[{number}] <b>[{label}]</b> {', '.join(authors)}. {title}.", PUB)
+    return p(f'[{number}] <b>[{label}]</b> {title}. <font size="8.2" color="#56616f">{", ".join(authors)}.</font>', PUB)
 
 
 WIDTH = A4[0] - 2 * SIDE_MARGIN - 12
@@ -239,8 +242,7 @@ name = escape(CV["name"])
 if "CV-Chinese" in pdfmetrics.getRegisteredFontNames():
     name += f' <font name="CV-Chinese" size="17">({CV["name_zh"]})</font>'
 story += [p(name, TITLE), p(f'<b>{escape(CV["position"])}</b> | {escape(CV["affiliation"])}', CENTER)]
-story.append(contact_row([("email", "mailto:" + CV["email"], CV["email"]), ("email", "mailto:" + CV["personal_email"], CV["personal_email"])]))
-story.append(contact_row([("home", CV["website"], "Homepage"), ("code", CV["github"], "GitHub"), ("education", CV["scholar"], "Google Scholar")]))
+story.append(contact_row([("email", "mailto:" + CV["personal_email"], CV["personal_email"]), ("home", CV["website"], "Homepage"), ("code", CV["github"], "GitHub"), ("education", CV["scholar"], "Google Scholar")]))
 
 section("Research Interests")
 story.append(p(escape(CV["research"])))
@@ -249,8 +251,8 @@ for role, institution, date in CV["experience"]:
     story.append(dated(f"<b>{escape(role)}</b><br/>{escape(institution)}", date, SMALL))
 section("Education")
 for institution, degree, date, *details in CV["education"]:
-    entry = [dated(f"<b>{escape(institution)}</b> - {escape(degree)}", date, SMALL)]
-    entry.extend(p(escape(detail), SMALL) for detail in details)
+    degree_line = " | ".join(escape(part) for part in [degree, *details])
+    entry = [dated(f"<b>{escape(institution)}</b>", date, SMALL), p(degree_line, SMALL)]
     story.append(KeepTogether(entry))
 
 section("Selected Publications")
@@ -272,9 +274,10 @@ for role, description in CV["service"]:
     else:
         story.append(p(f"<b>{escape(role)}:</b> {escape(description)}", SMALL))
 section("Teaching")
-rows = [[p(f"<b>{escape(institution)}</b> | {escape(term)}", SMALL), p(escape(course), SMALL), p(escape(role), SMALL)] for institution, term, course, role in CV["teaching"]]
-table = Table(rows, colWidths=[119, WIDTH - 213, 94])
-table.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (-1, -1), 7), ("TOPPADDING", (0, 0), (-1, -1), 1), ("BOTTOMPADDING", (0, 0), (-1, -1), 3)]))
+rows = [[p(f"<b>{heading}</b>", SMALL) for heading in ["Institution / Term", "Course", "Role"]]]
+rows += [[p(f"<b>{escape(institution)}</b><br/>{escape(term)}", SMALL), p("<br/>".join(escape(part) for part in course.split("; ")), SMALL), p(escape(role), SMALL)] for institution, term, course, role in CV["teaching"]]
+table = Table(rows, colWidths=[100, WIDTH - 165, 65], repeatRows=1)
+table.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (-1, -1), 8), ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 6), ("LINEBELOW", (0, 0), (-1, 0), 0.4, colors.HexColor("#cdd5df"))]))
 story.append(table)
 section("Honors and Awards")
 for award, date in CV["awards"]:
@@ -284,8 +287,14 @@ def footer(canvas, doc):
     canvas.saveState()
     canvas.setFont("CV", 7.5)
     canvas.setFillColor(colors.HexColor("#657180"))
-    canvas.drawString(SIDE_MARGIN, 23, f"CHEN Chaofeng | Updated {CV['updated']}")
-    canvas.drawRightString(A4[0] - SIDE_MARGIN, 23, str(doc.page))
+    canvas.drawString(SIDE_MARGIN + 6, 23, f"CHEN Chaofeng | Updated {CV['updated']}")
+    canvas.drawRightString(A4[0] - SIDE_MARGIN - 6, 23, str(doc.page))
+    if doc.page > 1:
+        canvas.setFont("CV", 7)
+        canvas.drawString(SIDE_MARGIN + 6, A4[1] - 24, "CHEN Chaofeng | Curriculum Vitae")
+        canvas.setStrokeColor(colors.HexColor("#dce2e9"))
+        canvas.setLineWidth(0.4)
+        canvas.line(SIDE_MARGIN + 6, A4[1] - 30, A4[0] - SIDE_MARGIN - 6, A4[1] - 30)
     canvas.restoreState()
 
 
