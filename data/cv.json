@@ -1,0 +1,65 @@
+{
+  "updated": "2026-10-16",
+  "name": "CHEN Chaofeng",
+  "name_zh": "陈超锋",
+  "position": "Tenure Track Assistant Professor",
+  "affiliation": "School of Artificial Intelligence, Wuhan University",
+  "email": "chaofengchen@whu.edu.cn",
+  "personal_email": "chaofenghust@gmail.com",
+  "website": "https://chaofengc.github.io",
+  "github": "https://github.com/chaofengc",
+  "scholar": "https://scholar.google.com/citations?user=lxiqnI0AAAAJ&hl=en",
+  "research": "Computer vision and image processing, with a focus on image/video quality assessment, image restoration and enhancement, and multi-modality generative models.",
+  "experience": [
+    ["Tenure Track Assistant Professor", "School of Artificial Intelligence, Wuhan University", "Present"],
+    ["Postdoctoral Research Fellow", "S-Lab, Nanyang Technological University; worked with Prof. Weisi Lin and Prof. Kelly", "Sep. 2021 - Jan. 2025"]
+  ],
+  "education": [
+    ["The University of Hong Kong (HKU)", "Ph.D. in Computer Science", "Sep. 2015 - Jan. 2021"],
+    ["Huazhong University of Science and Technology (HUST)", "B.Eng. in Computer Science", "Sep. 2011 - Jun. 2015"]
+  ],
+  "service": [
+    ["Area Chair", "ICLR 2027"],
+    ["Senior Program Committee Member", "AAAI 2027"],
+    ["Forums", ["PRCV 2026: Invited forum talk on quality assessment and reward modeling for generative vision (Aug. 2026).", "CCIG 2026: Forum Chair, Low-Quality Visual Processing and Quality Assessment (May 2026)."]],
+    ["Committee Member", ["Member, Multimedia Technical Committee, China Society of Image and Graphics (CSIG).", "Executive Member, Multimedia Technical Committee, China Computer Federation (CCF)."]],
+    ["Conference Reviewer", "CVPR, ICCV, ECCV, SIGGRAPH Asia, ACM MM, ICLR, NeurIPS, ICML, AAAI."],
+    ["Journal Reviewer", "TPAMI, IJCV, TIP, CVIU, TIFS, TNNLS, Neurocomputing, TMM, TCSVT."]
+  ],
+  "teaching": [
+    ["WHU", "Spring 2026", "Introduction to Machine Learning", "Lecturer"],
+    ["SYSU", "Spring 2025", "AI236 Principles of Artificial Intelligence; AI238 Experiment of Artificial Intelligence", "Lecturer"]
+  ],
+  "awards": [
+    ["World's Top 2% Scientists, Stanford University", "2025, 2026"],
+    ["ICML Silver Reviewer", "2026"],
+    ["Hong Kong PhD Fellowship", "2015 - 2018"],
+    ["National Scholarship", "2013 - 2014"]
+  ],
+  "publication_groups": [
+    {
+      "heading": "Recent Publications (2025-2026)",
+      "keys": ["gan2026geomar", "ma2026desap", "li2026etpdesigner", "lan2025text4segpp", "sun2026prompt", "li2025denoised", "mi2025mvqa", "lan2025reimagining"]
+    },
+    {
+      "heading": "Selected Conference Papers",
+      "keys": ["chen2024qground", "chen2024enhancing", "chen2024iter", "wu2024qalign", "lan2024clearclip", "lan2024proxyclip", "xu2024local", "wu2024qinstruct", "wu2024qbench", "wu2023dover", "ning2023mimo", "chen2022femasr", "yang2022s3nerf", "wu2022fastvqa", "yang2022psnerf", "li2022redegnet", "liao2022tpqi", "chen2021psfrgan", "chen2021hdrvideo", "li2020dfdnet", "chen2018facesketch", "chen2018pyramid", "liu2018charnet"]
+    },
+    {
+      "heading": "Selected Journal Papers",
+      "keys": ["chen2024topiq", "chen2023semisupervised", "wu2023neighbourhood", "wu2023discovqa", "yang2023deepface", "chen2021sparnet"]
+    },
+    {
+      "heading": "Preprints",
+      "keys": ["li2025gsmorph", "li20252dgaussiansplattingsemantic"]
+    }
+  ],
+  "additional_publications": {
+    "yang2022psnerf": {
+      "title": "PS-NeRF: Neural Inverse Rendering for Multi-view Photometric Stereo",
+      "author": "Wenqi Yang and Guanying Chen and Chaofeng Chen and Zhenfang Chen and Kwan-Yee K. Wong",
+      "booktitle": "European Conference on Computer Vision (ECCV)",
+      "year": "2022"
+    }
+  }
+}
