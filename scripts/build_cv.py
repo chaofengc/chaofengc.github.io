@@ -27,6 +27,9 @@ CV = json.loads((ROOT / "data/cv.json").read_text())
 CONFIG = json.loads((ROOT / "data/publication-config.json").read_text())["publications"]
 OUTPUT = ROOT / "assets/Resume_ChenChaofeng_en.pdf"
 ACCENT = colors.HexColor("#17406b")
+SIDE_MARGIN = 45
+TOP_MARGIN = 36
+BOTTOM_MARGIN = 40
 FONT_DIRS = [
     Path(os.environ.get("CV_FONT_DIR", "/usr/share/fonts/truetype/dejavu")),
     Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/LibreOfficeDev.app/Contents/Resources/fonts/truetype",
@@ -229,7 +232,7 @@ def publication(key, number):
     return p(f"[{number}] <b>[{label}]</b> {', '.join(authors)}. {title}.", PUB)
 
 
-WIDTH = A4[0] - 76
+WIDTH = A4[0] - 2 * SIDE_MARGIN - 12
 ENTRIES = bib_entries()
 story = []
 name = escape(CV["name"])
@@ -281,11 +284,11 @@ def footer(canvas, doc):
     canvas.saveState()
     canvas.setFont("CV", 7.5)
     canvas.setFillColor(colors.HexColor("#657180"))
-    canvas.drawString(32, 20, f"CHEN Chaofeng | Updated {CV['updated']}")
-    canvas.drawRightString(A4[0] - 32, 20, str(doc.page))
+    canvas.drawString(SIDE_MARGIN, 23, f"CHEN Chaofeng | Updated {CV['updated']}")
+    canvas.drawRightString(A4[0] - SIDE_MARGIN, 23, str(doc.page))
     canvas.restoreState()
 
 
-doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=32, rightMargin=32, topMargin=28, bottomMargin=34, title="Chaofeng Chen - Curriculum Vitae", author="Chaofeng Chen", subject=f"Academic CV updated {CV['updated']}")
+doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=SIDE_MARGIN, rightMargin=SIDE_MARGIN, topMargin=TOP_MARGIN, bottomMargin=BOTTOM_MARGIN, title="Chaofeng Chen - Curriculum Vitae", author="Chaofeng Chen", subject=f"Academic CV updated {CV['updated']}")
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
 print(f"Built {OUTPUT}")
