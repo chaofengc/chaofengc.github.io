@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-22",
   "name": "CHEN Chaofeng",
   "name_zh": "陈超锋",
   "position": "Tenure Track Assistant Professor",
@@ -19,7 +19,7 @@
     ["Huazhong University of Science and Technology (HUST)", "B.Eng. in Computer Science", "Sep. 2011 - Jun. 2015"]
   ],
   "service": [
-    ["Area Chair", "ICLR 2027"],
+    ["Area Chair", "ICLR 2027; ICML 2027"],
     ["Senior Program Committee Member", "AAAI 2027"],
     ["Forums", ["PRCV 2026: Invited forum talk on quality assessment and reward modeling for generative vision (Aug. 2026).", "CCIG 2026: Forum Chair, Low-Quality Visual Processing and Quality Assessment (May 2026)."]],
     ["Committee Member", ["Member, Multimedia Technical Committee, China Society of Image and Graphics (CSIG).", "Executive Member, Multimedia Technical Committee, China Computer Federation (CCF)."]],
