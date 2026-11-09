@@ -1130,19 +1130,31 @@ section h2 {
 }
 
 .opening-highlight {
+  position: relative;
   background: linear-gradient(135deg, #fffdf8 0%, var(--highlight-bg) 100%);
   border: 1px solid var(--highlight-border);
   border-left: 4px solid #d98324;
   border-radius: var(--border-radius);
-  padding: 16px;
-  margin: 20px 0;
+  padding: 10px 16px;
+  margin: 16px 0;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
-.opening-highlight-title {
-  color: #a33f13;
-  font-weight: 700;
-  font-size: 1.1rem;
+.opening-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 45%;
+  border-radius: 0 7px 7px 0;
+  background: url('../images/site/whu_castle.jpg') center 45% / cover no-repeat;
+  opacity: 0.14;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 70%);
+  mask-image: linear-gradient(to right, transparent, #000 70%);
+  pointer-events: none;
+}
+
+.opening-highlight > * {
+  position: relative;
 }
 
 .opening-highlight-header {
@@ -1152,205 +1164,113 @@ section h2 {
   gap: 10px;
 }
 
+.opening-highlight-title {
+  margin: 0;
+  color: #a33f13;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .opening-highlight hr {
   border: none;
   border-top: 1px dashed #ebc78c;
-  margin: 10px 0 14px;
-}
-
-.opening-highlight p {
-  margin: 8px 0;
-  color: var(--text-color);
-  line-height: 1.65;
-}
-
-.opening-highlight-accent {
-  color: var(--danger-color);
-  font-weight: 700;
-}
-
-.opening-highlight-intro {
   margin: 6px 0;
 }
 
-.opening-status-grid {
+.opening-highlight p {
+  margin: 2px 0;
+  color: var(--text-color);
+  line-height: 1.45;
+}
+
+.opening-highlight-intro[lang="en"] {
+  font-size: 0.93rem;
+  color: #666;
+}
+
+.opening-roles-line {
+  margin-top: 6px;
+  font-size: 0.93rem;
+  line-height: 1.4;
+}
+
+.opening-roles {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.opening-status-card {
-  background: #fff;
-  border: 1px solid #e9dfcf;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
-  animation: openingCardEnter 0.45s ease both;
-}
-
-.opening-status-card:nth-child(2) {
-  animation-delay: 0.06s;
-}
-
-.opening-status-card:nth-child(3) {
-  animation-delay: 0.12s;
-}
-
-.opening-status-card:hover {
-  transform: translateY(-3px);
-}
-
-.opening-status-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.opening-role {
-  font-weight: 700;
-  color: #4d4032;
-}
-
-.opening-status-badge {
-  flex-shrink: 0;
-  border-radius: 999px;
-  padding: 2px 10px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.opening-status-card.is-open {
-  border-color: #7ecb8d;
-  background: linear-gradient(180deg, #f4fff5 0%, #e8fbe9 100%);
-  box-shadow: 0 8px 18px rgba(38, 166, 91, 0.16);
-}
-
-.opening-status-card.is-open:hover {
-  box-shadow: 0 14px 28px rgba(28, 150, 82, 0.24);
-}
-
-.opening-status-card.is-open:hover .opening-status-badge {
-  transform: translateY(-1px) scale(1.04);
-  box-shadow: 0 5px 10px rgba(24, 129, 63, 0.24);
-}
-
-.opening-status-card.is-open .opening-status-badge {
-  color: #ffffff;
-  background: #1f9d4f;
-  border: 1px solid #18813f;
-}
-
-.opening-status-card.is-closed {
-  border-color: #dde2e8;
-  background: linear-gradient(180deg, #f8f9fb 0%, #f3f5f8 100%);
-  box-shadow: none;
-}
-
-.opening-status-card.is-closed:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(136, 145, 157, 0.1);
-}
-
-.opening-status-card.is-closed .opening-status-badge {
-  color: #7b838d;
-  background: #eceff3;
-  border: 1px solid #d9dfe6;
-}
-
-.opening-status-card.is-closed .opening-role,
-.opening-status-card.is-closed p {
-  color: #8b939d;
-}
-
-.opening-status-card.is-longterm .opening-status-badge {
-  color: #0d496e;
-  background: #d9edff;
-  border-color: #b8dcfb;
-}
-
-.opening-status-card p {
+  max-width: 720px;
+  gap: 8px;
   margin: 0;
-  font-size: 0.93rem;
+  padding: 0;
+  list-style: none;
+}
+
+.opening-roles li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  gap: 1px;
+  padding: 4px 9px;
+  border: 1px solid #ecd9b9;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
   color: #4f4f4f;
 }
 
-@keyframes openingCardEnter {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.opening-roles strong {
+  color: #4d4032;
 }
 
-.opening-highlight-footer {
-  margin-top: 12px;
+.opening-roles span {
+  color: #6a6258;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.opening-roles .opening-role-icon {
+  margin-right: 5px;
+  font-size: 1em;
+}
+
+.opening-highlight .opening-highlight-contact {
+  margin: 5px 0 0;
+  font-size: 0.93rem;
 }
 
 .opening-detail-link {
   display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  align-items: baseline;
+  gap: 5px;
+  margin-left: 4px;
+  color: #a33f13;
+  font-size: 0.93rem;
+  font-weight: 700;
+  line-height: inherit;
   text-decoration: none;
-  font-weight: 700;
-  color: #9e3f12;
-  background: linear-gradient(180deg, #fff4eb 0%, #ffe9d8 100%);
-  border: 1px solid #e0b188;
-  border-radius: 999px;
-  padding: 4px 11px;
-  box-shadow: 0 2px 8px rgba(176, 90, 28, 0.14);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-}
-
-.opening-detail-link::after {
-  content: "→";
-  font-weight: 700;
-  font-size: 0.8rem;
-  transform: translateX(0);
-  transition: transform 0.2s ease;
+  vertical-align: baseline;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .opening-detail-link:hover {
   color: #7d2f0c;
-  background: linear-gradient(180deg, #ffe8d4 0%, #ffd9bd 100%);
-  box-shadow: 0 5px 14px rgba(176, 90, 28, 0.2);
-  transform: translateY(-1px);
+  text-decoration: none;
 }
 
-.opening-detail-link:hover::after {
-  transform: translateX(2px);
-}
-
-.opening-detail-link:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(194, 87, 26, 0.26), 0 5px 14px rgba(176, 90, 28, 0.2);
-}
-
-.opening-detail-link:active {
-  transform: translateY(0);
-}
-
-.opening-detail-link-inline {
-  flex-shrink: 0;
-  padding: 3px 10px;
-  font-size: 0.86rem;
-}
-
-@media (max-width: 960px) {
-  .opening-status-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .opening-highlight::before {
+    width: 65%;
+    opacity: 0.08;
   }
 
-  .opening-highlight-header {
-    align-items: flex-start;
-    flex-direction: column;
+  .opening-roles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .opening-roles {
+    grid-template-columns: 1fr;
   }
 }
 
