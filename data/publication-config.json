@@ -1,5 +1,12 @@
 {
   "publications": {
+    "he2026uniflowrs": {
+      "image": "images/publications/arxiv2026_uniflow_rs.png",
+      "select": true,
+      "pdf": "https://arxiv.org/abs/2611.14281",
+      "github": "https://github.com/MindVision-AI/UniFlow-RS",
+      "corresponding_authors": ["Chaofeng Chen"]
+    },
     "gan2026geomar": {
       "pdf": "https://arxiv.org/abs/2608.03923",
       "github": "https://github.com/BRL-SYSU/GeoMAR"
