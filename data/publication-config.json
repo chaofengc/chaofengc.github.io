@@ -31,7 +31,8 @@
     "lan2025text4segpp": {
       "image": "images/publications/arxiv2025_text4segpp.png",
       "select": true,
-      "pdf": "https://arxiv.org/abs/2509.06321"
+      "pdf": "https://arxiv.org/abs/2509.06321",
+      "github": "https://github.com/mc-lan/Text4Seg"
     },
     "li20252dgaussiansplattingsemantic": {
       "image": "images/publications/arxiv2025_gsinpaint.png",
