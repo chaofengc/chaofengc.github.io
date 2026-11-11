@@ -5,6 +5,7 @@
       "select": true,
       "pdf": "https://arxiv.org/abs/2611.14281",
       "github": "https://github.com/MindVision-AI/UniFlow-RS",
+      "project": "https://elaxegan.github.io/uniflow-rs/",
       "corresponding_authors": ["Chaofeng Chen"]
     },
     "gan2026geomar": {

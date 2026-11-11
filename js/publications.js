@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pubConfig.pdf || pub.url || pub.pdf) {
           const pdfLink = document.createElement('a');
           pdfLink.href = pubConfig.pdf || pub.url || pub.pdf || '#';
-          pdfLink.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
+          pdfLink.innerHTML = '<i class="far fa-file-pdf" aria-hidden="true"></i><span>PDF</span>';
           pdfLink.target = '_blank';
           links.appendChild(pdfLink);
         }
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pubConfig.project) {
           const projectLink = document.createElement('a');
           projectLink.href = pubConfig.project;
-          projectLink.innerHTML = '<i class="fas fa-link"></i> Project';
+          projectLink.innerHTML = '<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Project</span>';
           projectLink.target = '_blank';
           links.appendChild(projectLink);
         }
@@ -244,17 +244,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Code link from config or bib (check both 'github' and 'code' fields)
         const codeUrl = pubConfig.github || pub.github || pubConfig.code || pub.code;
         if (codeUrl) {
-          // GitHub stars badge for index page
+          const codeLink = document.createElement('a');
+          codeLink.href = codeUrl;
+          codeLink.target = '_blank';
+          codeLink.innerHTML = '<i class="fab fa-github" aria-hidden="true"></i><span>Code</span>';
+          links.appendChild(codeLink);
+
           if (codeUrl.includes('github.com')) {
             const githubUrl = codeUrl.replace('https://github.com/', '').replace('http://github.com/', '');
             const repoPath = githubUrl.split('/').slice(0, 2).join('/');
             if (repoPath.includes('/')) {
-              const starsLink = document.createElement('a');
-              starsLink.href = codeUrl;
-              starsLink.target = '_blank';
-              starsLink.className = 'github-stars';
-              starsLink.innerHTML = `<img src="https://img.shields.io/github/stars/${repoPath}?style=social" alt="GitHub stars" style="vertical-align: middle;">`;
-              links.appendChild(starsLink);
+              codeLink.className = 'github-code';
+              codeLink.innerHTML = `<span class="github-code-label"><i class="fab fa-github" aria-hidden="true"></i>Code</span><img src="https://img.shields.io/github/stars/${repoPath}?style=flat-square&amp;label=%E2%98%85&amp;labelColor=dde5eb&amp;color=dde5eb" alt="GitHub stars">`;
             }
           }
         }
@@ -263,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pub.doi) {
           const doiLink = document.createElement('a');
           doiLink.href = `https://doi.org/${pub.doi}`;
-          doiLink.innerHTML = '<i class="fas fa-external-link-alt"></i> DOI';
+          doiLink.innerHTML = '<i class="fas fa-link" aria-hidden="true"></i><span>DOI</span>';
           doiLink.target = '_blank';
           links.appendChild(doiLink);
         }
@@ -271,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // BibTeX citation
         const citeLink = document.createElement('a');
         citeLink.href = '#';
-        citeLink.innerHTML = '<i class="fas fa-quote-right"></i> Cite';
+        citeLink.innerHTML = '<i class="fas fa-quote-left" aria-hidden="true"></i><span>Cite</span>';
         citeLink.onclick = function(e) {
           e.preventDefault();
           showBibtex(pub, pubElement);
@@ -483,205 +484,62 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {Object} publication Publication object
    * @param {HTMLElement} publicationElement The publication item element
    */
-  function showBibtex(publication, publicationElement, triggerElement = null) {
-    const bibtexFields = [
-      `    title={${publication.title || ''}}`,
-      `    author={${publication.author || ''}}`
-    ];
-
-    if (publication.journal) {
-      bibtexFields.push(`    journal={${publication.journal}},`);
-    }
-    if (publication.booktitle) {
-      bibtexFields.push(`    booktitle={${publication.booktitle}},`);
-    }
-    if (publication.volume) {
-      bibtexFields.push(`    volume={${publication.volume}},`);
-    }
-    if (publication.number) {
-      bibtexFields.push(`    number={${publication.number}},`);
-    }
-    if (publication.pages) {
-      bibtexFields.push(`    pages={${publication.pages}},`);
-    }
-    if (publication.year) {
-      bibtexFields.push(`    year={${publication.year}},`);
-    }
-    if (publication.publisher) {
-      bibtexFields.push(`    publisher={${publication.publisher}}`);
-    }
-
-    const bibtexText = [`@${publication.type}{${publication.citeKey},`, ...bibtexFields, '}'].join('\n');
-    
-    // Find existing citation container
-    let citationContainer = publicationElement.querySelector('.citation-container');
-    
-    // Check if we need to close an existing citation
-    const isExpanded = citationContainer && citationContainer.classList.contains('expanded');
-    if (isExpanded) {
-      collapseCitation(citationContainer);
+  function showBibtex(publication, publicationElement) {
+    const existing = publicationElement.querySelector('.citation-container');
+    if (existing) {
+      collapseCitation(existing);
       return;
     }
-    
-    // Remove any existing citation container
-    if (citationContainer) {
-      citationContainer.remove();
-    }
-    
-    // Create new citation container
-    citationContainer = createCitationContainer(publication, bibtexText);
-    
-    // Always insert citation container at the end of publication-content to ensure it displays below
-    const publicationContent = publicationElement.querySelector('.publication-content');
-    if (publicationContent) {
-      publicationContent.appendChild(citationContainer);
-    } else {
-      publicationElement.appendChild(citationContainer);
-    }
-    
-    // Expand the citation
-    expandCitation(citationContainer, publication, bibtexText);
+
+    const fields = [
+      ['title', 'title'], ['author', 'author'], ['journal', 'journal'],
+      ['booktitle', 'booktitle'], ['volume', 'volume'], ['number', 'number'],
+      ['pages', 'pages'], ['year', 'year'], ['publisher', 'publisher'],
+      ['eprint', 'eprint'], ['archivePrefix', 'archiveprefix'],
+      ['primaryClass', 'primaryclass'], ['doi', 'doi'], ['url', 'url']
+    ];
+    const lines = fields
+      .filter(([, key]) => publication[key])
+      .map(([label, key]) => `  ${label} = {${publication[key]}}`);
+    const bibtexText = `@${publication.type}{${publication.citeKey},\n${lines.join(',\n')}\n}`;
+    const container = createCitationContainer(bibtexText);
+    const content = publicationElement.querySelector('.publication-content');
+    (content || publicationElement).appendChild(container);
   }
-  
-  /**
-   * Create inline citation container HTML structure
-   * @param {Object} publication Publication object
-   * @param {string} bibtexText BibTeX citation text
-   * @returns {HTMLElement} Citation container element
-   */
-  function createCitationContainer(publication, bibtexText) {
+
+  function createCitationContainer(bibtexText) {
     const container = document.createElement('div');
-    container.className = 'citation-container';
-    
+    container.className = 'citation-container expanded';
     container.innerHTML = `
       <div class="citation-header">
-        <h4 class="citation-title">Citation: ${publication.title || 'Untitled'}</h4>
-        <button class="citation-toggle" aria-label="Toggle citation">▼</button>
-      </div>
-      <div class="citation-content">
-        <div class="citation-text">${bibtexText}</div>
+        <span class="citation-title">BibTeX</span>
         <div class="citation-actions">
-          <button class="citation-btn citation-btn-primary citation-copy-btn">
-            <i class="fas fa-copy"></i> Copy
-          </button>
-          <button class="citation-btn citation-btn-secondary citation-collapse-btn">
-            <i class="fas fa-chevron-up"></i> Collapse
-          </button>
-          <span class="citation-success"></span>
+          <span class="citation-success" role="status" aria-live="polite"></span>
+          <button type="button" class="citation-copy-btn"><i class="far fa-copy" aria-hidden="true"></i> Copy</button>
+          <button type="button" class="citation-close-btn" aria-label="Close citation">×</button>
         </div>
       </div>
+      <pre class="citation-text"></pre>
     `;
-    
-    // Setup toggle functionality
-    const toggleBtn = container.querySelector('.citation-toggle');
-    const collapseBtn = container.querySelector('.citation-collapse-btn');
-    const header = container.querySelector('.citation-header');
-    
-    const toggleFunction = function() {
-      const isExpanded = container.classList.contains('expanded');
-      if (isExpanded) {
-        collapseCitation(container);
-      } else {
-        expandCitation(container, publication, bibtexText);
+    container.querySelector('.citation-text').textContent = bibtexText;
+    container.querySelector('.citation-close-btn').addEventListener('click', () => collapseCitation(container));
+    container.querySelector('.citation-copy-btn').addEventListener('click', async () => {
+      const status = container.querySelector('.citation-success');
+      try {
+        await navigator.clipboard.writeText(bibtexText);
+        status.textContent = 'Copied';
+      } catch (error) {
+        status.textContent = 'Copy failed';
       }
-    };
-    
-    toggleBtn.onclick = toggleFunction;
-    header.onclick = function(e) {
-      // Only toggle if clicking on header, not on toggle button
-      if (e.target === header || e.target.classList.contains('citation-title')) {
-        toggleFunction();
-      }
-    };
-    
-    collapseBtn.onclick = function() {
-      collapseCitation(container);
-    };
-    
-    // Setup copy functionality
-    const copyBtn = container.querySelector('.citation-copy-btn');
-    const successElement = container.querySelector('.citation-success');
-    
-    copyBtn.onclick = function() {
-      navigator.clipboard.writeText(bibtexText).then(() => {
-        successElement.textContent = 'Copied!';
-        successElement.classList.add('show');
-        setTimeout(() => {
-          successElement.classList.remove('show');
-        }, 2000);
-      }).catch(() => {
-        successElement.textContent = 'Copy failed';
-        successElement.classList.add('show');
-        setTimeout(() => {
-          successElement.classList.remove('show');
-        }, 3000);
-      });
-    };
-    
+      setTimeout(() => { status.textContent = ''; }, 2500);
+    });
     return container;
   }
-  
-  /**
-   * Expand citation container
-   * @param {HTMLElement} container Citation container element
-   * @param {Object} publication Publication object
-   * @param {string} bibtexText BibTeX citation text
-   */
-  function expandCitation(container, publication, bibtexText) {
-    // Update content first
-    const textElement = container.querySelector('.citation-text');
-    const titleElement = container.querySelector('.citation-title');
-    const successElement = container.querySelector('.citation-success');
-    
-    titleElement.textContent = `Citation: ${publication.title || 'Untitled'}`;
-    textElement.textContent = bibtexText;
-    successElement.classList.remove('show');
-    
-    // Force a reflow to ensure content is updated before animation
-    container.offsetHeight;
-    
-    // Add expanded class with a slight delay for smooth animation
-    requestAnimationFrame(() => {
-      container.classList.add('expanded');
-      const toggleBtn = container.querySelector('.citation-toggle');
-      toggleBtn.classList.add('expanded');
-      
-      // Scroll the citation into view smoothly
-      setTimeout(() => {
-        container.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'nearest',
-          inline: 'nearest'
-        });
-      }, 200);
-    });
-  }
-  
-  /**
-   * Collapse citation container
-   * @param {HTMLElement} container Citation container element
-   */
+
   function collapseCitation(container) {
-    // Clear success message first
-    const successElement = container.querySelector('.citation-success');
-    successElement.classList.remove('show');
-    
-    // Add collapse animation class
-    container.style.animation = 'slideUpFadeOut 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
-    
-    // Trigger collapse animation
-    container.classList.remove('expanded');
-    const toggleBtn = container.querySelector('.citation-toggle');
-    toggleBtn.classList.remove('expanded');
-    
-    // Remove the container after animation completes
-    setTimeout(() => {
-      if (container.parentNode && !container.classList.contains('expanded')) {
-        container.remove();
-      }
-    }, 300);
+    container.remove();
   }
-  
+
   /**
    * Handle filter button clicks
    */
