@@ -49,7 +49,8 @@
       "select": true,
       "image": "images/publications/arXiv2024_Text4Seg.png",
       "pdf": "https://arxiv.org/abs/2410.09855",
-      "github": "https://github.com/mc-lan/Text4Seg"
+      "github": "https://github.com/mc-lan/Text4Seg",
+      "project": "https://mc-lan.github.io/Text4Seg/"
     },
     "chen2024qground": {
       "select": true,
@@ -122,6 +123,7 @@
       "image": "images/publications/qbench.png",
       "pdf": "https://arxiv.org/abs/2309.14181",
       "github": "https://github.com/Q-Future/Q-Bench",
+      "project": "https://q-future.github.io/Q-Bench/",
       "co_first_authors": ["Haoning Wu", "Zicheng Zhang", "Erli Zhang"],
       "corresponding_authors": ["Weisi Lin"],
       "accept_info": "Spotlight, 4.96%"
@@ -243,7 +245,8 @@
       "select": true,
       "image": "images/publications/TPAMI2023_FastVQA.jpg",
       "pdf": "https://arxiv.org/abs/2210.05357",
-      "github": "https://github.com/timothyhtimothy/FAST-VQA-and-FasterVQA"
+      "github": "https://github.com/timothyhtimothy/FAST-VQA-and-FasterVQA",
+      "project": "https://vqassessment.github.io/#fast-vqa-end-to-end"
     },
     "chen2023semisupervised": {
       "image": "images/publications/CVIU2023_FaceSCG.png",
